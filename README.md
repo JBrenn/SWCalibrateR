@@ -2,10 +2,10 @@
 =======
 # SMC calibration
 R package providing functionality for calibration of soil moisture snsors installed in South Tyrol.
-* get calibration data [data()]
-* choose parameters to calibrate on
-* do calibration
-* interactive shiny app for calibration
+* get calibration data [data("SensorVSample")]
+* choose parameters to calibrate on and get diminished dataframe (CAL_doreg_data)
+* performs linear calibration and visualization (CAL_doreg)
+* interactive shiny app for calibration (see below)
 
 
 # How to start
