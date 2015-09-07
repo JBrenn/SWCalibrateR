@@ -1,23 +1,16 @@
-Package: AnalyseGeotop
+Package: SMCcalibration
 Version: 1.0
-Date: 2015-04-17
-Title: Analyse GEOtop simulations
+Date: 2015-09-07
+Title: Calibration of SMC sensors (South Tyrol)
 Author: Johannes Brenner <Johannes.Brenner@eurac.com>
 Maintainer: Johannes Brenner <Johannes.Brenner@eurac.com>
-Description: Read output from GEOtop simulations and analyse in terms of e.g. hydrological budget, simulation validation, maps animation.
+Description: Calibrates SMC sensors vs. Soil Samples, includes interactive shiny app.
 Depends: R (>= 3.0.0)
 License: LGPL (>= 2)
 LazyData: Yes
 LazyLoad: Yes
 Imports:
-    geotopbricks,
-    chron,
-    zoo,
-    hydroGOF,
-    soilwater,
-    raster,
-    sp,
+    shiny,
     ggplot2,
-    xts,
-    RSAGA,
-    stringr
+    Cairo
+
