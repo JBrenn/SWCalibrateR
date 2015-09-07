@@ -7,8 +7,8 @@ Maintainer: Johannes Brenner <Johannes.Brenner@eurac.com>
 Description: Calibrates SMC sensors vs. Soil Samples, includes interactive shiny app.
 Depends: R (>= 3.0.0)
 License: LGPL (>= 2)
-LazyData: Yes
-LazyLoad: Yes
+LazyData: No
+LazyLoad: No
 Imports:
     shiny,
     ggplot2,
