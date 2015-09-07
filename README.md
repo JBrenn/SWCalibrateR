@@ -23,3 +23,10 @@ and then import the library with:
 ```R
 library(SMCcalibration)
 ```
+
+For running the calibration shiny app:
+
+```R
+data("SensorVSample")
+shinyApp(ui, server)
+```
