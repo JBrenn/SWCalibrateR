@@ -1,17 +1,9 @@
 # Default NAMESPACE created by R
 # Remove the previous line if you edit this file
 
-import(geotopbricks)
-import(chron)
-import(zoo)
-import(hydroGOF)
-import(soilwater)
-import(raster)
-import(sp)
+import(shiny)
 import(ggplot2)
-import(xts)
-import(RSAGA)
-import(stringr)
+import(Cairo)
 
 # Export all names
 exportPattern(".")
