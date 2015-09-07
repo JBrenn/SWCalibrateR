@@ -44,12 +44,8 @@ makes up shiny app with ui (see example)
 }
 \examples{
 \code{
-# choose data
-  data(SensorVSample )
-  
-# source ui and server
-  source("ui.R")
-  source("server.R")
+# load data set 
+  data("SensorVSample")
 
 # run shiny app
   shinyApp(ui, server)
