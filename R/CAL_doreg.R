@@ -68,7 +68,8 @@ CAL_doreg <- function (data, date_obs=NA, landuse=NA, depth=NA, station=NA, proj
     text(x = 0.05, y = 0.05, labels = "y = x", col=grey(level = 0.6, alpha = 0.5))
     text(x = 0.55, y = 0.55, labels = "y = x", col=grey(level = 0.6, alpha = 0.5))
     abline(reg.lin, col=rgb(1,0,0,.5), lwd=3)
-    legend("topleft", legend = paste(choices[!choices.na]))
+    # bug choices are NULL/ zero length
+    legend("topleft", legend = paste(c("CALIBRATION FOR:", choices[!choices.na])))
     text(x = 0.45, y = 0.05, labels = linMod_text, col=rgb(1,0,0,.75))
     
     if(pdf)
