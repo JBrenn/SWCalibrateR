@@ -61,7 +61,7 @@ img {
 
 
 
-<p>======= # SMC calibration R package providing functionality for calibration of soil moisture snsors installed in South Tyrol. * get calibration data [data(“SensorVSample”)] * choose parameters to calibrate on and get diminished dataframe (CAL_doreg_data) * performs linear calibration and visualization (CAL_doreg) * interactive shiny app for calibration (see below)</p>
+<p>======= # SMC calibration R package providing functionality for calibration of soil moisture sensors installed in South Tyrol. * get calibration data via data(“SensorVSample”) * choose parameters to calibrate on and get diminished dataframe (CAL_doreg_data) * performs linear calibration and visualization (CAL_doreg) * interactive shiny app for calibration (see below on how to run)</p>
 <div id="how-to-start" class="section level1">
 <h1>How to start</h1>
 <p>First install the package with:</p>
@@ -73,6 +73,7 @@ install_github(&quot;JBrenn/SMCcalibration&quot;)</code></pre>
 <p>For running the calibration shiny app:</p>
 <pre class="r"><code>data(&quot;SensorVSample&quot;)
 shinyApp(ui, server)</code></pre>
+<p>======= For this application I got inspired by the R Studio shiny gallery and used these <a href="http://shiny.rstudio.com/gallery/plot-interaction-exclude.html">code snippets</a>.</p>
 </div>
 
 

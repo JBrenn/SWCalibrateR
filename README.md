@@ -30,3 +30,6 @@ For running the calibration shiny app:
 data("SensorVSample")
 shinyApp(ui, server)
 ```
+
+=======
+For this application I got inspired by the R Studio shiny gallery and used these [code snippets](http://shiny.rstudio.com/gallery/plot-interaction-exclude.html).
