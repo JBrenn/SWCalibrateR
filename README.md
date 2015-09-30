@@ -8,7 +8,7 @@ R package providing functionality for calibration of soil moisture sensors insta
 * interactive shiny app for calibration (see below on how to run)
 
 
-# How to start
+## How to start
 
 First install the package with:
 
@@ -24,6 +24,8 @@ and then import the library with:
 library(SMCcalibration)
 ```
 
+=======
+
 For running the calibration shiny app:
 
 ```R
@@ -31,5 +33,4 @@ data("SensorVSample")
 shinyApp(ui, server)
 ```
 
-=======
-For this application I got inspired by the R Studio shiny gallery and used these [code snippets](http://shiny.rstudio.com/gallery/plot-interaction-exclude.html).
+For this application I got inspired by the RStudio shiny gallery and used these [code snippets](http://shiny.rstudio.com/gallery/plot-interaction-exclude.html).
