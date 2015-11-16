@@ -27,7 +27,7 @@ ui <- fluidPage(
                   choices = list("ALL","CS655","Decagon10HS","OnsetSMB005")),
       
       selectInput("SensorName", label = h3("SensorName"), 
-                  choices = list("ALL","CI","Lsp","LBL","Cst","T","L","Lst","Csn","Tst"))
+                  choices = list("ALL","A","B","C","CI","Lsp","LBL","Cst","T","L","Lst","Csn","Tst","LS","Tsn"))
       
     ),
   
