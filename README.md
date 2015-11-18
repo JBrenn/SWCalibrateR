@@ -29,6 +29,8 @@ library(SMCcalibration)
 For running the calibration shiny app:
 
 ```R
+library(shiny)
+
 data("SensorVSample")
 shinyApp(ui, server)
 ```
