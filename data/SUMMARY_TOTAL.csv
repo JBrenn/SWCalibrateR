@@ -568,3 +568,6 @@ matsch,S4,pasture,15/06/2015,5,OnsetSMB005,0.2276000,0.32868,0.3530933,SensorMea
 matsch,S4,pasture,15/06/2015,5,OnsetSMB005,0.2276000,0.28952,0.3530933,SensorMean
 matsch,S4,pasture,15/06/2015,5,OnsetSMB005,0.2276000,0.44108,0.3530933,SensorMean
 matsch,S4,pasture,15/06/2015,20,OnsetSMB005,0.2228143,0.3072,0.3072,SensorMean
+matsch,P2,pasture,21/09/2015,5,CS655,0.1440952,0.22396,0.23902,SensorMean
+matsch,P2,pasture,21/09/2015,5,CS655,0.1440952,0.25408,0.23902,SensorMean
+
