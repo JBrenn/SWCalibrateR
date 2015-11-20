@@ -1,11 +1,9 @@
 ui <- fluidPage(
   
-  sidebarLayout(fluid = T, 
+  sidebarLayout(fluid = T, position = "left",
     
     # Sidebar with a slider input
     sidebarPanel(width=2,
-      
-      shiny::checkboxInput("Rownames", label = "Show Rownames", FALSE),                
                  
       selectInput("Project", label = h3("Project"), 
                   choices = list("ALL","matsch","monalisa")),
@@ -34,23 +32,25 @@ ui <- fluidPage(
     ),
   
   mainPanel(
-           plotOutput("plot1", height = 1000, width = 1000,
-                      click = "plot1_click",
-                      brush = brushOpts(
-                        id = "plot1_brush"
-                      )
-           ),
-           
-           actionButton("exclude_toggle", "Toggle points"),
-           actionButton("exclude_reset", "Reset"),
-           
-           plotOutput("plot2", height = 1000, width = 1000,
-                      click = "plot2_click",
-                      brush = brushOpts(
-                        id = "plot2_brush"
-                      )
-           )
+    tabsetPanel(
+      tabPanel("Model Fit",  
+               plotOutput("plot1", height = 800, width = 800,
+                                   click = "plot1_click",
+                                   brush = brushOpts(
+                                     id = "plot1_brush"
+                                   )),
+      actionButton("exclude_toggle", "Toggle points"),
+      actionButton("exclude_reset", "Reset"),
+      checkboxInput("Rownames", label = "Show row.names", value = FALSE)),
+      
+      tabPanel("Diagnostics", plotOutput("plot2", height = 1000, width = 1000,
+                                         click = "plot2_click",
+                                         brush = brushOpts(
+                                           id = "plot2_brush"
+                                         ))),
+      tabPanel("Data Table", dataTableOutput("table"))
     )
   )
+)
 )
 

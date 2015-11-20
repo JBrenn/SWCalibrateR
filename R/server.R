@@ -4,8 +4,8 @@ server <- function(input, output) {
   vals <- reactiveValues(
     keeprows = rep(TRUE, nrow(data))
   )
-
-  output$plot1 <- renderPlot({
+  
+  output$table <- renderDataTable({
     
     if (input$Project=="ALL")  project <- NA else project <- input$Project
     if (input$Landuse=="ALL")  landuse <- NA else landuse <- input$Landuse
@@ -18,6 +18,25 @@ server <- function(input, output) {
     data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
                            depth = depth, sensorType = SensorType, sensorName = SensorName, preserveStr = T)
     
+    data$row.name <- rownames(data)
+    
+    data[!is.na(data[,1]),]
+    
+    }, list(pageLength = 20, lengthMenu = c(20, 30, 50, 100)) )
+  
+  output$plot1 <- renderPlot({
+    
+    if (input$Project=="ALL")  project <- NA else project <- input$Project
+    if (input$Landuse=="ALL")  landuse <- NA else landuse <- input$Landuse
+    if (input$Station=="ALL")  station <- NA else station <- input$Station
+    if (input$Date=="ALL")  date <- NA else date <- input$Date
+    if (input$Depth=="ALL")  depth <- NA else depth <- input$Depth
+    if (input$SensorType=="ALL")  SensorType <- NA else SensorType <- input$SensorType
+    if (input$SensorName=="ALL")  SensorName <- NA else SensorName <- input$SensorName
+    
+    data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
+                           depth = depth, sensorType = SensorType, sensorName = SensorName, preserveStr = T)
+  
     data$ID <- rownames(data)
     
     # Plot the kept and excluded points as two separate data sets
