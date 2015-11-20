@@ -27,7 +27,8 @@ server <- function(input, output) {
       geom_text(x = 0.55, y = 0.55, label = "y = x", color = "white") +
       geom_text(x = 0.05, y = 0.05, label = "y = x", color = "white") +
       geom_point() +
-      geom_smooth(method = lm, fullrange = TRUE, shape = 21, color = "black") +
+      geom_smooth(method = lm, fullrange = TRUE, shape = 21, color = "grey") +
+     # geom_smooth(method = glm, fullrange = TRUE, shape = 21, color = "black") +
       geom_point(data = exclude, shape = 21, fill = NA, color = "black", alpha = 0.25) +
       geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep), parse = TRUE) +
       coord_cartesian(xlim = c(0, 0.6), ylim = c(0,0.6))

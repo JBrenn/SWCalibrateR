@@ -1,5 +1,14 @@
-lm_eqn <- function(df){
-  m <- lm(meansample ~ meanstation, df);
+lm_eqn <- function(df, method){
+  
+  if (method == "lm") {
+    m <- lm(meansample ~ meanstation, df)
+  }
+  
+  if (method == "rlm") {
+    require(robustbase)
+    m <- lmrob(meansample ~ meanstation, df, setting = "KS2011", maxit.scale = 1000)
+  }
+
   eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2, 
                    list(a = format(coef(m)[1], digits = 2), 
                         b = format(coef(m)[2], digits = 2), 

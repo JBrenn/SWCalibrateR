@@ -12,7 +12,5 @@ LazyLoad: No
 Imports:
     shiny,
     ggplot2,
-    Cairo, 
-    robustbase
-	
+    Cairo
 

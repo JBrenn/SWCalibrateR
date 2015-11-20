@@ -4,6 +4,7 @@
 import(shiny)
 import(ggplot2)
 import(Cairo)
+import(robustbase)
 
 # Export all names
 exportPattern(".")
