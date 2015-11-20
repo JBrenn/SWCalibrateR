@@ -32,6 +32,8 @@ For running the calibration shiny app:
 library(shiny)
 
 data("SensorVSample")
+data <- unique(data[,-8])
+
 shinyApp(ui, server)
 ```
 
