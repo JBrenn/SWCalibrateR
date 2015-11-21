@@ -43,21 +43,36 @@ server <- function(input, output) {
     keep    <- data[ vals$keeprows, , drop = FALSE]
     exclude <- data[!vals$keeprows, , drop = FALSE]
     
-    p <- ggplot(keep, aes(x = meanstation, y = meansample, label=ID)) +
-            geom_abline(intercept = 0, slope = 1, colour = "white") + 
-            geom_text(x = 0.55, y = 0.55, label = "y = x", color = "white") +
-            geom_text(x = 0.05, y = 0.05, label = "y = x", color = "white") +
-            #geom_smooth(method = lm, fullrange = TRUE, shape = 21, color = "grey") +
-            geom_smooth(method = fitSMDM, fullrange = TRUE, shape = 21, color = "grey") +
-            geom_point(data = exclude, shape = 21, fill = NA, color = "black", alpha = 0.25) +
-            geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="rlm"), parse = TRUE) +
-            coord_cartesian(xlim = c(0, 0.6), ylim = c(0,0.6))
+    if (input$facet) {
+      
+      p <- ggplot(keep[!is.na(keep)[,1],], aes(x = meanstation, y = meansample, label=ID)) +
+        geom_abline(intercept = 0, slope = 1, colour = "white") + 
+        #geom_smooth(method = lm, fullrange = TRUE, shape = 21, color = "grey") +
+        geom_smooth(method = fitSMDM, fullrange = TRUE, shape = 21, color = "grey") +
+        geom_point(data = exclude, shape = 21, fill = NA, color = "black", alpha = 0.25) +
+        coord_cartesian(xlim = c(0, 0.6), ylim = c(0,0.6)) + 
+        facet_grid(depth ~ landuse)
+      
+    } else {
+      
+      p <- ggplot(keep, aes(x = meanstation, y = meansample, label=ID)) +
+        geom_abline(intercept = 0, slope = 1, colour = "white") + 
+        geom_text(x = 0.55, y = 0.55, label = "y = x", color = "white") +
+        geom_text(x = 0.05, y = 0.05, label = "y = x", color = "white") +
+        #geom_smooth(method = lm, fullrange = TRUE, shape = 21, color = "grey") +
+        geom_smooth(method = fitSMDM, fullrange = TRUE, shape = 21, color = "grey") +
+        geom_point(data = exclude, shape = 21, fill = NA, color = "black", alpha = 0.25) +
+        geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="rlm"), parse = TRUE) +
+        coord_cartesian(xlim = c(0, 0.6), ylim = c(0,0.6))
+    }  
     
     if (input$Rownames) {
-      p + geom_text()
+      p <- p + geom_text()
     } else {
-      p + geom_point()
+      p <- p + geom_point()
     }
+    
+    p
     
   })
   
