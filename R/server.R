@@ -47,8 +47,6 @@ server <- function(input, output) {
       
       p <- ggplot(keep[!is.na(keep)[,1],], aes(x = meanstation, y = meansample, label=ID)) +
         geom_abline(intercept = 0, slope = 1, colour = "white") + 
-        #geom_smooth(method = lm, fullrange = TRUE, shape = 21, color = "grey") +
-        geom_smooth(method = fitSMDM, fullrange = TRUE, shape = 21, color = "grey") +
         geom_point(data = exclude, shape = 21, fill = NA, color = "black", alpha = 0.25) +
         coord_cartesian(xlim = c(0, .60), ylim = c(0, .60)) + 
         facet_grid(depth ~ landuse)
@@ -61,12 +59,18 @@ server <- function(input, output) {
         geom_abline(intercept = 0, slope = 1, colour = "white") + 
         geom_text(x = xypos, y = xypos, label = "y = x", color = "white") +
         geom_text(x = 0.05, y = 0.05, label = "y = x", color = "white") +
-        #geom_smooth(method = lm, fullrange = TRUE, shape = 21, color = "grey") +
-        geom_smooth(method = fitSMDM, fullrange = TRUE, shape = 21, color = "grey") +
         geom_point(data = exclude, shape = 21, fill = NA, color = "black", alpha = 0.25) +
-        geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="rlm"), parse = TRUE) +
+       
         coord_cartesian(xlim = xlim, ylim = ylim)
-    }  
+    }
+    
+    if (input$robust) {
+      p <- p +  geom_smooth(method = fitSMDM, fullrange = TRUE, shape = 21, color = "grey") +
+        geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="rlm"), parse = TRUE)
+    } else {
+      p <- p + geom_smooth(method = lm, fullrange = TRUE, shape = 21, color = "grey") + 
+        geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="lm"), parse = TRUE)
+    }
     
     if (input$Rownames) {
       p <- p + geom_text()
@@ -95,7 +99,12 @@ server <- function(input, output) {
     keep    <- data[ vals$keeprows, , drop = FALSE]
     exclude <- data[!vals$keeprows, , drop = FALSE]
     
-    fit_rlm <- fitSMDM(formula = meansample ~ meanstation, data = keep)
+    if (input$robust) {
+      fit_rlm <- fitSMDM(formula = meansample ~ meanstation, data = keep)
+    } else {
+      fit_rlm <- lm(formula = meansample ~ meanstation, data = keep)
+    }
+
     
     op <- par(mfrow=c(2,2))
       plot(fit_rlm, c(1,2,4,5))

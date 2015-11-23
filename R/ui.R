@@ -31,6 +31,10 @@ ui <- fluidPage(
       
       br(),
       
+      checkboxInput("robust", label = "robust estimates", value = FALSE),
+      
+      br(),
+      
       checkboxInput("facet", label = "facet grid", value = FALSE),
       checkboxInput("Rownames", label = "show row.names", value = FALSE),
       checkboxInput("Zoom", label = "zoom in", value = FALSE)
