@@ -50,20 +50,22 @@ server <- function(input, output) {
         #geom_smooth(method = lm, fullrange = TRUE, shape = 21, color = "grey") +
         geom_smooth(method = fitSMDM, fullrange = TRUE, shape = 21, color = "grey") +
         geom_point(data = exclude, shape = 21, fill = NA, color = "black", alpha = 0.25) +
-        coord_cartesian(xlim = c(0, 1), ylim = c(0, 1)) + 
+        coord_cartesian(xlim = c(0, .60), ylim = c(0, .60)) + 
         facet_grid(depth ~ landuse)
       
     } else {
       
+      if (input$Zoom) {xlim <- ylim <- c(0, .6); xypos <- .55} else {xlim <- ylim <- c(0, .85); xypos <- .8}
+      
       p <- ggplot(keep, aes(x = meanstation, y = meansample, label=ID)) +
         geom_abline(intercept = 0, slope = 1, colour = "white") + 
-        geom_text(x = 0.55, y = 0.55, label = "y = x", color = "white") +
+        geom_text(x = xypos, y = xypos, label = "y = x", color = "white") +
         geom_text(x = 0.05, y = 0.05, label = "y = x", color = "white") +
         #geom_smooth(method = lm, fullrange = TRUE, shape = 21, color = "grey") +
         geom_smooth(method = fitSMDM, fullrange = TRUE, shape = 21, color = "grey") +
         geom_point(data = exclude, shape = 21, fill = NA, color = "black", alpha = 0.25) +
         geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="rlm"), parse = TRUE) +
-        coord_cartesian(xlim = c(0, 1), ylim = c(0, 1))
+        coord_cartesian(xlim = xlim, ylim = ylim)
     }  
     
     if (input$Rownames) {

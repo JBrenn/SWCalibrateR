@@ -31,7 +31,9 @@ ui <- fluidPage(
       
       br(),
       
-      checkboxInput("facet", label = "facet grid", value = FALSE)
+      checkboxInput("facet", label = "facet grid", value = FALSE),
+      checkboxInput("Rownames", label = "show row.names", value = FALSE),
+      checkboxInput("Zoom", label = "zoom in", value = FALSE)
       
     ),
   
@@ -44,8 +46,8 @@ ui <- fluidPage(
                                      id = "plot1_brush"
                                    )),
       actionButton("exclude_toggle", "Toggle points"),
-      actionButton("exclude_reset", "Reset"),
-      checkboxInput("Rownames", label = "Show row.names", value = FALSE)),
+      actionButton("exclude_reset", "Reset")),
+
       
       tabPanel("Diagnostics", plotOutput("plot2", height = 1000, width = 1000,
                                          click = "plot2_click",
