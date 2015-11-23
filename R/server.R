@@ -50,7 +50,7 @@ server <- function(input, output) {
         #geom_smooth(method = lm, fullrange = TRUE, shape = 21, color = "grey") +
         geom_smooth(method = fitSMDM, fullrange = TRUE, shape = 21, color = "grey") +
         geom_point(data = exclude, shape = 21, fill = NA, color = "black", alpha = 0.25) +
-        coord_cartesian(xlim = c(0, 0.6), ylim = c(0,0.6)) + 
+        coord_cartesian(xlim = c(0, 1), ylim = c(0, 1)) + 
         facet_grid(depth ~ landuse)
       
     } else {
@@ -63,7 +63,7 @@ server <- function(input, output) {
         geom_smooth(method = fitSMDM, fullrange = TRUE, shape = 21, color = "grey") +
         geom_point(data = exclude, shape = 21, fill = NA, color = "black", alpha = 0.25) +
         geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="rlm"), parse = TRUE) +
-        coord_cartesian(xlim = c(0, 0.6), ylim = c(0,0.6))
+        coord_cartesian(xlim = c(0, 1), ylim = c(0, 1))
     }  
     
     if (input$Rownames) {
