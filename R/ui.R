@@ -65,7 +65,7 @@ ui <- fluidPage(
                br(),
                hr(),
                h4("The Model Fit Panel"),
-               p("The data subset is visualised in a scatter plot. Moreover, the statistical model with the 95% confidence intervall for the estimates is ablined. Estimates are computed with robust statistics (SMDM fit from the", strong("robustbase"), "R-package). One can toogle outliing points by klicking one or mark multiple and apply", em("Toogle points"), ". A helpful descision tool for indicating possible outliers are the diagnostic plots on the next panel. One can enable", em("Show row.names"), "to easily points to remove."),
+               p("The data subset is visualised in a scatter plot. Moreover, the statistical model with the 95% confidence intervall for the estimates is ablined. Estimates are computed with robust statistics (SMDM fit from the", strong("robustbase"), "R-package). One can toogle outlying points by klicking one or mark multiple and apply", em("Toogle points"), ". A helpful descision tool for indicating possible outliers are the diagnostic plots on the next panel. One can enable", em("Show row.names"), "to easily choose points to remove."),
                br(),
                hr(),
                h4("The Diagnostic Panel"),
