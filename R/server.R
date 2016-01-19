@@ -47,7 +47,7 @@ server <- function(input, output) {
       
       p <- ggplot(keep[!is.na(keep)[,1],], aes(x = meanstation, y = meansample, label=ID)) +
         geom_abline(intercept = 0, slope = 1, colour = "white") + 
-        geom_point(data = exclude, shape = 21, fill = NA, color = "black", alpha = 0.25) +
+        geom_point(data = exclude, fill = NA, color = "black", alpha = 0.25) +
         coord_cartesian(xlim = c(0, .60), ylim = c(0, .60)) + 
         facet_grid(depth ~ landuse)
       
@@ -59,16 +59,15 @@ server <- function(input, output) {
         geom_abline(intercept = 0, slope = 1, colour = "white") + 
         geom_text(x = xypos, y = xypos, label = "y = x", color = "white") +
         geom_text(x = 0.05, y = 0.05, label = "y = x", color = "white") +
-        geom_point(data = exclude, shape = 21, fill = NA, color = "black", alpha = 0.25) +
-       
+        geom_point(data = exclude, fill = NA, color = "black", alpha = 0.25) +
         coord_cartesian(xlim = xlim, ylim = ylim)
     }
     
     if (input$robust) {
-      p <- p +  geom_smooth(method = fitSMDM, fullrange = TRUE, shape = 21, color = "grey") +
+      p <- p +  geom_smooth(method = fitSMDM, fullrange = TRUE, color = "grey") +
         geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="rlm"), parse = TRUE)
     } else {
-      p <- p + geom_smooth(method = lm, fullrange = TRUE, shape = 21, color = "grey") + 
+      p <- p + geom_smooth(method = lm, fullrange = TRUE, color = "grey") + 
         geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="lm"), parse = TRUE)
     }
     
