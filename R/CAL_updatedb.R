@@ -20,6 +20,8 @@ CAL_updatedb <- function(stations, inGIT="/home/jbr/GitHub/SMCcalibration/data/"
   # B1
   if (any(grepl("B1",stations)))
   {
+    print("updating SWC data of station B1")
+    
     path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/B/B1/"
     header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/B/header_B1.txt"
     
@@ -34,6 +36,8 @@ CAL_updatedb <- function(stations, inGIT="/home/jbr/GitHub/SMCcalibration/data/"
   
   if (any(grepl("B2",stations)))
   {
+    print("updating SWC data of station B2")
+    
     # B2
     path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/B/B2/"
     header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/B/header_B2.txt"
@@ -49,6 +53,8 @@ CAL_updatedb <- function(stations, inGIT="/home/jbr/GitHub/SMCcalibration/data/"
   
   if (any(grepl("B3",stations)))
   {
+    print("updating SWC data of station B3")
+    
     # B3
     path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/B/B3/"
     header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/B/header_B3.txt"
@@ -64,8 +70,10 @@ CAL_updatedb <- function(stations, inGIT="/home/jbr/GitHub/SMCcalibration/data/"
   
   # I stations
   
-  if (any(grepl("I3",stations)))
+  if (any(grepl("I1",stations)))
   {
+    print("updating SWC data of station I1")
+    
     # I1
     path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/I/I1/"
     header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/I/header_I1.txt"
@@ -81,6 +89,8 @@ CAL_updatedb <- function(stations, inGIT="/home/jbr/GitHub/SMCcalibration/data/"
   
   if (any(grepl("I3",stations)))
   {
+    print("updating SWC data of station I3")
+    
     # I3
     path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/I/I3/"
     header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/I/header_I3.txt"
@@ -98,6 +108,8 @@ CAL_updatedb <- function(stations, inGIT="/home/jbr/GitHub/SMCcalibration/data/"
   # P stations
   if (any(grepl("P1",stations)))
   {
+    print("updating SWC data of station P1")
+    
     # P1
     path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/P/P1/"
     header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/P/header_P.txt"
@@ -114,6 +126,8 @@ CAL_updatedb <- function(stations, inGIT="/home/jbr/GitHub/SMCcalibration/data/"
   
   if (any(grepl("P2",stations)))
   {
+    print("updating SWC data of station P2")
+    
     # P2
     path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/P/P2/"
     header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/P/header_P2.txt"
@@ -127,8 +141,10 @@ CAL_updatedb <- function(stations, inGIT="/home/jbr/GitHub/SMCcalibration/data/"
                  field.types = NULL)
   }
   
-  if (any(grepl("P2",stations)))
+  if (any(grepl("P3",stations)))
   {
+    print("updating SWC data of station P3")
+    
     # P3
     path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/P/P3/"
     header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/P/header_P.txt"
