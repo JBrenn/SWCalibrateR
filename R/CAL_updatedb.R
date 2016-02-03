@@ -100,7 +100,7 @@ CAL_updatedb <- function(stations, inGIT="/home/jbr/GitHub/SMCcalibration/data/"
     
     # update litesql
     dbWriteTable(conn=db, name="I3",
-                 value=df_I3, row.names = NA, overwrite = FALSE, append = FALSE,
+                 value=df_I3, row.names = NA, overwrite = TRUE, append = FALSE,
                  field.types = NULL)
     
   }
