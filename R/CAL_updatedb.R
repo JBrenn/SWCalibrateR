@@ -139,7 +139,7 @@ CAL_updatedb <- function(stations)
   
   # list tables in db
   print("Tables in data base:")
-  dbListTables(db)
+  print(dbListTables(db))
   
   dbDisconnect(db)
 }
