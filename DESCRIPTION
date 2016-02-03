@@ -13,6 +13,7 @@ Imports:
     shiny,
     ggplot2,
     Cairo, 
-    robustbase
+    robustbase,
+    RSQLite
 	
 
