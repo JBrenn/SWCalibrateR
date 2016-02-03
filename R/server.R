@@ -120,6 +120,59 @@ server <- function(input, output) {
     
   })
   
+  output$plot3 <- renderDygraph({
+    zoo_data <- datasetInput()
+    zoo::index(zoo_data) <- as.POSIXct(zoo::index(zoo_data))
+    
+    dygraph(zoo_data) %>%
+      dyRoller() %>%
+      dyRangeSelector()
+    
+  })
+  
+  datasetInput <- reactive({
+    if (input$Project=="ALL")  project <- NA else project <- input$Project
+    if (input$Landuse=="ALL")  landuse <- NA else landuse <- input$Landuse
+    if (input$Station=="ALL")  station <- NA else station <- input$Station
+    if (input$Date=="ALL")  date <- NA else date <- input$Date
+    if (input$Depth=="ALL")  depth <- NA else depth <- input$Depth
+    if (input$SensorType=="ALL")  SensorType <- NA else SensorType <- input$SensorType
+    if (input$SensorName=="ALL")  SensorName <- NA else SensorName <- input$SensorName
+    
+    data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
+                           depth = depth, sensorType = SensorType, sensorName = SensorName, preserveStr = T)
+    
+    # Plot the kept and excluded points as two separate data sets
+    keep    <- data[ vals$keeprows, , drop = FALSE]
+    exclude <- data[!vals$keeprows, , drop = FALSE]
+    
+    if (input$robust) {
+      fit_rlm <- fitSMDM(formula = meansample ~ meanstation, data = keep)
+    } else {
+      fit_rlm <- lm(formula = meansample ~ meanstation, data = keep)
+    }
+    
+    # test sql lite db
+    # connect to db in data folder of project
+    pkg_path <- path.package("SMCcalibration")
+    #setwd(file.path(pkg_path,"data"))
+    db = dbConnect(SQLite(), dbname=file.path(pkg_path,"data","swc.sqlite"))
+    
+    # get data column
+    datetime  <- sqliteQuickColumn(db,input$StationTs,"datetime")
+    swc_uncal <- sqliteQuickColumn(db,input$StationTs,paste("SWC_",input$SensorNameTs,"_z",input$DepthTs,sep=""))
+    swc_cal   <- coef(fit_rlm)[1] + coef(fit_rlm)[2] *swc_uncal
+    
+    zoo::zoo(cbind(swc_uncal,swc_cal), chron::chron(datetime))
+  })
+  
+  output$downloadData <- downloadHandler(filename = function() { 
+    paste(input$StationTs,input$SensorNameTs,input$DepthTs, ".csv", sep="") 
+    },
+    content = function(file) {
+      zoo::write.zoo(datasetInput(), file, sep=",", quote=F, row.names = F) 
+    })
+  
   # Toggle points that are clicked
   observeEvent(input$plot1_click, {
     res <- nearPoints(data, input$plot1_click, allRows = TRUE)

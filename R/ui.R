@@ -3,7 +3,7 @@ ui <- fluidPage(
   sidebarLayout(fluid = T, position = "left",
     
     # Sidebar with a slider input
-    sidebarPanel(width=2,
+    sidebarPanel(width=2, 
                  
       selectInput("Project", label = h4("project"), 
                   choices = list("ALL","matsch","monalisa")),
@@ -61,6 +61,21 @@ ui <- fluidPage(
       tabPanel("Data Table", 
                br(),
                dataTableOutput("table")),
+      
+      tabPanel("Data Download", 
+               br(),
+               dygraphOutput("plot3", height = 500, width = 800),
+      selectInput("StationTs", label = h4("download station"), selected="I1",
+                  choices = list("ALL","B1","B2","B3","domef1500","domes1500","eppanberg","girlan","gries","I1","I3",
+                                 "kaltern","lana6","latsch1","latsch3","latsch4","M1","M3","M4","M5","M6",
+                                 "M7","nals","nemef1500","nemes1500","neumarkt","P1","P2","P3","S2","S4",
+                                 "S5","stpauls","terlanalt","terlanneu","tramin13","unterrain","vimef2000","vimes2000","XS1")),
+      selectInput("SensorNameTs", label = h4("download sensor"), selected = "A",
+                  choices = list("ALL","SensorMean","A","B","C","CI","Lsp","LBL","Cst","T","L","Lst","Csn","Tst","LS","Tsn")),
+      selectInput("DepthTs", label = h4("download depth"), selected="5", choices = list("ALL","2","5","20","40")),
+      downloadButton('downloadData', 'Download')
+      ),
+      
       
       tabPanel("Description", 
                br(),
