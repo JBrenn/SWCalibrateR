@@ -1,11 +1,11 @@
 
 =======
 # SMC calibration
-R package providing functionality for calibration of soil moisture sensors installed in South Tyrol.
+R package providing functionality for calibration of soil moisture sensors.
 * get calibration data via data("SensorVSample")
-* choose parameters to calibrate on and get filtered data frame (CAL_doreg_data)
+* query sites to calibrate and retrieve filtered data frame (CAL_doreg_data)
 * perform linear calibration and visualization (CAL_doreg)
-* interactive shiny app for calibration (how to run see below)
+* interactive shiny app for sensor calibration (how to run see below)
 
 
 ## How to start
