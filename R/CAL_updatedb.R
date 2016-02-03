@@ -4,12 +4,17 @@
 # library(chron)
 
 
-CAL_updatedb <- function(stations)
+CAL_updatedb <- function(stations, inGIT="/home/jbr/GitHub/SMCcalibration/data/")
 {
   # connect to db in data folder of project
-  pkg_path <- path.package("SMCcalibration")
-  setwd(file.path(pkg_path,"data"))
-  db = dbConnect(SQLite(), dbname="swc.sqlite")
+  if (is.null(inGIT)) {
+    pkg_path <- path.package("SMCcalibration")
+    setwd(file.path(pkg_path,"data"))
+    db = dbConnect(SQLite(), dbname="swc.sqlite")
+  } else {
+    db = dbConnect(SQLite(), dbname="swc.sqlite")
+  }
+
   
   # B stations
   # B1
@@ -139,7 +144,7 @@ CAL_updatedb <- function(stations)
   
   # list tables in db
   print("Tables in data base:")
-  dbListTables(db)
+  print(dbListTables(db))
   
   dbDisconnect(db)
 }
