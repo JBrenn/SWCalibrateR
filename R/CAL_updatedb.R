@@ -1,9 +1,8 @@
-library("RSQLite")
-library("DataBaseAlpEnvEURAC")
-library(zoo)
-library(chron)
 
-library(SMCcalibration)
+# library("DataBaseAlpEnvEURAC")
+# library(zoo)
+# library(chron)
+
 
 CAL_updatedb <- function(stations)
 {
