@@ -6,6 +6,8 @@ import(ggplot2)
 import(Cairo)
 import(robustbase)
 import(RSQLite)
+import(zoo)
+import(chron)
 
 # Export all names
 exportPattern(".")
