@@ -63,14 +63,23 @@ server <- function(input, output) {
         coord_cartesian(xlim = xlim, ylim = ylim)
     }
     
-    if (input$robust) {
-      p <- p +  geom_smooth(method = fitSMDM, fullrange = TRUE, color = "grey") +
-        geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="rlm"), parse = TRUE)
+    if (input$facet)
+    {
+      if (input$robust) {
+        p <- p +  geom_smooth(method = fitSMDM, fullrange = TRUE, color = "grey")
+      } else {
+        p <- p + geom_smooth(method = lm, fullrange = TRUE, color = "grey")
+      }
     } else {
-      p <- p + geom_smooth(method = lm, fullrange = TRUE, color = "grey") + 
-        geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="lm"), parse = TRUE)
+      if (input$robust) {
+        p <- p +  geom_smooth(method = fitSMDM, fullrange = TRUE, color = "grey") +
+          geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="rlm"), parse = TRUE, size=6.5)
+      } else {
+        p <- p + geom_smooth(method = lm, fullrange = TRUE, color = "grey") + 
+          geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="lm"), parse = TRUE, size=6.5)
+      }
     }
-    
+
     if (input$Rownames) {
       p <- p + geom_text()
     } else {
