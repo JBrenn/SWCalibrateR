@@ -9,10 +9,9 @@ CAL_updatedb <- function(stations, inGIT="/home/jbr/GitHub/SMCcalibration/data/"
   # connect to db in data folder of project
   if (is.null(inGIT)) {
     pkg_path <- path.package("SMCcalibration")
-    setwd(file.path(pkg_path,"data"))
-    db = dbConnect(SQLite(), dbname="swc.sqlite")
+    db = dbConnect(SQLite(), dbname=file.path(pkg_path,"data","swc.sqlite")
   } else {
-    db = dbConnect(SQLite(), dbname="swc.sqlite")
+    db = dbConnect(SQLite(), dbname=file.path(inGIT,"swc.sqlite"))
   }
 
   
