@@ -59,7 +59,7 @@ Push the database file _swc.sqlite_ into the folder _data_ of the _SMCcalibratio
 path.package("SMCcalibration")
 ```
 
-Be aware: you have to change run the shiny app externally (e.g. web browser) to enable data download.
+Be aware: you have to change run the shiny app externally (e.g. web browser) to enable data download. For this set _options = list(launch.browser = TRUE)_ when starting the app.
 For running the calibration shiny app:
 
 ```R
@@ -68,7 +68,7 @@ library(shiny)
 data("SensorVSample")
 data <- unique(data[,-8])
 
-shinyApp(ui, server, launch.browser	= TRUE)
+shinyApp(ui, server, option = list(launch.browser = TRUE))
 ``` 
 
 =======
