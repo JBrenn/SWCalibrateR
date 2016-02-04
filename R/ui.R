@@ -82,7 +82,7 @@ ui <- fluidPage(
       tabPanel("Description", 
                br(),
                h4("Side Panel for Data Subsetting"),
-               p("The left side panel enables subsetting of the data set. By default the whole unique data set is used. An option for ggplot's facet_grid functionality is included. Klick", em("facet grid"), "and the data set will be shown grouped by landuse and soil depth in the Model Fit panel. One can enable", em("Show row.names"), "to easily choose points to remove. Zooming to the data range of 0 to 60 %vol is also possible."),
+               p("The left side panel enables subsetting of the data set. By default only the pasture sites are used. An option for ggplot's facet_grid functionality is included. Klick", em("facet grid"), "and the data set will be shown grouped by landuse and soil depth in the Model Fit panel. One can enable", em("show row.names"), "to easily choose points to remove. Zooming to the data range of 0 to 60 %vol is also possible."),
                p("For a description of the data set have a look at", code("?SensorVSample")),
                p(""),
                br(),
