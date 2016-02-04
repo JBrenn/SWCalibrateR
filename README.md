@@ -7,7 +7,7 @@ R package providing functionality for calibration of soil moisture sensors.
 * perform linear calibration and visualization (CAL_doreg)
 * interactive shiny app for sensor calibration (how to run see below)
 
-
+=======
 ## How to start
 
 First install the package with:
@@ -35,9 +35,7 @@ data <- unique(data[,-8])
 shinyApp(ui, server)
 ```
 
-
 =======
-
 ### Branch download
 
 Enables downloading of (un)calibrated soil moisture data (specific sensors) after adjusting the calibration function.
@@ -61,7 +59,7 @@ Push the database file _swc.sqlite_ into the folder _data_ of the _SMCcalibratio
 path.package("SMCcalibration")
 ```
 
-Be aware: you have to run the shiny app externally (e.g. web browser) to enable data download.
+Be aware: you have to change run the shiny app externally (e.g. web browser) to enable data download.
 For running the calibration shiny app:
 
 ```R
@@ -72,7 +70,6 @@ data <- unique(data[,-8])
 
 shinyApp(ui, server, launch.browser	= TRUE)
 ``` 
-
 
 =======
 
