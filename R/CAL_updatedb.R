@@ -4,14 +4,14 @@
 # library(chron)
 
 
-CAL_updatedb <- function(stations, inGIT="/home/jbr/GitHub/SMCcalibration/data/")
+CAL_updatedb <- function(stations, inCloud="/home/jbr/ownCloud/data/")
 {
   # connect to db in data folder of project
-  if (is.null(inGIT)) {
+  if (is.null(inCloud)) {
     pkg_path <- path.package("SMCcalibration")
     db = dbConnect(SQLite(), dbname=file.path(pkg_path,"data","swc.sqlite"))
   } else {
-    db = dbConnect(SQLite(), dbname=file.path(inGIT,"swc.sqlite"))
+    db = dbConnect(SQLite(), dbname=file.path(inCloud,"swc.sqlite"))
   }
 
   
