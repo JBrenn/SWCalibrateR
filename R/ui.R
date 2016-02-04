@@ -27,7 +27,7 @@ ui <- fluidPage(
                   choices = list("ALL","CS655","Decagon10HS","OnsetSMB005")),
       
       selectInput("SensorName", label = h4("sensor name"), selected = "SensorMean",
-                  choices = list("ALL","SensorMean","A","B","C","CI","Lsp","LBL","Cst","T","L","Lst","Csn","Tst","LS","Tsn")),
+                  choices = list("ALL","SensorMean","A","B","C","CI","LSp","LBL","CSt","T","L","Lst","CSn","TSt","LS","TSn")),
       
       br(),
       
@@ -71,7 +71,7 @@ ui <- fluidPage(
                                  "M7","nals","nemef1500","nemes1500","neumarkt","P1","P2","P3","S2","S4",
                                  "S5","stpauls","terlanalt","terlanneu","tramin13","unterrain","vimef2000","vimes2000","XS1")),
       selectInput("SensorNameTs", label = h4("download sensor"), selected = "A",
-                  choices = list("ALL","SensorMean","A","B","C","CI","Lsp","LBL","Cst","T","L","Lst","Csn","Tst","LS","Tsn")),
+                  choices = list("ALL","SensorMean","A","B","C","CI","LSp","LBL","Cst","T","L","LSt","CSn","TSt","LS","TSn")),
       selectInput("DepthTs", label = h4("download depth"), selected="5", choices = list("ALL","2","5","20","40")),
       downloadButton('downloadData', 'Download')
       ),
