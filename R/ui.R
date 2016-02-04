@@ -8,7 +8,7 @@ ui <- fluidPage(
       selectInput("Project", label = h4("project"), 
                   choices = list("ALL","matsch","monalisa")),
       
-      selectInput("Landuse", label = h4("land use"), 
+      selectInput("Landuse", label = h4("land use"), selected="pasture",
                   choices = list("ALL","appleorchards","meadow","pasture","forest","grassland")),
       
       selectInput("Depth", label = h4("soil depth"), 
@@ -53,7 +53,8 @@ ui <- fluidPage(
       actionButton("exclude_reset", "Reset")),
 
       
-      tabPanel("Diagnostics", plotOutput("plot2", height = 1000, width = 1000,
+      tabPanel("Diagnostics", 
+               plotOutput("plot2", height = 1000, width = 1000,
                                          click = "plot2_click",
                                          brush = brushOpts(
                                            id = "plot2_brush"
@@ -64,14 +65,15 @@ ui <- fluidPage(
       
       tabPanel("Data Download", 
                br(),
-               dygraphOutput("plot3", height = 500, width = 800),
-      selectInput("StationTs", label = h4("download station"), selected="I1",
+#               dygraphOutput("plot3", height = 500, width = 800),
+                plotOutput("plot3", height = 500, width = 800),
+      selectInput("StationTs", label = h4("download station"), selected="P2",
                   choices = list("ALL","B1","B2","B3","domef1500","domes1500","eppanberg","girlan","gries","I1","I3",
                                  "kaltern","lana6","latsch1","latsch3","latsch4","M1","M3","M4","M5","M6",
                                  "M7","nals","nemef1500","nemes1500","neumarkt","P1","P2","P3","S2","S4",
                                  "S5","stpauls","terlanalt","terlanneu","tramin13","unterrain","vimef2000","vimes2000","XS1")),
       selectInput("SensorNameTs", label = h4("download sensor"), selected = "A",
-                  choices = list("ALL","SensorMean","A","B","C","CI","LSp","LBL","Cst","T","L","LSt","CSn","TSt","LS","TSn")),
+                  choices = list("ALL","SensorMean","A","B","C","CI","LSp","LBL","CSt","T","L","LSt","CSn","TSt","LS","TSn")),
       selectInput("DepthTs", label = h4("download depth"), selected="5", choices = list("ALL","2","5","20","40")),
       downloadButton('downloadData', 'Download')
       ),
@@ -85,16 +87,20 @@ ui <- fluidPage(
                p(""),
                br(),
                hr(),
-               h4("The Model Fit Panel"),
+               h4("Calibration Model"),
                p("The data subset is visualised in a scatter plot. Moreover, the statistical model with the 95% confidence intervall for the estimates is ablined. Estimates are computed either with the lm() function or with robust statistics (SMDM fit from the", strong("robustbase"), "R-package). One can toogle outlying points by klicking one or mark multiple and apply", em("Toogle points"), ". A helpful descision tool for indicating possible outliers are the diagnostic plots on the next panel."),
                br(),
                hr(),
-               h4("The Diagnostic Panel"),
+               h4("Diagnostic Plots"),
                p("Four diagostic plots for the roblm object are visualised: (1) Standardized residuals vs. Robust Distances, (2) Normal Q-Q vs. Residuals, (3) Residuals vs. Fitted Values, (4) Sqrt of abs(Residuals) vs. Fitted Values"),
                br(),
                hr(),
-               h4("The Data Table Panel"),
-               p("The last panel contains the data table of the data subset."))
+               h4("Data Table"),
+               p("This panel contains the data table of the data subset. Here colomn sorting and global as well as colomn wise searching is provided."),
+                br(),
+                hr(),
+                h4("Data Download"),
+                p("This panel provides a download of uncalibrated and calibrated soil moisture data for specific stations. It is possible to download data for ALL sensors in ALL depths of the statin or query the database according to sensor names and sensor depth. The choosen calibration function (panel ONE) will be applied to the raw data set. A visual comparision of uncalibrated and calibrated timeseries is shown."))
     )
   )
 )

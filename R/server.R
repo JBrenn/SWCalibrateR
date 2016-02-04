@@ -120,13 +120,30 @@ server <- function(input, output) {
     
   })
   
-  output$plot3 <- renderDygraph({
+#   output$plot3 <- renderDygraph({
+#     zoo_data <- datasetInput()
+#     zoo::index(zoo_data) <- as.POSIXct(zoo::index(zoo_data))
+#     
+#     dygraph(zoo_data) %>%
+#       dyRoller() %>%
+#       dyRangeSelector()
+#     
+#   })
+  
+  output$plot3 <- renderPlot({
     zoo_data <- datasetInput()
-    zoo::index(zoo_data) <- as.POSIXct(zoo::index(zoo_data))
+    #zoo::index(zoo_data) <- as.POSIXct(zoo::index(zoo_data))
     
-    dygraph(zoo_data) %>%
-      dyRoller() %>%
-      dyRangeSelector()
+    nrpairs <- length(names(zoo_data)) /2
+    
+    #zoo_data <- na.omit(zoo_data)
+    #zoo_data_roll <- rollmean(zoo_data,4*24)
+    
+    color <- c(rep(rgb(1,0,0,.3), times=nrpairs), rep(rgb(0,0,1,.3), times=nrpairs))
+    
+    zoo::plot.zoo(zoo_data, plot.type="single", col=color, lwd=2, bty="n", ylim=c(0,.6), 
+         ylab="Soil Moisture Content", xlab="")
+    legend("bottomright", legend = c("uncalibrated series", "calibrated series"), col=c(rgb(1,0,0,.5), rgb(0,0,1,.5)), lwd=2, bty = "n")
     
   })
   
@@ -158,19 +175,56 @@ server <- function(input, output) {
     #setwd(file.path(pkg_path,"data"))
     db = dbConnect(SQLite(), dbname=file.path(pkg_path,"data","swc.sqlite"))
     
-    # get data column
-    datetime  <- sqliteQuickColumn(db,input$StationTs,"datetime")
-    swc_uncal <- sqliteQuickColumn(db,input$StationTs,paste("SWC_",input$SensorNameTs,"_z",input$DepthTs,sep=""))
-    swc_cal   <- coef(fit_rlm)[1] + coef(fit_rlm)[2] *swc_uncal
+    # get station data
+    swc_st_    <- dbReadTable(conn = db, name = input$StationTs)
+    swc_st     <- swc_st_[,-1]
+    # close conn
+    dbDisconnect(db)
     
-    zoo::zoo(cbind(swc_uncal,swc_cal), chron::chron(datetime))
+    # only depth set
+    if (input$DepthTs!="ALL" & input$SensorNameTs=="ALL")
+    {
+      swc_data <- swc_st[,grepl(input$DepthTs,names(swc_st))]
+        if (input$DepthTs=="2") swc_data <- swc_data[,!grepl("20",names(swc_data))]
+    }
+    
+    # only sensor set
+    if (input$DepthTs=="ALL" & input$SensorNameTs!="ALL") swc_data <- swc_st[,grepl(input$SensorNameTs,names(swc_st))]
+    
+    
+    # depth & sensor set
+    if (input$DepthTs!="ALL" & input$SensorNameTs!="ALL")
+    {
+      swc_data <- swc_st[,grepl(paste(input$SensorNameTs,input$DepthTs,sep="_z"),names(swc_st))]
+       if (input$DepthTs=="2") swc_data <- swc_data[,!grepl("20",names(swc_data))]
+    }
+    
+    # depth & sensor set
+    if (input$DepthTs=="ALL" & input$SensorNameTs=="ALL") swc_data <- swc_st
+  
+    swc_cal  <-  coef(fit_rlm)[1] + coef(fit_rlm)[2] *swc_data   
+    
+    swc_cal <- round(swc_cal, 3)
+    
+    swc_zoo <- zoo::zoo(cbind(swc_data,swc_cal), chron::chron(swc_st_$datetime))
+    if (dim(swc_zoo)[2] > 2) {
+      names(swc_zoo) <- paste(names(swc_zoo), c(rep("uncal",length(names(swc_zoo))/2), rep("cal",length(names(swc_zoo))/2)), sep="_") 
+    } else {
+      names(swc_zoo) <- paste("SWC_",input$SensorNameTs,"_z",input$DepthTs,c("_uncal","_cal"),sep="")
+    }
+
+    swc_zoo
   })
   
   output$downloadData <- downloadHandler(filename = function() { 
     paste(input$StationTs,input$SensorNameTs,input$DepthTs, ".csv", sep="") 
     },
     content = function(file) {
-      zoo::write.zoo(datasetInput(), file, sep=",", quote=F, row.names = F) 
+      data <- datasetInput()
+      date <- as.Date(zoo::index(data))
+      time <- substr(index(x),11,18)
+      data <- data.frame(date=date, time=time, coredata(data))
+      write.csv(data, file, sep=",", quote=F, row.names = F) 
     })
   
   # Toggle points that are clicked
