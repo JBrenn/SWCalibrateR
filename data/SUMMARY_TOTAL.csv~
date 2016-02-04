@@ -585,4 +585,15 @@ matsch,S4,pasture,15/06/2015,5,OnsetSMB005,0.2276000,0.44108,0.3530933,SensorMea
 matsch,S4,pasture,15/06/2015,20,OnsetSMB005,0.2228143,0.3072,0.3072,SensorMean
 matsch,P2,pasture,21/09/2015,5,CS655,0.1440952,0.22396,0.23902,SensorMean
 matsch,P2,pasture,21/09/2015,5,CS655,0.1440952,0.25408,0.23902,SensorMean
-
+monalisa,nemes1500,grassland,20/08/2015,5,CS655,0.309,0.3297,0.3157,SensorMean
+monalisa,nemes1500,grassland,20/08/2015,5,CS655,0.309,0.3539,0.3157,SensorMean
+monalisa,nemes1500,grassland,20/08/2015,5,CS655,0.309,0.2636,0.3157,SensorMean
+monalisa,nemes1500,grassland,20/08/2015,20,CS655,0.2123,0.2754,0.2827,SensorMean
+monalisa,nemes1500,grassland,20/08/2015,20,CS655,0.2123,0.2978,0.2827,SensorMean
+monalisa,nemes1500,grassland,20/08/2015,20,CS655,0.2123,0.2748,0.2827,SensorMean
+monalisa,domes1500,grassland,20/08/2015,5,CS655,0.35,0.3274,0.3637,SensorMean
+monalisa,domes1500,grassland,20/08/2015,5,CS655,0.35,0.3618,0.3637,SensorMean
+monalisa,domes1500,grassland,20/08/2015,5,CS655,0.35,0.4019,0.3637,SensorMean
+monalisa,domes1500,grassland,20/08/2015,20,CS655,0.2,0.3121,0.3363,SensorMean
+monalisa,domes1500,grassland,20/08/2015,20,CS655,0.2,0.3518,0.3363,SensorMean
+monalisa,domes1500,grassland,20/08/2015,20,CS655,0.2,0.3449,0.3363,SensorMean
