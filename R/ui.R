@@ -27,7 +27,7 @@ ui <- fluidPage(
                   choices = list("ALL","CS655","Decagon10HS","OnsetSMB005")),
       
       selectInput("SensorName", label = h4("sensor name"), selected = "SensorMean",
-                  choices = list("ALL","SensorMean","A","B","C","CI","Lsp","LBL","Cst","T","L","Lst","Csn","Tst","LS","Tsn")),
+                  choices = list("ALL","SensorMean","A","B","C","CI","LSp","LBL","CSt","T","L","LSt","CSn","TSt","LS","TSn")),
       
       br(),
       
