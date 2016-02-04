@@ -222,7 +222,7 @@ server <- function(input, output) {
     content = function(file) {
       data <- datasetInput()
       date <- as.Date(zoo::index(data))
-      time <- substr(index(x),11,18)
+      time <- substr(zoo::index(data),11,18)
       data <- data.frame(date=date, time=time, coredata(data))
       write.csv(data, file, sep=",", quote=F, row.names = F) 
     })
