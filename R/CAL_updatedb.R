@@ -19,6 +19,9 @@ CAL_updatedb <- function(stations,
   for (i in stations)
   {
     stationchr <- substr(i, 1, nchar(i)-1)
+
+    if (stationchr == "XS") stationchr <- "S"
+    
     stationnr  <- as.integer(substr(i, nchar(i), nchar(i)))
     
     print(paste("updating SWC data of station", i, sep=" "))
@@ -28,6 +31,10 @@ CAL_updatedb <- function(stations,
     
     data <- dB_getSWC(path2files, header.file, station = stationchr, station_nr = stationnr, calibrate = F, 
                       minVALUE = 0, maxVALUE = 1, aggregation = "n")
+    
+    if(any(names(data)=="core5")) names(data)[which(names(data)=="core5")] <- "SWC_A_z5"
+    if(any(names(data)=="core20")) names(data)[which(names(data)=="core20")] <- "SWC_A_z20"
+    
     df <- data.frame(datetime=index(data),coredata(data))
     
     # update litesql
