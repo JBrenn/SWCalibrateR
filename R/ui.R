@@ -68,13 +68,13 @@ ui <- fluidPage(
 #               dygraphOutput("plot3", height = 500, width = 800),
                 plotOutput("plot3", height = 500, width = 800),
       selectInput("StationTs", label = h4("download station"), selected="P2",
-                  choices = list("ALL","B1","B2","B3","domef1500","domes1500","eppanberg","girlan","gries","I1","I3",
-                                 "kaltern","lana6","latsch1","latsch3","latsch4","M1","M3","M4","M5","M6",
-                                 "M7","nals","nemef1500","nemes1500","neumarkt","P1","P2","P3","S2","S4",
-                                 "S5","stpauls","terlanalt","terlanneu","tramin13","unterrain","vimef2000","vimes2000","XS1")),
+                  choices = list("ALL","B1","B2","B3","I1","I3",
+                                 "M1","M2","M3","M4","M5","M6","M7",
+                                 "P1","P2","P3","S2","S4",
+                                 "S5","XS1","XS6")),
       selectInput("SensorNameTs", label = h4("download sensor"), selected = "A",
-                  choices = list("ALL","SensorMean","A","B","C","CI","LSp","LBL","CSt","T","L","LSt","CSn","TSt","LS","TSn")),
-      selectInput("DepthTs", label = h4("download depth"), selected="5", choices = list("ALL","2","5","20","40")),
+                  choices = list("ALL","A","B","C","CI","CS","CSn","L","LI","LS","LSm","LSn","LSp","LSt","T","TI","TS","TSn","TSt")),
+      selectInput("DepthTs", label = h4("download depth"), selected="5", choices = list("ALL","2","5","20","40","50")),
       downloadButton('downloadData', 'Download')
       ),
       
@@ -100,7 +100,7 @@ ui <- fluidPage(
                 br(),
                 hr(),
                 h4("Data Download"),
-                p("This panel provides a download of uncalibrated and calibrated soil moisture data for specific stations. It is possible to download data for ALL sensors in ALL depths of the statin or query the database according to sensor names and sensor depth. The choosen calibration function (panel ONE) will be applied to the raw data set. A visual comparision of uncalibrated and calibrated timeseries is shown."))
+                p("This panel provides a download of uncalibrated and calibrated soil moisture data for specific stations. It is possible to download data for ALL sensors in ALL depths of the statin or query the database according to sensor names and sensor depth. The choosen calibration function (panel ONE) will be applied to the raw data set. A visual comparision of uncalibrated and calibrated timeseries is shown. A list of available sensors for stations with multiple sensors installed can be accessed via", code(data("Sensors"))))
     )
   )
 )
