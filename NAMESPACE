@@ -8,7 +8,6 @@ import(robustbase)
 import(RSQLite)
 import(zoo)
 import(chron)
-import(dygraphs)
 
 # Export all names
 exportPattern(".")
