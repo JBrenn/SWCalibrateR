@@ -100,7 +100,7 @@ ui <- fluidPage(
                 br(),
                 hr(),
                 h4("Data Download"),
-                p("This panel provides a download of uncalibrated and calibrated soil moisture data for specific stations. It is possible to download data for ALL sensors in ALL depths of the statin or query the database according to sensor names and sensor depth. The choosen calibration function (panel ONE) will be applied to the raw data set. A visual comparision of uncalibrated and calibrated timeseries is shown. A list of available sensors for stations with multiple sensors installed can be accessed via", code(data("Sensors"))))
+                p("This panel provides a download of uncalibrated and calibrated soil moisture data for specific stations. It is possible to download data for ALL sensors in ALL depths or query the database according to sensor names and sensor depth. The choosen calibration function (panel ONE) will be applied to the raw data set. A visual comparision of uncalibrated and calibrated timeseries is shown. A list of available sensors for stations with multiple sensors installed can be accessed via", code("data(Sensors)")))
     )
   )
 )
