@@ -4,157 +4,37 @@
 # library(chron)
 
 
-CAL_updatedb <- function(stations, inCloud="/home/jbr/ownCloud/data/")
+CAL_updatedb <- function(stations, 
+                         path2data = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/", 
+                         inCloud = "/home/jbr/ownCloud/data/")
 {
   # connect to db in data folder of project
   if (is.null(inCloud)) {
-    pkg_path <- path.package("SMCcalibration")
+    pkg_path <- path.package("SMCcalibration") 
     db = dbConnect(SQLite(), dbname=file.path(pkg_path,"data","swc.sqlite"))
   } else {
     db = dbConnect(SQLite(), dbname=file.path(inCloud,"swc.sqlite"))
   }
 
-  
-  # B stations
-  # B1
-  if (any(grepl("B1",stations)))
+  for (i in stations)
   {
-    print("updating SWC data of station B1")
+    stationchr <- substr(i, 1, nchar(i)-1)
+    stationnr  <- as.integer(substr(i, nchar(i), nchar(i)))
     
-    path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/B/B1/"
-    header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/B/header_B1.txt"
+    print(paste("updating SWC data of station", i, sep=" "))
     
-    B1 <- dB_getSWC(path2files, header.file, station = "B", station_nr = 1, calibrate = F, minVALUE = 0, maxVALUE = 1, aggregation = "n")
-    df_B1 <- data.frame(datetime=time(B1),coredata(B1))
+    path2files = file.path(path2data,stationchr,i)
+    header.file = file.path(path2data,stationchr,paste("header_",i,".txt",sep=""))
+    
+    data <- dB_getSWC(path2files, header.file, station = stationchr, station_nr = stationnr, calibrate = F, 
+                      minVALUE = 0, maxVALUE = 1, aggregation = "n")
+    df <- data.frame(datetime=index(data),coredata(data))
     
     # update litesql
-    dbWriteTable(conn=db, name="B1",
-                 value=df_B1, row.names = NA, overwrite = TRUE, append = FALSE,
+    dbWriteTable(conn=db, name=i,
+                 value=df, row.names = NA, overwrite = TRUE, append = FALSE,
                  field.types = NULL)
-  }
-  
-  if (any(grepl("B2",stations)))
-  {
-    print("updating SWC data of station B2")
-    
-    # B2
-    path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/B/B2/"
-    header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/B/header_B2.txt"
-    
-    B2 <- dB_getSWC(path2files, header.file, station = "B", station_nr = 2, calibrate = F, minVALUE = 0, maxVALUE = 1, aggregation = "n")
-    df_B2 <- data.frame(datetime=time(B2),coredata(B2))
-    
-    # update litesql
-    dbWriteTable(conn=db, name="B2",
-                 value=df_B2, row.names = NA, overwrite = TRUE, append = FALSE,
-                 field.types = NULL)
-  }
-  
-  if (any(grepl("B3",stations)))
-  {
-    print("updating SWC data of station B3")
-    
-    # B3
-    path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/B/B3/"
-    header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/B/header_B3.txt"
-    
-    B3 <- dB_getSWC(path2files, header.file, station = "B", station_nr = 3, calibrate = F, minVALUE = 0, maxVALUE = 1, aggregation = "n")
-    df_B3 <- data.frame(datetime=time(B3),coredata(B3))
-    
-    # update litesql
-    dbWriteTable(conn=db, name="B3",
-                 value=df_B3, row.names = NA, overwrite = TRUE, append = FALSE,
-                 field.types = NULL)
-  }
-  
-  # I stations
-  
-  if (any(grepl("I1",stations)))
-  {
-    print("updating SWC data of station I1")
-    
-    # I1
-    path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/I/I1/"
-    header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/I/header_I1.txt"
-    
-    I1 <- dB_getSWC(path2files, header.file, station = "I", station_nr = 1, calibrate = F, minVALUE = 0, maxVALUE = 1, aggregation = "n")
-    df_I1 <- data.frame(datetime=time(I1),coredata(I1))
-    
-    # update litesql
-    dbWriteTable(conn=db, name="I1",
-                 value=df_I1, row.names = NA, overwrite = TRUE, append = FALSE,
-                 field.types = NULL)
-  }
-  
-  if (any(grepl("I3",stations)))
-  {
-    print("updating SWC data of station I3")
-    
-    # I3
-    path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/I/I3/"
-    header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/I/header_I3.txt"
-    
-    I3 <- dB_getSWC(path2files, header.file, station = "I", station_nr = 3, calibrate = F, minVALUE = 0, maxVALUE = 1, aggregation = "n")
-    df_I3 <- data.frame(datetime=time(I3),coredata(I3))
-    
-    # update litesql
-    dbWriteTable(conn=db, name="I3",
-                 value=df_I3, row.names = NA, overwrite = TRUE, append = FALSE,
-                 field.types = NULL)
-    
-  }
-  
-  # P stations
-  if (any(grepl("P1",stations)))
-  {
-    print("updating SWC data of station P1")
-    
-    # P1
-    path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/P/P1/"
-    header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/P/header_P.txt"
-    
-    P1 <- dB_getSWC(path2files, header.file, station = "P", station_nr = 1, calibrate = F, minVALUE = 0, maxVALUE = 1, aggregation = "n")
-    df_P1 <- data.frame(datetime=time(P1),coredata(P1))
-    
-    # update litesql
-    dbWriteTable(conn=db, name="P1",
-                 value=df_P1, row.names = NA, overwrite = TRUE, append = FALSE,
-                 field.types = NULL)
-    
-  }
-  
-  if (any(grepl("P2",stations)))
-  {
-    print("updating SWC data of station P2")
-    
-    # P2
-    path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/P/P2/"
-    header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/P/header_P2.txt"
-    
-    P2 <- dB_getSWC(path2files, header.file, station = "P", station_nr = 2, calibrate = F, minVALUE = 0, maxVALUE = 1, aggregation = "n")
-    df_P2 <- data.frame(datetime=time(P2),coredata(P2))
-    
-    # update litesql
-    dbWriteTable(conn=db, name="P2",
-                 value=df_P2, row.names = NA, overwrite = TRUE, append = FALSE,
-                 field.types = NULL)
-  }
-  
-  if (any(grepl("P3",stations)))
-  {
-    print("updating SWC data of station P3")
-    
-    # P3
-    path2files = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/P/P3/"
-    header.file = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/P/header_P.txt"
-    
-    P3 <- dB_getSWC(path2files, header.file, station = "P", station_nr = 3, calibrate = F, minVALUE = 0, maxVALUE = 1, aggregation = "n")
-    df_P3 <- data.frame(datetime=time(P3),coredata(P3))
-    
-    dbWriteTable(conn=db, name="P3",
-                 value=df_P3, row.names = NA, overwrite = TRUE, append = FALSE,
-                 field.types = NULL)
-    
+ 
   }
   
   # list tables in db
