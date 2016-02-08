@@ -6,7 +6,7 @@ R package providing functionality for calibration of soil moisture sensors.
 * query sites to calibrate and retrieve filtered data frame (CAL_doreg_data)
 * perform linear calibration and visualization (CAL_doreg)
 * interactive shiny app for sensor calibration (how to run see below)
-* download (un)calibrated SMC data for LTER Matsch/Mazia 
+* download (un)calibrated SMC data for LTER Matsch/Mazia
 
 =======
 ## How to start
@@ -60,7 +60,7 @@ Push the database file _swc.sqlite_ into the folder _data_ of the _SMCcalibratio
 path.package("SMCcalibration")
 ```
 
-Be aware: you have to change run the shiny app externally (e.g. web browser) to enable data download. For this set _options = list(launch.browser = TRUE)_ when starting the app.
+Be aware: you have to run the shiny app externally to enable data download. For this set _options = list(launch.browser = TRUE)_ when starting the app.
 For running the calibration shiny app:
 
 ```R
