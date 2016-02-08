@@ -6,6 +6,7 @@ R package providing functionality for calibration of soil moisture sensors.
 * query sites to calibrate and retrieve filtered data frame (CAL_doreg_data)
 * perform linear calibration and visualization (CAL_doreg)
 * interactive shiny app for sensor calibration (how to run see below)
+* download (un)calibrated SMC data for LTER Matsch/Mazia 
 
 =======
 ## How to start
