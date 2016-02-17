@@ -54,7 +54,7 @@ and then import the library with:
 library(SMCcalibration)
 ```
 
-Push the database file _swc.sqlite_ into the folder _data_ of the _SMCcalibration_ package file system. The database file can be [downloaded here](https://cloud.scientificnet.org/index.php/s/x6CZtdVdcsoTfvy/download). You can find the path to the package file system by executing
+Push the database file _swc.sqlite_ into the folder _data_ of the _SMCcalibration_ package file system. The database file can be [downloaded here](https://cloud.scientificnet.org/index.php/s/CJLNH1mTCUI2cQY/download). You can find the path to the package file system by executing
 
 ```R
 path.package("SMCcalibration")
