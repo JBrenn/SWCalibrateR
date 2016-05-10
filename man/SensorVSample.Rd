@@ -5,7 +5,7 @@
 Calibration data sensor vs. soil samples
 }
 \description{
-data.frame on claibratin data sensor vs. soil sample for teh LTsER site MAtsch/Mazia (South Tyrol, Italy). 
+data.frame on calibration data sensor vs. soil sample for the LTsER site Matsch/Mazia (South Tyrol, Italy) and multiple sites all over South Tyrol (Projects: MONALISA, HiResAlp).
 }
 \usage{data("SensorVSample")}
 \format{
