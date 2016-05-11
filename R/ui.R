@@ -65,8 +65,8 @@ ui <- fluidPage(
       
       tabPanel("Data Download", 
                br(),
-#               dygraphOutput("plot3", height = 500, width = 800),
-                plotOutput("plot3", height = 500, width = 800),
+               dygraphOutput("plot3", height = 500, width = 800),
+#                plotOutput("plot3", height = 500, width = 800),
       selectInput("StationTs", label = h4("download station"), selected="P2",
                   choices = list("B1","B2","B3","I1","I3",
                                  "M1","M2","M3","M4","M5","M6","M7",
