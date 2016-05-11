@@ -175,6 +175,7 @@ server <- function(input, output) {
     #setwd(file.path(pkg_path,"data"))
     db = dbConnect(SQLite(), dbname=file.path(pkg_path,"data","SWC.sqlite"))
     
+    
     # get station data
     swc_st_    <- dbReadTable(conn = db, name = input$StationTs)
     swc_st     <- swc_st_[,-1]
