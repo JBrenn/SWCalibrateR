@@ -16,6 +16,7 @@ Imports:
     robustbase,
     RSQLite,
     zoo,
-    chron
+    chron,
+    dygraphs
 	
 
