@@ -173,7 +173,7 @@ server <- function(input, output) {
     # connect to db in data folder of project
     pkg_path <- path.package("SMCcalibration")
     #setwd(file.path(pkg_path,"data"))
-    db = dbConnect(SQLite(), dbname=file.path(pkg_path,"data","swc.sqlite"))
+    db = dbConnect(SQLite(), dbname=file.path(pkg_path,"data","SWC.sqlite"))
     
     # get station data
     swc_st_    <- dbReadTable(conn = db, name = input$StationTs)
