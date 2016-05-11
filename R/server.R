@@ -123,10 +123,15 @@ server <- function(input, output) {
   output$plot3 <- renderDygraph({
     zoo_data <- datasetInput()
     zoo::index(zoo_data) <- as.POSIXct(zoo::index(zoo_data))
+    
+    nrpairs <- length(names(zoo_data)) /2
+    color <- c(rep("rgb(250,0,0)", times=nrpairs), rep("rgb(0,0,250)", times=nrpairs))
+    color <- c(rep("#bdbdbd", times=nrpairs), rep("#636363", times=nrpairs))
 
     dy <- dygraph(zoo_data) %>%
             dyRoller() %>%
-            dyRangeSelector()
+            dyRangeSelector() %>%
+            dyOptions(colors = color)
     dy
   })
   
