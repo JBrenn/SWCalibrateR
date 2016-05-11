@@ -184,22 +184,16 @@ server <- function(input, output) {
     
     # only depth set
     if (input$DepthTs!="ALL" & input$SensorNameTs=="ALL")
-    {
       swc_data <- swc_st[,grepl(input$DepthTs,names(swc_st))]
-        if (input$DepthTs=="2") swc_data <- swc_data[,!grepl("20",names(swc_data))]
-    }
     
     # only sensor set
-    if (input$DepthTs=="ALL" & input$SensorNameTs!="ALL") swc_data <- swc_st[,grepl(input$SensorNameTs,names(swc_st))]
-    
+    if (input$DepthTs=="ALL" & input$SensorNameTs!="ALL") 
+      swc_data <- swc_st[,grepl(input$SensorNameTs,names(swc_st))]
     
     # depth & sensor set
     if (input$DepthTs!="ALL" & input$SensorNameTs!="ALL")
-    {
-      swc_data <- swc_st[,grepl(paste(input$SensorNameTs,input$DepthTs,sep="_z"),names(swc_st))]
-       if (input$DepthTs=="2") swc_data <- swc_data[,!grepl("20",names(swc_data))]
-    }
-    
+      swc_data <- swc_st[,grepl(paste(input$SensorNameTs,input$DepthTs,sep="_"),names(swc_st))]
+   
     # depth & sensor set
     if (input$DepthTs=="ALL" & input$SensorNameTs=="ALL") swc_data <- swc_st
   

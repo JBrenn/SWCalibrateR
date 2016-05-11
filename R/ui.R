@@ -74,7 +74,7 @@ ui <- fluidPage(
                                  "S5","XS1","XS6")),
       selectInput("SensorNameTs", label = h4("download sensor"), selected = "A",
                   choices = list("ALL","A","B","C","CI","CS","CSn","L","LI","LS","LSm","LSn","LSp","LSt","T","TI","TS","TSn","TSt")),
-      selectInput("DepthTs", label = h4("download depth"), selected="5", choices = list("ALL","2","5","20","40","50")),
+      selectInput("DepthTs", label = h4("download depth"), selected="05", choices = list("ALL","02","05","20","40","50")),
       downloadButton('downloadData', 'Download')
       ),
       
