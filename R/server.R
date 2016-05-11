@@ -205,7 +205,7 @@ server <- function(input, output) {
     if (dim(swc_zoo)[2] > 2) {
       names(swc_zoo) <- paste(names(swc_zoo), c(rep("uncal",length(names(swc_zoo))/2), rep("cal",length(names(swc_zoo))/2)), sep="_") 
     } else {
-      names(swc_zoo) <- paste("SWC_",input$SensorNameTs,"_z",input$DepthTs,c("_uncal","_cal"),sep="")
+      names(swc_zoo) <- paste("SWC_",input$SensorNameTs,"_",input$DepthTs,c("_uncal","_cal"),sep="")
     }
 
     swc_zoo
