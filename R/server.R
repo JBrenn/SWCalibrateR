@@ -201,7 +201,9 @@ server <- function(input, output) {
     
     swc_cal <- round(swc_cal, 3)
     
-    swc_zoo <- zoo::zoo(cbind(swc_data,swc_cal), chron::chron(swc_st_$datetime))
+    swc_zoo <- zoo::zoo(cbind(swc_data,swc_cal), 
+                        chron::chron(dates. = substr(swc_st_$TIMESTAMP,1,10), times. = substr(swc_st_$TIMESTAMP,12,19), 
+                        format = c("y-m-d","h:m:s")))
     if (dim(swc_zoo)[2] > 2) {
       names(swc_zoo) <- paste(names(swc_zoo), c(rep("uncal",length(names(swc_zoo))/2), rep("cal",length(names(swc_zoo))/2)), sep="_") 
     } else {
