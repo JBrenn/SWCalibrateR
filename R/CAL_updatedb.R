@@ -5,7 +5,7 @@
 
 
 CAL_updatedb <- function(stations, 
-                         path2data = "/run/user/1000/gvfs/smb-share:server=abz02fst.eurac.edu,share=alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/", 
+                         path2data = "/media/alpenv/Projekte/HiResAlp/06_Workspace/BrJ/02_data/Station_data_Mazia/", 
                          inCloud = "/home/jbr/ownCloud/data/")
 {
   # connect to db in data folder of project
