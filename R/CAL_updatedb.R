@@ -29,7 +29,7 @@ CAL_updatedb <- function(stations,
     path2files = file.path(path2data,stationchr,i)
     header.file = file.path(path2data,stationchr,paste("header_",i,".txt",sep=""))
     
-    data <- dB_getSWC(path2files, header.file, station = stationchr, station_nr = stationnr, calibrate = F, 
+    data <- dB_getSWC(path2files, calibrate = F, 
                       minVALUE = 0, maxVALUE = 1, aggregation = "n")
     
     if(any(names(data)=="core5")) names(data)[which(names(data)=="core5")] <- "SWC_A_z5"
