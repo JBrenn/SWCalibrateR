@@ -23,6 +23,9 @@ ui <- fluidPage(
       selectInput("Date", label = h4("date"), 
                   choices = list("ALL","2013","2014","2015")),
       
+      selectInput("SoilType", label = h4("soil type"), 
+                  choices = list("ALL","sandy","loamy","clay")),           
+                 
       selectInput("SensorType", label = h4("sensor type"), 
                   choices = list("ALL","CS655","Decagon10HS","OnsetSMB005")),
       
