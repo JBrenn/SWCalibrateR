@@ -14,7 +14,7 @@ server <- function(input, output) {
     if (input$Depth=="ALL")  depth <- NA else depth <- input$Depth
     if (input$SensorType=="ALL")  SensorType <- NA else SensorType <- input$SensorType
     if (input$SensorName=="ALL")  SensorName <- NA else SensorName <- input$SensorName
-    if (input$SoilType=="ALL")  SoilType <- NA else SensorType <- input$SoilType
+    if (input$SoilType=="ALL")  SoilType <- NA else SoilType <- input$SoilType
       
     data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
                            depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
@@ -34,7 +34,7 @@ server <- function(input, output) {
     if (input$Depth=="ALL")  depth <- NA else depth <- input$Depth
     if (input$SensorType=="ALL")  SensorType <- NA else SensorType <- input$SensorType
     if (input$SensorName=="ALL")  SensorName <- NA else SensorName <- input$SensorName
-    if (input$SoilType=="ALL")  SoilType <- NA else SensorType <- input$SoilType
+    if (input$SoilType=="ALL")  SoilType <- NA else SoilType <- input$SoilType
       
     data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
                            depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
@@ -101,7 +101,7 @@ server <- function(input, output) {
     if (input$Depth=="ALL")  depth <- NA else depth <- input$Depth
     if (input$SensorType=="ALL")  SensorType <- NA else SensorType <- input$SensorType
     if (input$SensorName=="ALL")  SensorName <- NA else SensorName <- input$SensorName
-    if (input$SoilType=="ALL")  SoilType <- NA else SensorType <- input$SoilType
+    if (input$SoilType=="ALL")  SoilType <- NA else SoilType <- input$SoilType
       
     data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
                            depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
