@@ -15,7 +15,7 @@ First install the package with:
 ```R
 install.packages("devtools")
 library(devtools)
-install_github("JBrenn/SMCcalibration")
+install_github("GiulioGenova/SMCcalibration")
 ```
 
 and then import the library with:
