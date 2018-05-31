@@ -6,9 +6,9 @@
 
 # date: year of observation
 
-CAL_doreg <- function (data, date_obs=NA, landuse=NA, depth=NA, station=NA, project=NA, sensorType = NA, sensorName=NA, plot=TRUE, pdf=TRUE)
+CAL_doreg <- function (data, date_obs=NA, landuse=NA, depth=NA, station=NA, project=NA, sensorType = NA, sensorName=NA, soilType=NA, plot=TRUE, pdf=TRUE)
 {
-  choices <- c(project=project, station=station, landuse=landuse, depth=depth, date_obs=date_obs, sensorName=sensorName, sensorType=sensorType)
+  choices <- c(project=project, station=station, landuse=landuse, depth=depth, date_obs=date_obs, sensorName=sensorName, sensorType=sensorType,soilType=soilType)
   choices.na <- is.na(choices)
   
   for (i in 1:length(choices.na))
