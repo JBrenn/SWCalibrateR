@@ -1,6 +1,6 @@
-CAL_doreg_data <- function (data, date_obs=NA, landuse=NA, depth=NA, station=NA, project=NA, sensorType = NA, sensorName=NA, preserveStr=T)
+CAL_doreg_data <- function (data, date_obs=NA, landuse=NA, depth=NA, station=NA, project=NA, sensorType = NA, sensorName=NA,soilType=NA, preserveStr=T)
 {
-  choices <- c(project=project, station=station, landuse=landuse, depth=depth, date_obs=date_obs, sensorName=sensorName, sensorType=sensorType)
+  choices <- c(project=project, station=station, landuse=landuse, depth=depth, date_obs=date_obs, soilType=SoilType, sensorName=sensorName, sensorType=sensorType)
   choices.na <- is.na(choices)
   
   if (preserveStr) {
