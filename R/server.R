@@ -15,7 +15,8 @@ source("dB_getSWC.R")
 source("dB_readStationData.R")
 source("fitSMDM.R")
 source("lm_eq.R")
-load("SensorVSample.RData")
+#load("SensorVSample.RData")
+data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
 
 server <- function(input, output,session) {
   
