@@ -20,20 +20,17 @@ data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
 
 server <- function(input, output,session) {
   
-  observeEvent(input$upload_file, {
-  
-    filedata <- reactive({
-    
+  filedata <- reactive({
+    infile <- input$datafile
     if (is.null(infile))
       # User has not uploaded a file yet. Use NULL to prevent observeEvent from triggering
-      return(NULL)else{
-    infile <- input$datafile
-        path<-as.character(infile$datapath)
-    return(path)
-    }
+      return(NULL)
+    temp <- read.csv(infile$datapath,sep=",",dec=".")
+ 
   })
   
-    data<-read.csv(filedata,sep=",",dec=".")
+  observeEvent(input$upload_file, {
+    data<-filedata
 })
   
   observe({
