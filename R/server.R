@@ -43,9 +43,9 @@ server <- function(input, output,session) {
   observe({
   updateSelectInput(session, "SensorName", choices = c("ALL",data$sensorName %>% levels) ) 
 })
-  #observe({
-  #updateSelectInput(session, "SoilType", choices = c("ALL",data$soilType %>% levels) ) 
-#})
+  observe({
+  updateSelectInput(session, "SoilType", choices = c("ALL",data$soilType %>% levels) ) 
+})
   
   # For storing which rows have been excluded
   vals <- reactiveValues(
