@@ -20,23 +20,14 @@ source("lm_eq.R")
 
 server <- function(input, output,session) {
   
-  filedata <- reactive({
+  data <- reactive({
     infile <- input$datafile
     if (is.null(infile))
       # User has not uploaded a file yet. Use NULL to prevent observeEvent from triggering
-      return(NULL)
+      return(read.csv("SensorVSample_new.csv",sep=",",dec="."))
     temp <- read.csv(infile$datapath,sep=",",dec=".")
- 
   })
   
-  data<-reactiveValues(
-    if (input$upload_file=="default") {
-      data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
-    } else {
-      data<-filedata
-    }
-  
-  )
   
   
   observe({
