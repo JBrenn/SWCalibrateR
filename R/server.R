@@ -29,7 +29,7 @@ server <- function(input, output,session) {
  
   })
   
- if (input$upload_file) {
+ if (input$upload_file=="default") {
       data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
     } else {
       data<-filedata
