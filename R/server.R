@@ -1,3 +1,12 @@
+if (!require("ggplot2")) install.packages("ggplot2")
+if (!require("Cairo")) install.packages("Cairo")
+if (!require("robustbase")) install.packages("robustbase")
+
+library(ggplot2)
+library(Cairo)
+library(robustbase)
+
+
 source("CAL_doreg.R")
 source("CAL_doreg_data.R")
 source("CAL_updateRData.R")
