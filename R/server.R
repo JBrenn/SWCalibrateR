@@ -35,30 +35,30 @@ server <- function(input, output,session) {
   
   
   observe({
-  updateSelectInput(session, "Project", choices = c("ALL",data$project %>% levels) ) 
+  updateSelectInput(session, "Project", choices = c("ALL",data()$project %>% levels) ) 
 })
   
   observe({
-  updateSelectInput(session, "Landuse", choices = c("ALL",data$landuse %>% levels) ) 
+  updateSelectInput(session, "Landuse", choices = c("ALL",data()$landuse %>% levels) ) 
 })
   
   observe({
-  updateSelectInput(session, "Station", choices = c("ALL",data$station %>% levels) ) 
+  updateSelectInput(session, "Station", choices = c("ALL",data()$station %>% levels) ) 
 })
   
   observe({
-  updateSelectInput(session, "Date", choices = c("ALL",data$date_obs %>% levels) ) 
+  updateSelectInput(session, "Date", choices = c("ALL",data()$date_obs %>% levels) ) 
 })
   
   observe({
-  updateSelectInput(session, "SensorType", choices = c("ALL",data$sensorType %>% levels) ) 
+  updateSelectInput(session, "SensorType", choices = c("ALL",data()$sensorType %>% levels) ) 
 })
   
   observe({
-  updateSelectInput(session, "SensorName", choices = c("ALL",data$sensorName %>% levels) ) 
+  updateSelectInput(session, "SensorName", choices = c("ALL",data()$sensorName %>% levels) ) 
 })
   observe({
-  updateSelectInput(session, "SoilType", choices = c("ALL",data$soilType %>% levels) ) 
+  updateSelectInput(session, "SoilType", choices = c("ALL",data()$soilType %>% levels) ) 
 })
   
   # For storing which rows have been excluded
