@@ -34,7 +34,7 @@ server <- function(input, output,session) {
   
   
   observeEvent(input$upload_file, {
-    data<-read.csv(filedata$datapath,sep=",",dec=".")
+    data<-read.csv(filedata,sep=",",dec=".")
 })
   
   observe({
