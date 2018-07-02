@@ -17,53 +17,53 @@ source("dB_readStationData.R")
 source("fitSMDM.R")
 source("lm_eq.R")
 #load("SensorVSample.RData")
-#data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
+data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
 
 server <- function(input, output,session) {
   
-  data <- reactive({
-    temp1<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
-    infile <- input$datafile
-    if (is.null(infile)){
+  #data <- reactive({
+   # temp1<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
+  #  infile <- input$datafile
+   # if (is.null(infile)){
       # User has not uploaded a file yet. Use NULL to prevent observeEvent from triggering
-      return(temp1)}else{
-    temp <- read.csv(infile,sep=",",dec=".")
-    return(temp)
-    }
-  })
+  #    return(temp1)}else{
+  #  temp <- read.csv(infile,sep=",",dec=".")
+  #  return(temp)
+  #  }
+ # })
   
   
   
   observe({
-  updateSelectInput(session, "Project", choices = c("ALL",data()$project %>% levels) ) 
+  updateSelectInput(session, "Project", choices = c("ALL",data$project %>% levels) ) 
 })
   
   observe({
-  updateSelectInput(session, "Landuse", choices = c("ALL",data()$landuse %>% levels) ) 
+  updateSelectInput(session, "Landuse", choices = c("ALL",data$landuse %>% levels) ) 
 })
   
   observe({
-  updateSelectInput(session, "Station", choices = c("ALL",data()$station %>% levels) ) 
+  updateSelectInput(session, "Station", choices = c("ALL",data$station %>% levels) ) 
 })
   
   observe({
-  updateSelectInput(session, "Date", choices = c("ALL",data()$date_obs %>% levels) ) 
+  updateSelectInput(session, "Date", choices = c("ALL",data$date_obs %>% levels) ) 
 })
   
   observe({
-  updateSelectInput(session, "SensorType", choices = c("ALL",data()$sensorType %>% levels) ) 
+  updateSelectInput(session, "SensorType", choices = c("ALL",data$sensorType %>% levels) ) 
 })
   
   observe({
-  updateSelectInput(session, "SensorName", choices = c("ALL",data()$sensorName %>% levels) ) 
+  updateSelectInput(session, "SensorName", choices = c("ALL",data$sensorName %>% levels) ) 
 })
   observe({
-  updateSelectInput(session, "SoilType", choices = c("ALL",data()$soilType %>% levels) ) 
+  updateSelectInput(session, "SoilType", choices = c("ALL",data$soilType %>% levels) ) 
 })
   
   # For storing which rows have been excluded
   vals <- reactiveValues(
-    keeprows = rep(TRUE, nrow(data()))
+    keeprows = rep(TRUE, nrow(data))
   )
   
   output$table <- renderDataTable({
@@ -77,7 +77,7 @@ server <- function(input, output,session) {
     if (input$SensorName=="ALL")  SensorName <- NA else SensorName <- input$SensorName
     if (input$SoilType=="ALL")  SoilType <- NA else SoilType <- input$SoilType
       
-    data <- CAL_doreg_data(data = data(), project = project, station = station, landuse = landuse, date_obs = date, 
+    data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
                            depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
     data$row.name <- rownames(data)
