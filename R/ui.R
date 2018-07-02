@@ -48,7 +48,10 @@ ui <- fluidPage(
       
       checkboxInput("facet", label = "facet grid", value = FALSE),
       checkboxInput("Rownames", label = "show row.names", value = FALSE),
-      checkboxInput("Zoom", label = "zoom in", value = FALSE)
+      checkboxInput("Zoom", label = "zoom in", value = FALSE),
+      fileInput('datafile', 'Choose CSV file',
+                accept = c('text/csv', 'text/comma-separated-values,text/plain', '.csv')),
+      checkboxInput("upload_file", label = "use an uploaded file", value = FALSE)
       
     ),
   
