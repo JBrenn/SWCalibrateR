@@ -17,7 +17,7 @@ source("fitSMDM.R")
 source("lm_eq.R")
 load("SensorVSample.RData")
 
-server <- function(input, output) {
+server <- function(input, output,session) {
   
   observe({
   updateSelectInput(session, "Station", choices = data$station %>% levels) 
