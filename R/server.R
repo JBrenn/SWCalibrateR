@@ -30,7 +30,7 @@ server <- function(input, output,session) {
   })
   
   observeEvent(input$upload_file, {
-    data<-filedata
+    data<-filedata$temp
 })
   
   observe({
