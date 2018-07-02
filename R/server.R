@@ -20,7 +20,7 @@ load("SensorVSample.RData")
 server <- function(input, output) {
   
   observe({
-  updateSelectInput(session, "station", choices = data$station %>% levels) 
+  updateSelectInput(session, "Station", choices = data$station %>% levels) 
 })
   
   # For storing which rows have been excluded
