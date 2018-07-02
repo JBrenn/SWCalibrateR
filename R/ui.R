@@ -20,7 +20,7 @@ ui <- fluidPage(
          #                        "M7","nals","nemef1500","nemes1500","neumarkt","P1","P2","P3","S2","S4",
           #                       "S5","stpauls","terlanalt","terlanneu","tramin13","unterrain","vimef2000","vimes2000","XS1")),
       
-      selectInput("Station", label = h4("station"),  "placeholder1")           
+      selectInput("Station", label = h4("station"),  "placeholder1"),           
                  
       selectInput("Date", label = h4("date"), 
                   choices = list("ALL","2013","2014","2015")),
