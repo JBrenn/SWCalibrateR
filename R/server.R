@@ -16,7 +16,7 @@ source("dB_readStationData.R")
 source("fitSMDM.R")
 source("lm_eq.R")
 #load("SensorVSample.RData")
-data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
+#data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
 
 server <- function(input, output,session) {
   
@@ -29,17 +29,17 @@ server <- function(input, output,session) {
  
   })
   
- if (input$upload_file=="default") {
+  data<-reactiveValues()
+  
+  observeEvent( {#input$upload_file,
+
+    if (input$upload_file=="default") {
       data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
     } else {
       data<-filedata
     } 
-  
-  
-  
-  #observeEvent(input$upload_file, {
-   # data<-filedata$temp
-#})
+    
+})
   
   observe({
   updateSelectInput(session, "Project", choices = c("ALL",data$project %>% levels) ) 
