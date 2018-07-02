@@ -29,17 +29,15 @@ server <- function(input, output,session) {
  
   })
   
-  data<-reactiveValues()
-  
-  observeEvent( {#input$upload_file,
-
+  data<-reactiveValues(
     if (input$upload_file=="default") {
       data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
     } else {
       data<-filedata
-    } 
-    
-})
+    }
+  
+  )
+  
   
   observe({
   updateSelectInput(session, "Project", choices = c("ALL",data$project %>% levels) ) 
