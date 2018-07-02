@@ -26,7 +26,7 @@ server <- function(input, output,session) {
       # User has not uploaded a file yet. Use NULL to prevent observeEvent from triggering
       return(NULL)else{
     infile <- input$datafile
-        path<-infile$datapath
+        path<-as.character(infile$datapath)
     return(path)
     }
   })
