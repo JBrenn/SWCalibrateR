@@ -27,7 +27,7 @@ server <- function(input, output,session) {
     if (is.null(infile)){
       # User has not uploaded a file yet. Use NULL to prevent observeEvent from triggering
       return(temp1)}else{
-    temp <- read.csv(infile$datapath,sep=",",dec=".")
+    temp <- read.csv(infile,sep=",",dec=".")
     return(temp)
     }
   })
