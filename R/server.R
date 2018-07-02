@@ -63,7 +63,7 @@ server <- function(input, output,session) {
   
   # For storing which rows have been excluded
   vals <- reactiveValues(
-    keeprows = rep(TRUE, nrow(data))
+    keeprows = rep(TRUE, nrow(data()))
   )
   
   output$table <- renderDataTable({
@@ -77,7 +77,7 @@ server <- function(input, output,session) {
     if (input$SensorName=="ALL")  SensorName <- NA else SensorName <- input$SensorName
     if (input$SoilType=="ALL")  SoilType <- NA else SoilType <- input$SoilType
       
-    data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
+    data <- CAL_doreg_data(data = data(), project = project, station = station, landuse = landuse, date_obs = date, 
                            depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
     data$row.name <- rownames(data)
