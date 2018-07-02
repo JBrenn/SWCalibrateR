@@ -1,3 +1,13 @@
+source("CAL_doreg.R")
+source("CAL_doreg_data.R")
+source("CAL_updateRData.R")
+source("CAL_updatedb.R")
+source("dB_getSWC.R")
+source("dB_readStationData.R")
+source("fitSMDM.R")
+source("lm_eq.R")
+load("SensorVSample.RData")
+
 server <- function(input, output) {
   
   # For storing which rows have been excluded
