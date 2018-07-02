@@ -29,9 +29,17 @@ server <- function(input, output,session) {
  
   })
   
-  observeEvent(input$upload_file, {
-    data<-filedata$temp
-})
+ if (input$upload_file) {
+      data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
+    } else {
+      data<-filedata
+    } 
+  
+  
+  
+  #observeEvent(input$upload_file, {
+   # data<-filedata$temp
+#})
   
   observe({
   updateSelectInput(session, "Project", choices = c("ALL",data$project %>% levels) ) 
