@@ -29,9 +29,9 @@ server <- function(input, output,session) {
  
   })
   
-  #observeEvent(input$upload_file, {
-  #  data<-filedata
-#})
+  observeEvent(input$upload_file, {
+    data<-filedata
+})
   
   observe({
   updateSelectInput(session, "Project", choices = c("ALL",data$project %>% levels) ) 
