@@ -50,8 +50,8 @@ ui <- fluidPage(
       checkboxInput("Rownames", label = "show row.names", value = FALSE),
       checkboxInput("Zoom", label = "zoom in", value = FALSE),
       fileInput('datafile', 'Choose CSV file',
-                accept = c('text/csv', 'text/comma-separated-values,text/plain', '.csv')),
-      selectInput("upload_file", label = "use an uploaded file?",choices=c("default","uploaded"))#, value = FALSE
+                accept = c('text/csv', 'text/comma-separated-values,text/plain', '.csv'))#,
+      #selectInput("upload_file", label = "use an uploaded file?",choices=c("default","uploaded"))#, value = FALSE
       
     ),
   
