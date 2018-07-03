@@ -33,7 +33,7 @@ server <- function(input, output,session) {
     return(temp)
     
     }else{
-    temp <- read.csv(infile,sep=",",dec=".")
+    temp <- read.csv(infile$datapath,sep=",",dec=".")
     return(temp)
     }
     
