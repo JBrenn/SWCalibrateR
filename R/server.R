@@ -70,12 +70,12 @@ server <- function(input, output,session) {
 })
   
   # For storing which rows have been excluded
-  vals <- reactiveValues(#data<-datafile
-    keeprows = rep(TRUE, nrow(datafile()))
-  )
+  #vals <- reactiveValues(#data<-datafile
+   # keeprows = rep(TRUE, nrow(datafile()))
+  #)
   
   output$table <- renderDataTable({
-    data<-datafile
+    data<-datafile()
     if (input$Project=="ALL")  project <- NA else project <- input$Project
     if (input$Landuse=="ALL")  landuse <- NA else landuse <- input$Landuse
     if (input$Station=="ALL")  station <- NA else station <- input$Station
@@ -95,7 +95,7 @@ server <- function(input, output,session) {
     }, list(pageLength = 20, lengthMenu = c(20, 30, 50, 100)) )
   
   output$plot1 <- renderPlot({
-    data<-datafile
+    data<-datafile()
     if (input$Project=="ALL")  project <- NA else project <- input$Project
     if (input$Landuse=="ALL")  landuse <- NA else landuse <- input$Landuse
     if (input$Station=="ALL")  station <- NA else station <- input$Station
@@ -162,7 +162,7 @@ server <- function(input, output,session) {
   })
   
   output$plot2 <- renderPlot({
-    data<-datafile
+    data<-datafile()
     if (input$Project=="ALL")  project <- NA else project <- input$Project
     if (input$Landuse=="ALL")  landuse <- NA else landuse <- input$Landuse
     if (input$Station=="ALL")  station <- NA else station <- input$Station
