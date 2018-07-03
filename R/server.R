@@ -21,7 +21,7 @@ source("lm_eq.R")
 
 server <- function(input, output,session) {
   
-  data <- reactiveValues()
+  #filedata <- reactiveValues()
   
   datafile <- reactive({
     
@@ -30,52 +30,52 @@ server <- function(input, output,session) {
     if (is.null(infile)){
        #User has not uploaded a file yet. Use NULL to prevent observeEvent from triggering
     temp<-read.csv(file.path(getwd(),"SensorVSample_new.csv"),sep=",",dec=".")
-      #return(temp1)
+    return(temp)
     
     }else{
     temp <- read.csv(infile,sep=",",dec=".")
-    #return(temp)
+    return(temp)
     }
     
-    assign('data',temp,envir=.GlobalEnv)
+   # assign('data',temp,envir=.GlobalEnv)
  })
   
   
   
-  observe({
+  observe({ data<-datafile
   updateSelectInput(session, "Project", choices = c("ALL",data$project %>% levels) ) 
 })
   
-  observe({
+  observe({data<-datafile
   updateSelectInput(session, "Landuse", choices = c("ALL",data$landuse %>% levels) ) 
 })
   
-  observe({
+  observe({data<-datafile
   updateSelectInput(session, "Station", choices = c("ALL",data$station %>% levels) ) 
 })
   
-  observe({
+  observe({data<-datafile
   updateSelectInput(session, "Date", choices = c("ALL",data$date_obs %>% levels) ) 
 })
   
-  observe({
+  observe({data<-datafile
   updateSelectInput(session, "SensorType", choices = c("ALL",data$sensorType %>% levels) ) 
 })
   
-  observe({
+  observe({data<-datafile
   updateSelectInput(session, "SensorName", choices = c("ALL",data$sensorName %>% levels) ) 
 })
-  observe({
+  observe({data<-datafile
   updateSelectInput(session, "SoilType", choices = c("ALL",data$soilType %>% levels) ) 
 })
   
   # For storing which rows have been excluded
-  vals <- reactiveValues(
+  vals <- reactiveValues(data<-datafile
     keeprows = rep(TRUE, nrow(data))
   )
   
   output$table <- renderDataTable({
-    
+    data<-datafile
     if (input$Project=="ALL")  project <- NA else project <- input$Project
     if (input$Landuse=="ALL")  landuse <- NA else landuse <- input$Landuse
     if (input$Station=="ALL")  station <- NA else station <- input$Station
@@ -95,7 +95,7 @@ server <- function(input, output,session) {
     }, list(pageLength = 20, lengthMenu = c(20, 30, 50, 100)) )
   
   output$plot1 <- renderPlot({
-    
+    data<-datafile
     if (input$Project=="ALL")  project <- NA else project <- input$Project
     if (input$Landuse=="ALL")  landuse <- NA else landuse <- input$Landuse
     if (input$Station=="ALL")  station <- NA else station <- input$Station
@@ -162,7 +162,7 @@ server <- function(input, output,session) {
   })
   
   output$plot2 <- renderPlot({
-    
+    data<-datafile
     if (input$Project=="ALL")  project <- NA else project <- input$Project
     if (input$Landuse=="ALL")  landuse <- NA else landuse <- input$Landuse
     if (input$Station=="ALL")  station <- NA else station <- input$Station
