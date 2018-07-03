@@ -194,21 +194,21 @@ server <- function(input, output,session) {
   
   # Toggle points that are clicked
   observeEvent(input$plot1_click, {
-    res <- nearPoints(data, input$plot1_click, allRows = TRUE)
+    res <- nearPoints(datafile(), input$plot1_click, allRows = TRUE)
     
     vals$keeprows <- xor(vals$keeprows, res$selected_)
   })
   
   # Toggle points that are brushed, when button is clicked
   observeEvent(input$exclude_toggle, {
-    res <- brushedPoints(data, input$plot1_brush, allRows = TRUE)
+    res <- brushedPoints(datafile(), input$plot1_brush, allRows = TRUE)
     
     vals$keeprows <- xor(vals$keeprows, res$selected_)
   })
   
   # Reset all points
   observeEvent(input$exclude_reset, {
-    vals$keeprows <- rep(TRUE, nrow(data))
+    vals$keeprows <- rep(TRUE, nrow(datafile()))
   })
   
 }
