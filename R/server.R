@@ -71,7 +71,7 @@ server <- function(input, output,session) {
   
   # For storing which rows have been excluded
   vals <- reactiveValues(#data<-datafile()
-    keeprows = rep(TRUE, nrow(datafile()))
+    keeprows = NULL#rep(TRUE, nrow(datafile()))
   )
   
   output$table <- renderDataTable({
