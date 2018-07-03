@@ -17,7 +17,7 @@ source("dB_readStationData.R")
 source("fitSMDM.R")
 source("lm_eq.R")
 #load("SensorVSample.RData")
-#data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
+data_def<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
 
 server <- function(input, output,session) {
   
@@ -71,7 +71,7 @@ server <- function(input, output,session) {
   
   # For storing which rows have been excluded
   vals <- reactiveValues(#data<-datafile()
-    keeprows = NULL#rep(TRUE, nrow(datafile()))
+    keeprows = rep(TRUE, nrow(data_def))#NULL
   )
   
   output$table <- renderDataTable({
