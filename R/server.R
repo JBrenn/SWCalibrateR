@@ -21,16 +21,23 @@ data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
 
 server <- function(input, output,session) {
   
-  #data <- reactive({
-   # temp1<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
-  #  infile <- input$datafile
-   # if (is.null(infile)){
-      # User has not uploaded a file yet. Use NULL to prevent observeEvent from triggering
-  #    return(temp1)}else{
-  #  temp <- read.csv(infile,sep=",",dec=".")
-  #  return(temp)
-  #  }
- # })
+  data <- reactiveValues()
+  
+  datafile <- reactive({
+    
+    infile <- input$datafile
+    if (is.null(infile)){
+       #User has not uploaded a file yet. Use NULL to prevent observeEvent from triggering
+    temp<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
+      #return(temp1)
+    
+    }else{
+    temp <- read.csv(infile,sep=",",dec=".")
+    #return(temp)
+    }
+    
+    assign('data',temp,envir=.GlobalEnv)
+ })
   
   
   
