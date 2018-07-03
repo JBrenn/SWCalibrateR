@@ -17,7 +17,7 @@ source("dB_readStationData.R")
 source("fitSMDM.R")
 source("lm_eq.R")
 #load("SensorVSample.RData")
-data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
+#data<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
 
 server <- function(input, output,session) {
   
@@ -26,9 +26,10 @@ server <- function(input, output,session) {
   datafile <- reactive({
     
     infile <- input$datafile
+    
     if (is.null(infile)){
        #User has not uploaded a file yet. Use NULL to prevent observeEvent from triggering
-    temp<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
+    temp<-read.csv(file.path(getwd(),"SensorVSample_new.csv"),sep=",",dec=".")
       #return(temp1)
     
     }else{
