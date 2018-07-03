@@ -42,36 +42,36 @@ server <- function(input, output,session) {
   
   
   
-  observe({ data<-datafile
-  updateSelectInput(session, "Project", choices = c("ALL",data$project %>% levels) ) 
+  observe({ #data<-datafile
+  updateSelectInput(session, "Project", choices = c("ALL",datafile()$project %>% levels) ) 
 })
   
-  observe({data<-datafile
-  updateSelectInput(session, "Landuse", choices = c("ALL",data$landuse %>% levels) ) 
+  observe({#data<-datafile
+  updateSelectInput(session, "Landuse", choices = c("ALL",datafile()$landuse %>% levels) ) 
 })
   
-  observe({data<-datafile
-  updateSelectInput(session, "Station", choices = c("ALL",data$station %>% levels) ) 
+  observe({#data<-datafile
+  updateSelectInput(session, "Station", choices = c("ALL",datafile()$station %>% levels) ) 
 })
   
-  observe({data<-datafile
-  updateSelectInput(session, "Date", choices = c("ALL",data$date_obs %>% levels) ) 
+  observe({#data<-datafile
+  updateSelectInput(session, "Date", choices = c("ALL",datafile()$date_obs %>% levels) ) 
 })
   
-  observe({data<-datafile
-  updateSelectInput(session, "SensorType", choices = c("ALL",data$sensorType %>% levels) ) 
+  observe({#data<-datafile
+  updateSelectInput(session, "SensorType", choices = c("ALL",datafile()$sensorType %>% levels) ) 
 })
   
-  observe({data<-datafile
-  updateSelectInput(session, "SensorName", choices = c("ALL",data$sensorName %>% levels) ) 
+  observe({#data<-datafile
+  updateSelectInput(session, "SensorName", choices = c("ALL",datafile()$sensorName %>% levels) ) 
 })
-  observe({data<-datafile
-  updateSelectInput(session, "SoilType", choices = c("ALL",data$soilType %>% levels) ) 
+  observe({#data<-datafile
+  updateSelectInput(session, "SoilType", choices = c("ALL",datafile()$soilType %>% levels) ) 
 })
   
   # For storing which rows have been excluded
-  vals <- reactiveValues(data<-datafile
-    keeprows = rep(TRUE, nrow(data))
+  vals <- reactiveValues(#data<-datafile
+    keeprows = rep(TRUE, nrow(datafile()))
   )
   
   output$table <- renderDataTable({
