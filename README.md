@@ -37,4 +37,15 @@ data <- unique(data[,-8])
 shinyApp(ui, server)
 ```
 
+An online version of the app is here:
+https://euracalpenv.shinyapps.io/SWC_Calibration/
+
+The same version runs with the following code:
+```R
+if (!require("shiny")) install.packages("shiny")
+
+shiny::runGitHub('GiulioGenova/SMCcalibration',subdir="R",launch.browser = TRUE)
+```
 For this application I got inspired by the RStudio shiny gallery and used these [code snippets](http://shiny.rstudio.com/gallery/plot-interaction-exclude.html).
+
+
