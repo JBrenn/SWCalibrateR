@@ -41,34 +41,34 @@ server <- function(input, output,session) {
  })
   
   observe({#data<-datafile
-  updateSelectInput(session, "Depth", choices = c(datafile()$depth %>% unique %>% as.numeric) ) 
+  updateSelectInput(session, "Depth", choices = c("ALL",datafile()$depth %>% unique %>% as.numeric),selected=c("ALL") ) 
 })
   
   observe({ #data<-datafile
-  updateSelectInput(session, "Project", choices = c("ALL",datafile()$project %>% levels) ) 
+  updateSelectInput(session, "Project", choices = c("ALL",datafile()$project %>% levels),selected=c("ALL") ) 
 })
   
   observe({#data<-datafile
-  updateSelectInput(session, "Landuse", choices = c("ALL",datafile()$landuse %>% levels) ) 
+  updateSelectInput(session, "Landuse", choices = c("ALL",datafile()$landuse %>% levels),selected=c("ALL") ) 
 })
   
   observe({#data<-datafile
-  updateSelectInput(session, "Station", choices = c("ALL",datafile()$station %>% levels) ) 
+  updateSelectInput(session, "Station", choices = c("ALL",datafile()$station %>% levels),selected=c("ALL") ) 
 })
   
   observe({#data<-datafile
-  updateSelectInput(session, "Date", choices = c("ALL",datafile()$date_obs %>% levels) ) 
+  updateSelectInput(session, "Date", choices = c("ALL",datafile()$date_obs %>% levels),selected=c("ALL") ) 
 })
   
   observe({#data<-datafile
-  updateSelectInput(session, "SensorType", choices = c("ALL",datafile()$sensorType %>% levels) ) 
+  updateSelectInput(session, "SensorType", choices = c("ALL",datafile()$sensorType %>% levels),selected=c("ALL") ) 
 })
   
   observe({#data<-datafile
-  updateSelectInput(session, "SensorName", choices = c("ALL",datafile()$sensorName %>% levels) ) 
+  updateSelectInput(session, "SensorName", choices = c("ALL",datafile()$sensorName %>% levels),selected=c("ALL") ) 
 })
   observe({#data<-datafile
-  updateSelectInput(session, "SoilType", choices = c("ALL",datafile()$soilType %>% levels) ) 
+  updateSelectInput(session, "SoilType", choices = c("ALL",datafile()$soilType %>% levels),selected=c("ALL") ) 
 })
   
   # For storing which rows have been excluded
