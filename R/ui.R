@@ -24,7 +24,7 @@ ui <- fluidPage(
       #selectInput("Project", label = h4("project"), 
        #           choices = list("ALL","matsch","monalisa")),
       
-      selectInput("Landuse", label = h4("land use"),  "placeholder2",multiple=T),               
+      selectInput("Landuse", label = h4("land use"),  "placeholder2",multiple=T,selected= data_def$landuse %>% levels),               
       #selectInput("Landuse", label = h4("land use"), 
        #           choices = list("ALL","appleorchards","meadow","pasture","forest","grassland")),
       
