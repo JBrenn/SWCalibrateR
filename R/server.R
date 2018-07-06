@@ -89,9 +89,9 @@ server <- function(input, output,session) {
     #                       depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
     data<- data %>% filter(project%in%as.character(input$Project),station%in%as.character(input$Station),landuse%in%as.character(input$Landuse),
-                          date_obs%in%as.character(input$Date),depth%in%as.character(input$Depth),sensorType%in%as.character(input$SensorType),
+                          date_obs%in%as.character(input$Date),sensorType%in%as.character(input$SensorType),
                           sensorName%in%as.character(input$SensorName),soilType%in%as.character(input$SoilType)) 
-      
+      #depth%in%as.character(input$Depth),
       
     data$row.name <- rownames(data)
     
@@ -114,8 +114,9 @@ server <- function(input, output,session) {
       #                     depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
     data<- data %>% filter(project%in%as.character(input$Project),station%in%as.character(input$Station),landuse%in%as.character(input$Landuse),
-                          date_obs%in%as.character(input$Date),depth%in%as.character(input$Depth),sensorType%in%as.character(input$SensorType),
+                          date_obs%in%as.character(input$Date),sensorType%in%as.character(input$SensorType),
                           sensorName%in%as.character(input$SensorName),soilType%in%as.character(input$SoilType)) 
+      #depth%in%as.character(input$Depth),
     
     data$ID <- rownames(data)
     
@@ -185,8 +186,9 @@ server <- function(input, output,session) {
      #                      depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
     data<- data %>% filter(project%in%as.character(input$Project),station%in%as.character(input$Station),landuse%in%as.character(input$Landuse),
-                          date_obs%in%as.character(input$Date),depth%in%as.character(input$Depth),sensorType%in%as.character(input$SensorType),
+                          date_obs%in%as.character(input$Date),sensorType%in%as.character(input$SensorType),
                           sensorName%in%as.character(input$SensorName),soilType%in%as.character(input$SoilType)) 
+      #depth%in%as.character(input$Depth),
     
     # Plot the kept and excluded points as two separate data sets
     keep    <- data[ vals$keeprows, , drop = FALSE]
