@@ -90,7 +90,7 @@ server <- function(input, output,session) {
     
     data<- data %>% filter(project%in%input$Project,station%in%input$Station,landuse%in%input$Landuse,
                           date_obs%in%input$Date,depth%in%input$Depth,sensorType%in%input$SensorType,
-                          sensorName%in%,input$SensorName,soilType%in%input$SoilType)  
+                          sensorName%in%input$SensorName,soilType%in%input$SoilType) 
       
       
     data$row.name <- rownames(data)
@@ -114,8 +114,8 @@ server <- function(input, output,session) {
       #                     depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
     data<- data %>% filter(project%in%input$Project,station%in%input$Station,landuse%in%input$Landuse,
-                           date_obs%in%input$Date,depth%in%input$Depth,sensorType%in%input$SensorType,
-                           sensorName%in%,input$SensorName,soilType%in%input$SoilType) 
+                          date_obs%in%input$Date,depth%in%input$Depth,sensorType%in%input$SensorType,
+                          sensorName%in%input$SensorName,soilType%in%input$SoilType) 
     
     data$ID <- rownames(data)
     
@@ -186,7 +186,7 @@ server <- function(input, output,session) {
     
     data<- data %>% filter(project%in%input$Project,station%in%input$Station,landuse%in%input$Landuse,
                           date_obs%in%input$Date,depth%in%input$Depth,sensorType%in%input$SensorType,
-                          sensorName%in%,input$SensorName,soilType%in%input$SoilType) 
+                          sensorName%in%input$SensorName,soilType%in%input$SoilType) 
     
     # Plot the kept and excluded points as two separate data sets
     keep    <- data[ vals$keeprows, , drop = FALSE]
