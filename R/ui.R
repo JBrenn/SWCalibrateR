@@ -5,15 +5,15 @@ ui <- fluidPage(
     # Sidebar with a slider input
     sidebarPanel(width=2,
                  
-      selectInput("Project", label = h4("project"),  "placeholder1"),            
+      selectInput("Project", label = h4("project"),  "placeholder1",multiple=T),            
       #selectInput("Project", label = h4("project"), 
        #           choices = list("ALL","matsch","monalisa")),
       
-      selectInput("Landuse", label = h4("land use"),  "placeholder2"),               
+      selectInput("Landuse", label = h4("land use"),  "placeholder2",multiple=T),               
       #selectInput("Landuse", label = h4("land use"), 
        #           choices = list("ALL","appleorchards","meadow","pasture","forest","grassland")),
       
-      selectInput("Depth", label = h4("soil depth"), 
+      selectInput("Depth", label = h4("soil depth",multiple=T), 
                   choices = list("ALL","5","20","40")),
       
       #selectInput("Station", label = h4("station"), 
@@ -22,9 +22,9 @@ ui <- fluidPage(
          #                        "M7","nals","nemef1500","nemes1500","neumarkt","P1","P2","P3","S2","S4",
           #                       "S5","stpauls","terlanalt","terlanneu","tramin13","unterrain","vimef2000","vimes2000","XS1")),
       
-      selectInput("Station", label = h4("station"),  "placeholder4"),           
+      selectInput("Station", label = h4("station"),  "placeholder4",multiple=T),           
                  
-      selectInput("Date", label = h4("date"),  "placeholder5"),
+      selectInput("Date", label = h4("date"),  "placeholder5",multiple=T),
       #selectInput("Date", label = h4("date"), 
        #           choices = list("ALL","2013","2014","2015")),
       
@@ -32,11 +32,11 @@ ui <- fluidPage(
       #selectInput("SoilType", label = h4("soil type"), 
        #           choices = list("ALL","sandy","loamy","clay")),           
       
-      selectInput("SensorType", label = h4("sensor type"),  "placeholder7"),           
+      selectInput("SensorType", label = h4("sensor type"),  "placeholder7",multiple=T),           
       #selectInput("SensorType", label = h4("sensor type"), 
        #           choices = list("ALL","CS655","Decagon10HS","OnsetSMB005")),
       
-      selectInput("SensorName", label = h4("sensor name"),  "placeholder8"),            
+      selectInput("SensorName", label = h4("sensor name"),  "placeholder8",multiple=T),            
       #selectInput("SensorName", label = h4("sensor name"), selected = "SensorMean",
        #           choices = list("ALL","SensorMean","A","B","C","CI","LSp","LBL","CSt","T","L","LSt","CSn","TSt","LS","TSn")),
       
