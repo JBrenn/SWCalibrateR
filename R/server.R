@@ -40,7 +40,9 @@ server <- function(input, output,session) {
    # assign('data',temp,envir=.GlobalEnv)
  })
   
-  
+  observe({#data<-datafile
+  updateSelectInput(session, "Depth", choices = c(datafile()$depth %>% unique %>% as.numeric) ) 
+})
   
   observe({ #data<-datafile
   updateSelectInput(session, "Project", choices = c("ALL",datafile()$project %>% levels) ) 
