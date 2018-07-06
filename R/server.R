@@ -53,7 +53,7 @@ server <- function(input, output,session) {
 })
   
   observe({#data<-datafile
-  updateSelectInput(session, "Station", choices = c("ALL",datafile()$station %>% levels),selected=c("ALL") ) 
+  updateSelectInput(session, "Station", choices = c("ALL",datafile()$station %>% levels),selected=data_def$station %>% levels ) 
 })
   
   observe({#data<-datafile
