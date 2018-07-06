@@ -13,8 +13,8 @@ ui <- fluidPage(
       #selectInput("Landuse", label = h4("land use"), 
        #           choices = list("ALL","appleorchards","meadow","pasture","forest","grassland")),
       
-      selectInput("Depth", label = h4("soil depth",multiple=T), 
-                  choices = list("ALL","5","20","40")),
+      selectInput("Depth", label = h4("soil depth"),multiple=T#, 
+                  ),#choices = list("ALL","5","20","40")
       
       #selectInput("Station", label = h4("station"), 
        #           choices = list("ALL","B1","B2","B3","domef1500","domes1500","eppanberg","girlan","gries","I1","I3",
