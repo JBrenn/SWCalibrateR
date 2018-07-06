@@ -90,9 +90,14 @@ server <- function(input, output,session) {
     #data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
     #                       depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
-    data<- data %>% filter(project%in%as.character(input$Project),station%in%as.character(input$Station),landuse%in%as.character(input$Landuse),
-                          date_obs%in%as.character(input$Date),sensorType%in%as.character(input$SensorType),
-                          sensorName%in%as.character(input$SensorName),soilType%in%as.character(input$SoilType)) 
+    data<- data %>% filter(project%in%c(NA,as.character(input$Project)),
+                           station%in%c(NA,as.character(input$Station)),
+                           landuse%in%c(NA,as.character(input$Landuse)),
+                           date_obs%in%c(NA,as.character(input$Date)),
+                           sensorType%in%c(NA,as.character(input$SensorType)),
+                           sensorName%in%c(NA,as.character(input$SensorName)),
+                           soilType%in%c(NA,as.character(input$SoilType)),
+                           depth%in%c(NA,as.numeric(input$Depth)))
       #depth%in%as.character(input$Depth),
       
     data$row.name <- rownames(data)
@@ -115,9 +120,14 @@ server <- function(input, output,session) {
     #data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
       #                     depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
-    data<- data %>% filter(project%in%as.character(input$Project),station%in%as.character(input$Station),landuse%in%as.character(input$Landuse),
-                          date_obs%in%as.character(input$Date),sensorType%in%as.character(input$SensorType),
-                          sensorName%in%as.character(input$SensorName),soilType%in%as.character(input$SoilType)) 
+    data<- data %>% filter(project%in%c(NA,as.character(input$Project)),
+                           station%in%c(NA,as.character(input$Station)),
+                           landuse%in%c(NA,as.character(input$Landuse)),
+                           date_obs%in%c(NA,as.character(input$Date)),
+                           sensorType%in%c(NA,as.character(input$SensorType)),
+                           sensorName%in%c(NA,as.character(input$SensorName)),
+                           soilType%in%c(NA,as.character(input$SoilType)),
+                           depth%in%c(NA,as.numeric(input$Depth)))
       #depth%in%as.character(input$Depth),
     
     data$ID <- rownames(data)
@@ -187,9 +197,14 @@ server <- function(input, output,session) {
     #data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
      #                      depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
-    data<- data %>% filter(project%in%as.character(input$Project),station%in%as.character(input$Station),landuse%in%as.character(input$Landuse),
-                          date_obs%in%as.character(input$Date),sensorType%in%as.character(input$SensorType),
-                          sensorName%in%as.character(input$SensorName),soilType%in%as.character(input$SoilType)) 
+    data<- data %>% filter(project%in%c(NA,as.character(input$Project)),
+                           station%in%c(NA,as.character(input$Station)),
+                           landuse%in%c(NA,as.character(input$Landuse)),
+                           date_obs%in%c(NA,as.character(input$Date)),
+                           sensorType%in%c(NA,as.character(input$SensorType)),
+                           sensorName%in%c(NA,as.character(input$SensorName)),
+                           soilType%in%c(NA,as.character(input$SoilType)),
+                           depth%in%c(NA,as.numeric(input$Depth)))
       #depth%in%as.character(input$Depth),
     
     # Plot the kept and excluded points as two separate data sets
