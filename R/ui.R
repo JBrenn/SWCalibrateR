@@ -20,7 +20,8 @@ ui <- fluidPage(
 #data_def$soilType %>% levels
         
                  
-      selectInput("Project", label = h4("project"),  "placeholder1",multiple=T,selected=data_def$project %>% levels),  #"Project"          
+      selectInput("Project", label = h4("project"),  "placeholder1",multiple=T,
+                  selected=list(data_def$project %>% levels)),  #"Project"          
       #selectInput("Project", label = h4("project"), 
        #           choices = list("ALL","matsch","monalisa")),
       
