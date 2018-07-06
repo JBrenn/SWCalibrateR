@@ -41,7 +41,7 @@ server <- function(input, output,session) {
  })
   
   observe({#data<-datafile
-  updateSelectInput(session, "Depth", choices = c("ALL",datafile()$depth %>% unique %>% as.numeric),selected=c("ALL") ) 
+  updateSelectInput(session, "Depth", choices = c("ALL",datafile()$depth %>% unique %>% as.numeric),selected=data_def$depth %>% unique %>% as.numeric ) 
 })
   
   observe({ #data<-datafile
@@ -49,7 +49,7 @@ server <- function(input, output,session) {
 })
   
   observe({#data<-datafile
-  updateSelectInput(session, "Landuse", choices = c("ALL",datafile()$landuse %>% levels),selected=c("ALL") ) 
+  updateSelectInput(session, "Landuse", choices = c("ALL",datafile()$landuse %>% levels),selected=data_def$landuse %>% levels ) 
 })
   
   observe({#data<-datafile
@@ -57,18 +57,18 @@ server <- function(input, output,session) {
 })
   
   observe({#data<-datafile
-  updateSelectInput(session, "Date", choices = c("ALL",datafile()$date_obs %>% levels),selected=c("ALL") ) 
+  updateSelectInput(session, "Date", choices = c("ALL",datafile()$date_obs %>% levels),selected=data_def$date_obs %>% levels) 
 })
   
   observe({#data<-datafile
-  updateSelectInput(session, "SensorType", choices = c("ALL",datafile()$sensorType %>% levels),selected=c("ALL") ) 
+  updateSelectInput(session, "SensorType", choices = c("ALL",datafile()$sensorType %>% levels),selected=data_def$sensorType %>% levels ) 
 })
   
   observe({#data<-datafile
-  updateSelectInput(session, "SensorName", choices = c("ALL",datafile()$sensorName %>% levels),selected=c("ALL") ) 
+  updateSelectInput(session, "SensorName", choices = c("ALL",datafile()$sensorName %>% levels),selected=data_def$sensorName %>% levels ) 
 })
   observe({#data<-datafile
-  updateSelectInput(session, "SoilType", choices = c("ALL",datafile()$soilType %>% levels),selected=c("ALL") ) 
+  updateSelectInput(session, "SoilType", choices = c("ALL",datafile()$soilType %>% levels),selected=data_def$soilType %>% levels) 
 })
   
   # For storing which rows have been excluded
