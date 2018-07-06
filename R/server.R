@@ -78,7 +78,7 @@ server <- function(input, output,session) {
   
   output$table <- renderDataTable({
     data<-datafile()
-    #if (input$Project=="ALL")  project <- NA else project <- input$Project
+    if (length(input$Project)==1 & input$Project=="ALL")  project <- NA else project <- input$Project
     #if (input$Landuse=="ALL")  landuse <- NA else landuse <- input$Landuse
     #if (input$Station=="ALL")  station <- NA else station <- input$Station
     #if (input$Date=="ALL")  date <- NA else date <- input$Date
