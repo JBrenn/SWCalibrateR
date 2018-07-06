@@ -88,9 +88,9 @@ server <- function(input, output,session) {
     #data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
     #                       depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
-    data<- data %>% filter(project%in%input$Project,station%in%input$Station,landuse%in%input$Landuse,
-                          date_obs%in%input$Date,depth%in%input$Depth,sensorType%in%input$SensorType,
-                          sensorName%in%input$SensorName,soilType%in%input$SoilType) 
+    data<- data %>% filter(project%in%as.character(input$Project),station%in%as.character(input$Station),landuse%in%as.character(input$Landuse),
+                          date_obs%in%as.character(input$Date),depth%in%as.character(input$Depth),sensorType%in%as.character(input$SensorType),
+                          sensorName%in%as.character(input$SensorName),soilType%in%as.character(input$SoilType)) 
       
       
     data$row.name <- rownames(data)
@@ -113,9 +113,9 @@ server <- function(input, output,session) {
     #data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
       #                     depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
-    data<- data %>% filter(project%in%input$Project,station%in%input$Station,landuse%in%input$Landuse,
-                          date_obs%in%input$Date,depth%in%input$Depth,sensorType%in%input$SensorType,
-                          sensorName%in%input$SensorName,soilType%in%input$SoilType) 
+    data<- data %>% filter(project%in%as.character(input$Project),station%in%as.character(input$Station),landuse%in%as.character(input$Landuse),
+                          date_obs%in%as.character(input$Date),depth%in%as.character(input$Depth),sensorType%in%as.character(input$SensorType),
+                          sensorName%in%as.character(input$SensorName),soilType%in%as.character(input$SoilType)) 
     
     data$ID <- rownames(data)
     
@@ -184,9 +184,9 @@ server <- function(input, output,session) {
     #data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
      #                      depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
-    data<- data %>% filter(project%in%input$Project,station%in%input$Station,landuse%in%input$Landuse,
-                          date_obs%in%input$Date,depth%in%input$Depth,sensorType%in%input$SensorType,
-                          sensorName%in%input$SensorName,soilType%in%input$SoilType) 
+    data<- data %>% filter(project%in%as.character(input$Project),station%in%as.character(input$Station),landuse%in%as.character(input$Landuse),
+                          date_obs%in%as.character(input$Date),depth%in%as.character(input$Depth),sensorType%in%as.character(input$SensorType),
+                          sensorName%in%as.character(input$SensorName),soilType%in%as.character(input$SoilType)) 
     
     # Plot the kept and excluded points as two separate data sets
     keep    <- data[ vals$keeprows, , drop = FALSE]
