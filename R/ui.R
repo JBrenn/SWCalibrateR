@@ -1,11 +1,26 @@
+data_def<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
+
 ui <- fluidPage(
   
   sidebarLayout(fluid = T, position = "left",
     
     # Sidebar with a slider input
     sidebarPanel(width=2,
+          
                  
-      selectInput("Project", label = h4("project"),  "placeholder1",multiple=T),  #,selected="Project"          
+         
+
+#data_def$depth %>% unique %>% as.numeric  
+#data_def$project %>% levels
+#data_def$landuse %>% levels
+#data_def$station %>% levels
+#data_def$date_obs %>% levels
+#data_def$sensorType %>% levels 
+#data_def$sensorName %>% levels 
+#data_def$soilType %>% levels
+        
+                 
+      selectInput("Project", label = h4("project"),  "placeholder1",multiple=T,selected=data_def$project %>% levels),  #"Project"          
       #selectInput("Project", label = h4("project"), 
        #           choices = list("ALL","matsch","monalisa")),
       
@@ -13,7 +28,7 @@ ui <- fluidPage(
       #selectInput("Landuse", label = h4("land use"), 
        #           choices = list("ALL","appleorchards","meadow","pasture","forest","grassland")),
       
-      selectInput("Depth", label = h4("soil depth"),"placeholder3",multiple=T#, 
+      selectInput("Depth", label = h4("soil depth"),"placeholder3",multiple=T, data_def$depth %>% unique %>% as.numeric
                   ),#choices = list("ALL","5","20","40")
       
       #selectInput("Station", label = h4("station"), 
