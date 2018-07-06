@@ -5,7 +5,7 @@ ui <- fluidPage(
     # Sidebar with a slider input
     sidebarPanel(width=2,
                  
-      selectInput("Project", label = h4("project"),  "placeholder1",multiple=T),            
+      selectInput("Project", label = h4("project"),  "placeholder1",multiple=T,selected="Project"),            
       #selectInput("Project", label = h4("project"), 
        #           choices = list("ALL","matsch","monalisa")),
       
