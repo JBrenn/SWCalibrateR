@@ -21,7 +21,7 @@ ui <- fluidPage(
         
                  
       selectInput(inputId = "Project", label = h4("project"),choices =  "placeholder1",  
-            selected=list(data_def$project %>% levels %>% as.character),multiple=T),  
+            selected=list("ALL),multiple=T),  
       #selectInput("Project", label = h4("project"), 
        #           choices = list("ALL","matsch","monalisa")),
       
