@@ -92,14 +92,14 @@ server <- function(input, output,session) {
     #data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
     #                       depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
-    data<- datafile() %>% filter(project%in%c(sproject),
-                           station%in%c(sstation),
-                           landuse%in%c(slanduse),
-                           date_obs%in%c(sdate),
-                           sensorType%in%c(ssensorType),
-                           sensorName%in%c(ssensorName),
-                           soilType%in%c(ssoilType),
-                           depth%in%c(sdepth))
+    data<- datafile() %>% filter(project%in%sproject,
+                           station%in%sstation,
+                           landuse%in%slanduse,
+                           date_obs%in%sdate,
+                           sensorType%in%ssensorType,
+                           sensorName%in%ssensorName,
+                           soilType%in%ssoilType,
+                           depth%in%sdepth)
     return(data)
 })
   
