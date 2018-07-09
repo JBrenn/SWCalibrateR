@@ -220,10 +220,13 @@ server <- function(input, output,session) {
   })
   
   
-  if(any(names(data())%in%c("lat","lon"))){
+  
   
     output$map<- renderLeaflet({
  stations<-data()
+      if(any(names(stations)%in%c("lat","lon"))){
+      
+      
     c1 <- awesomeIcons(icon = "ios-close", iconColor = "black", 
                    library = "ion", markerColor = "blue")
 
@@ -249,6 +252,7 @@ m <- leaflet() %>%addSearchOSM()%>%
   addLayersControl(baseGroups = c("OSM","SAT"),
                    options = layersControlOptions(collapsed = FALSE),position = "topleft")
 m
+    }
  })
-  }
+ 
 }
