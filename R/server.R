@@ -102,7 +102,7 @@ server <- function(input, output,session) {
       
     data$row.name <- rownames(data)
     
-    #data[!is.na(data[,1]),]
+    data[!is.na(data[,1]),]
     
     }, list(pageLength = 20, lengthMenu = c(20, 30, 50, 100)) )
   
