@@ -1,13 +1,15 @@
 if (!require("ggplot2")) install.packages("ggplot2")
 if (!require("Cairo")) install.packages("Cairo")
 if (!require("robustbase")) install.packages("robustbase")
-if (!require("tidyverse")) install.packages("tidyverse")
+if (!require("dplyr")) install.packages("dplyr")
+if (!require("tidyr")) install.packages("tidyr")
+
 
 library(ggplot2)
 library(Cairo)
 library(robustbase)
-library(tidyverse)
-
+library(tidyr)
+library(dplyr)
 
 source("CAL_doreg.R")
 source("CAL_doreg_data.R")
