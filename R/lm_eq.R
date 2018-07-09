@@ -21,6 +21,6 @@ lm_eqn <- function(df, method){
     r2 = format(summary(m)$r.squared, digits = 3)))
   }
   
-  return(as.expression(eq)) # as.character() 
+  return(as.character(eq)) #  as.expression()
   
 }
