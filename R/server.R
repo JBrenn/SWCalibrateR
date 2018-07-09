@@ -79,26 +79,26 @@ server <- function(input, output,session) {
   
   output$table <- renderDataTable({
     #data<-datafile()
-    if (length(input$Project)==0){  project <- c(NA,datafile()$project %>% levels)} else {project <- input$Project}
-    if (length(input$Landuse)==0){  landuse <- c(NA,datafile()$landuse %>% levels)} else {landuse <- input$Landuse}
-    if (length(input$Station)==0){  station <- c(NA,datafile()$station %>% levels)} else {station <- input$Station}
-    if (length(input$Date)==0){  date <- c(NA,datafile()$date %>% levels)} else {date <- input$Date}
-    if (length(input$Depth)==0){  depth  <- c(NA,datafile()$depth %>% unique %>% as.numeric)} else {depth  <- input$Depth}
-    if (length(input$SensorType)==0){  sensorType   <- c(NA,datafile()$sensorType  %>% levels)} else {sensorType  <- input$SensorType}
-    if (length(input$SensorName)==0){  sensorName  <- c(NA,datafile()$sensorName  %>% levels)} else {sensorName  <- input$SensorName}
-    if (length(input$SoilType)==0){  soilType  <- c(NA,datafile()$soilType  %>% levels)} else {soilType  <- input$SoilType}
+    if (length(input$Project)==0){  sproject <- c(NA,datafile()$project %>% levels)} else {sproject <- input$Project}
+    if (length(input$Landuse)==0){  slanduse <- c(NA,datafile()$landuse %>% levels)} else {slanduse <- input$Landuse}
+    if (length(input$Station)==0){  sstation <- c(NA,datafile()$station %>% levels)} else {sstation <- input$Station}
+    if (length(input$Date)==0){  sdate <- c(NA,datafile()$date %>% levels)} else {sdate <- input$Date}
+    if (length(input$Depth)==0){  sdepth  <- c(NA,datafile()$depth %>% unique %>% as.numeric)} else {sdepth  <- input$Depth}
+    if (length(input$SensorType)==0){  ssensorType   <- c(NA,datafile()$sensorType  %>% levels)} else {ssensorType  <- input$SensorType}
+    if (length(input$SensorName)==0){  ssensorName  <- c(NA,datafile()$sensorName  %>% levels)} else {ssensorName  <- input$SensorName}
+    if (length(input$SoilType)==0){  ssoilType  <- c(NA,datafile()$soilType  %>% levels)} else {ssoilType  <- input$SoilType}
       
     #data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
     #                       depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
-    data<- datafile() %>% filter(project%in%c(project),
-                           station%in%c(station),
-                           landuse%in%c(landuse),
-                           date_obs%in%c(date),
-                           sensorType%in%c(sensorType),
-                           sensorName%in%c(sensorName),
-                           soilType%in%c(soilType),
-                           depth%in%c(depth))
+    data<- datafile() %>% filter(project%in%c(sproject),
+                           station%in%c(sstation),
+                           landuse%in%c(slanduse),
+                           date_obs%in%c(sdate),
+                           sensorType%in%c(ssensorType),
+                           sensorName%in%c(ssensorName),
+                           soilType%in%c(ssoilType),
+                           depth%in%c(sdepth))
       
     data$row.name <- rownames(data)
     
@@ -107,27 +107,27 @@ server <- function(input, output,session) {
     }, list(pageLength = 20, lengthMenu = c(20, 30, 50, 100)) )
   
   output$plot1 <- renderPlot({
-    #data<-datafile()
-    if (length(input$Project)==0){  project <- c(NA,datafile()$project %>% levels)} else {project <- input$Project}
-    if (length(input$Landuse)==0){  landuse <- c(NA,datafile()$landuse %>% levels)} else {landuse <- input$Landuse}
-    if (length(input$Station)==0){  station <- c(NA,datafile()$station %>% levels)} else {station <- input$Station}
-    if (length(input$Date)==0){  date <- c(NA,datafile()$date %>% levels)} else {date <- input$Date}
-    if (length(input$Depth)==0){  depth  <- c(NA,datafile()$depth %>% unique %>% as.numeric)} else {depth  <- input$Depth}
-    if (length(input$SensorType)==0){  sensorType   <- c(NA,datafile()$sensorType  %>% levels)} else {sensorType  <- input$SensorType}
-    if (length(input$SensorName)==0){  sensorName  <- c(NA,datafile()$sensorName  %>% levels)} else {sensorName  <- input$SensorName}
-    if (length(input$SoilType)==0){  soilType  <- c(NA,datafile()$soilType  %>% levels)} else {soilType  <- input$SoilType}
+      #data<-datafile()
+    if (length(input$Project)==0){  sproject <- c(NA,datafile()$project %>% levels)} else {sproject <- input$Project}
+    if (length(input$Landuse)==0){  slanduse <- c(NA,datafile()$landuse %>% levels)} else {slanduse <- input$Landuse}
+    if (length(input$Station)==0){  sstation <- c(NA,datafile()$station %>% levels)} else {sstation <- input$Station}
+    if (length(input$Date)==0){  sdate <- c(NA,datafile()$date %>% levels)} else {sdate <- input$Date}
+    if (length(input$Depth)==0){  sdepth  <- c(NA,datafile()$depth %>% unique %>% as.numeric)} else {sdepth  <- input$Depth}
+    if (length(input$SensorType)==0){  ssensorType   <- c(NA,datafile()$sensorType  %>% levels)} else {ssensorType  <- input$SensorType}
+    if (length(input$SensorName)==0){  ssensorName  <- c(NA,datafile()$sensorName  %>% levels)} else {ssensorName  <- input$SensorName}
+    if (length(input$SoilType)==0){  ssoilType  <- c(NA,datafile()$soilType  %>% levels)} else {ssoilType  <- input$SoilType}
       
     #data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
     #                       depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
-    data<- datafile() %>% filter(project%in%c(project),
-                           station%in%c(station),
-                           landuse%in%c(landuse),
-                           date_obs%in%c(date),
-                           sensorType%in%c(sensorType),
-                           sensorName%in%c(sensorName),
-                           soilType%in%c(soilType),
-                           depth%in%c(depth))
+    data<- datafile() %>% filter(project%in%c(sproject),
+                           station%in%c(sstation),
+                           landuse%in%c(slanduse),
+                           date_obs%in%c(sdate),
+                           sensorType%in%c(ssensorType),
+                           sensorName%in%c(ssensorName),
+                           soilType%in%c(ssoilType),
+                           depth%in%c(sdepth))
     
     data$ID <- rownames(data)
     
@@ -183,27 +183,27 @@ server <- function(input, output,session) {
   })
   
   output$plot2 <- renderPlot({
-    #data<-datafile()
-    if (length(input$Project)==0){  project <- c(NA,datafile()$project %>% levels)} else {project <- input$Project}
-    if (length(input$Landuse)==0){  landuse <- c(NA,datafile()$landuse %>% levels)} else {landuse <- input$Landuse}
-    if (length(input$Station)==0){  station <- c(NA,datafile()$station %>% levels)} else {station <- input$Station}
-    if (length(input$Date)==0){  date <- c(NA,datafile()$date %>% levels)} else {date <- input$Date}
-    if (length(input$Depth)==0){  depth  <- c(NA,datafile()$depth %>% unique %>% as.numeric)} else {depth  <- input$Depth}
-    if (length(input$SensorType)==0){  sensorType   <- c(NA,datafile()$sensorType  %>% levels)} else {sensorType  <- input$SensorType}
-    if (length(input$SensorName)==0){  sensorName  <- c(NA,datafile()$sensorName  %>% levels)} else {sensorName  <- input$SensorName}
-    if (length(input$SoilType)==0){  soilType  <- c(NA,datafile()$soilType  %>% levels)} else {soilType  <- input$SoilType}
+      #data<-datafile()
+    if (length(input$Project)==0){  sproject <- c(NA,datafile()$project %>% levels)} else {sproject <- input$Project}
+    if (length(input$Landuse)==0){  slanduse <- c(NA,datafile()$landuse %>% levels)} else {slanduse <- input$Landuse}
+    if (length(input$Station)==0){  sstation <- c(NA,datafile()$station %>% levels)} else {sstation <- input$Station}
+    if (length(input$Date)==0){  sdate <- c(NA,datafile()$date %>% levels)} else {sdate <- input$Date}
+    if (length(input$Depth)==0){  sdepth  <- c(NA,datafile()$depth %>% unique %>% as.numeric)} else {sdepth  <- input$Depth}
+    if (length(input$SensorType)==0){  ssensorType   <- c(NA,datafile()$sensorType  %>% levels)} else {ssensorType  <- input$SensorType}
+    if (length(input$SensorName)==0){  ssensorName  <- c(NA,datafile()$sensorName  %>% levels)} else {ssensorName  <- input$SensorName}
+    if (length(input$SoilType)==0){  ssoilType  <- c(NA,datafile()$soilType  %>% levels)} else {ssoilType  <- input$SoilType}
       
     #data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
     #                       depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
-    data<- datafile() %>% filter(project%in%c(project),
-                           station%in%c(station),
-                           landuse%in%c(landuse),
-                           date_obs%in%c(date),
-                           sensorType%in%c(sensorType),
-                           sensorName%in%c(sensorName),
-                           soilType%in%c(soilType),
-                           depth%in%c(depth))
+    data<- datafile() %>% filter(project%in%c(sproject),
+                           station%in%c(sstation),
+                           landuse%in%c(slanduse),
+                           date_obs%in%c(sdate),
+                           sensorType%in%c(ssensorType),
+                           sensorName%in%c(ssensorName),
+                           soilType%in%c(ssoilType),
+                           depth%in%c(sdepth))
     
     # Plot the kept and excluded points as two separate data sets
     keep    <- data[ vals$keeprows, , drop = FALSE]
