@@ -220,9 +220,10 @@ server <- function(input, output,session) {
   })
   
   
-  if(any(names(stations)%in%c("lat","lon"))){
-  output$map<- renderLeaflet({
- 
+  if(any(names(data())%in%c("lat","lon"))){
+  
+    output$map<- renderLeaflet({
+ stations<-data()
     c1 <- awesomeIcons(icon = "ios-close", iconColor = "black", 
                    library = "ion", markerColor = "blue")
 
