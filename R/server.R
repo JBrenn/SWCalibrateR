@@ -77,9 +77,10 @@ server <- function(input, output,session) {
     keeprows = rep(TRUE, nrow(data_def))#NULL
   )
   
-  output$table <- renderDataTable({
-    #data<-datafile()
-   if (length(input$Project)==0){  sproject <- c(NA,datafile()$project %>% levels)} else {sproject <- input$Project}
+  
+  data <- reactive({
+    
+    if (length(input$Project)==0){  sproject <- c(NA,datafile()$project %>% levels)} else {sproject <- input$Project}
     if (length(input$Landuse)==0){  slanduse <- c(NA,datafile()$landuse %>% levels)} else {slanduse <- input$Landuse}
     if (length(input$Station)==0){  sstation <- c(NA,datafile()$station %>% levels)} else {sstation <- input$Station}
     if (length(input$Date)==0){  sdate <- c(NA,datafile()$date %>% levels)} else {sdate <- input$Date}
@@ -99,6 +100,13 @@ server <- function(input, output,session) {
                            sensorName%in%c(ssensorName),
                            soilType%in%c(ssoilType),
                            depth%in%c(sdepth))
+    return(data)
+})
+  
+  
+  output$table <- renderDataTable({
+    data<-data()
+   
       
     data$row.name <- rownames(data)
     
