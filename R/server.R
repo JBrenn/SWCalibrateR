@@ -219,4 +219,35 @@ server <- function(input, output,session) {
     vals$keeprows <- rep(TRUE, nrow(data))
   })
   
+  
+  if(any(names(stations)%in%c("lat","lon"))){
+  output$map<- renderLeaflet({
+ 
+    c1 <- awesomeIcons(icon = "ios-close", iconColor = "black", 
+                   library = "ion", markerColor = "blue")
+
+m <- leaflet() %>%addSearchOSM()%>%
+  #htmlwidgets::onRender(".leaflet-control {
+  #                     float: left;
+  #                    clear: both;}")%>% 
+  #addTiles()%>% 
+  addProviderTiles("OpenStreetMap.Mapnik", group = "OSM")%>% 
+  addProviderTiles("Esri.WorldImagery", group = "SAT") %>%
+  addAwesomeMarkers(lng = stations$lon %>% as.character %>% as.numeric, 
+                    lat = stations$lat %>% as.character %>% as.numeric, 
+                    icon = c1, popup = paste("Name:", stations$station,
+                                             "<br>","Landuse:", 
+                                             stations$landuse, 
+                                             "<br>", "Project:",
+                                             stations$project,
+                                             "<br>", "Altitude:",
+                                             stations$alt))%>%
+
+
+  addMeasure(position = "topleft",primaryLengthUnit = "meters")%>%
+  addLayersControl(baseGroups = c("OSM","SAT"),
+                   options = layersControlOptions(collapsed = FALSE),position = "topleft")
+m
+ })
+  }
 }
