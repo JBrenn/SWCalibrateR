@@ -78,7 +78,7 @@ server <- function(input, output,session) {
   )
   
   output$table <- renderDataTable({
-    data<-datafile()
+    #data<-datafile()
     if (length(input$Project)==0){  project <- datafile()$project %>% levels} else {project <- input$Project}
     if (length(input$Landuse)==0){  landuse <- datafile()$landuse %>% levels} else {landuse <- input$Landuse}
     if (length(input$Station)==0){  station <- datafile()$station %>% levels} else {station <- input$Station}
@@ -91,14 +91,14 @@ server <- function(input, output,session) {
     #data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
     #                       depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
-    data<- data %>% filter(project%in%project,
-                           station%in%station,
-                           landuse%in%landuse,
-                           date_obs%in%date,
-                           sensorType%in%sensorType,
-                           sensorName%in%sensorName,
-                           soilType%in%soilType,
-                           depth%in%depth)
+    data<- datafile() %>% filter(project%in%c(project),
+                           station%in%c(station),
+                           landuse%in%c(landuse),
+                           date_obs%in%c(date),
+                           sensorType%in%c(sensorType),
+                           sensorName%in%c(sensorName),
+                           soilType%in%c(soilType),
+                           depth%in%c(depth))
       
     data$row.name <- rownames(data)
     
@@ -107,7 +107,7 @@ server <- function(input, output,session) {
     }, list(pageLength = 20, lengthMenu = c(20, 30, 50, 100)) )
   
   output$plot1 <- renderPlot({
-    data<-datafile()
+    #data<-datafile()
     if (length(input$Project)==0){  project <- datafile()$project %>% levels} else {project <- input$Project}
     if (length(input$Landuse)==0){  landuse <- datafile()$landuse %>% levels} else {landuse <- input$Landuse}
     if (length(input$Station)==0){  station <- datafile()$station %>% levels} else {station <- input$Station}
@@ -120,14 +120,14 @@ server <- function(input, output,session) {
     #data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
     #                       depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
-    data<- data %>% filter(project%in%project,
-                           station%in%station,
-                           landuse%in%landuse,
-                           date_obs%in%date,
-                           sensorType%in%sensorType,
-                           sensorName%in%sensorName,
-                           soilType%in%soilType,
-                           depth%in%depth)
+    data<- datafile() %>% filter(project%in%c(project),
+                           station%in%c(station),
+                           landuse%in%c(landuse),
+                           date_obs%in%c(date),
+                           sensorType%in%c(sensorType),
+                           sensorName%in%c(sensorName),
+                           soilType%in%c(soilType),
+                           depth%in%c(depth))
     
     data$ID <- rownames(data)
     
@@ -183,8 +183,8 @@ server <- function(input, output,session) {
   })
   
   output$plot2 <- renderPlot({
-    data<-datafile()
-   if (length(input$Project)==0){  project <- datafile()$project %>% levels} else {project <- input$Project}
+    #data<-datafile()
+    if (length(input$Project)==0){  project <- datafile()$project %>% levels} else {project <- input$Project}
     if (length(input$Landuse)==0){  landuse <- datafile()$landuse %>% levels} else {landuse <- input$Landuse}
     if (length(input$Station)==0){  station <- datafile()$station %>% levels} else {station <- input$Station}
     if (length(input$Date)==0){  date <- datafile()$date %>% levels} else {date <- input$Date}
@@ -196,14 +196,14 @@ server <- function(input, output,session) {
     #data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
     #                       depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
     
-    data<- data %>% filter(project%in%project,
-                           station%in%station,
-                           landuse%in%landuse,
-                           date_obs%in%date,
-                           sensorType%in%sensorType,
-                           sensorName%in%sensorName,
-                           soilType%in%soilType,
-                           depth%in%depth)
+    data<- datafile() %>% filter(project%in%c(project),
+                           station%in%c(station),
+                           landuse%in%c(landuse),
+                           date_obs%in%c(date),
+                           sensorType%in%c(sensorType),
+                           sensorName%in%c(sensorName),
+                           soilType%in%c(soilType),
+                           depth%in%c(depth))
     
     # Plot the kept and excluded points as two separate data sets
     keep    <- data[ vals$keeprows, , drop = FALSE]
