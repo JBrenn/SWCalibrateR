@@ -81,26 +81,33 @@ ui <- fluidPage(
                 mainPanel(
                   tabsetPanel(
                     tabPanel("Model Fit",
-                             
-                             fluidRow(
-                               column(width = 6,
-                             plotOutput("plot1", height = 800, width = 800,
-                                        click = "plot1_click",
-                                        brush = brushOpts(
-                                          id = "plot1_brush"
-                                        ))
-                             ),
-                             column(width = 4,
-                             leafletOutput("map")
-                             ),
-                             column(width = 4,
-                             actionButton("exclude_toggle", "Toggle points")),
-                             column(width = 4,
-                             actionButton("exclude_reset", "Reset")))
-                             
-                             
-                             ),
-                    
+         
+         #fluidRow(
+         #column(width = 6,
+                plotOutput("plot1", height = 800, width = 800,
+                           click = "plot1_click",
+                           brush = brushOpts(
+                             id = "plot1_brush"
+                           ))
+                # )
+                #   ,
+                #column(width = 4,
+                # leafletOutput("map")
+                # )
+                ,
+                # column(width = 4,
+                actionButton("exclude_toggle", "Toggle points")
+                #      )
+                ,
+                #column(width = 4,
+                actionButton("exclude_reset", "Reset")
+         #)
+#)
+
+
+),
+                    tabPanel("Map Table", 
+                             leafletOutput("map")),
                     
                     tabPanel("Diagnostics", plotOutput("plot2", height = 1000, width = 1000,
                                                        click = "plot2_click",
