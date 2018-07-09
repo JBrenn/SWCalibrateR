@@ -90,12 +90,13 @@ ui <- fluidPage(
                                           id = "plot1_brush"
                                         ))
                              ),
-                             column(width = 6,
+                             column(width = 4,
                              leafletOutput("map")
                              ),
-                             
-                             actionButton("exclude_toggle", "Toggle points"),
-                             actionButton("exclude_reset", "Reset"))
+                             column(width = 4,
+                             actionButton("exclude_toggle", "Toggle points")),
+                             column(width = 4,
+                             actionButton("exclude_reset", "Reset")))
                              
                              
                              ),
