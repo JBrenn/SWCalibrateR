@@ -85,6 +85,7 @@ ui <- fluidPage(
                                    brush = brushOpts(
                                      id = "plot1_brush"
                                    )),
+      leafletOutput("map"),
       actionButton("exclude_toggle", "Toggle points"),
       actionButton("exclude_reset", "Reset")),
 
