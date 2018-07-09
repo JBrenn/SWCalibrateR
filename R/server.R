@@ -100,7 +100,7 @@ server <- function(input, output,session) {
                            sensorName%in%ssensorName,
                            soilType%in%ssoilType,
                            depth%in%sdepth)
-    return(data)
+    return(as.data.frame(data))
 })
   
   
