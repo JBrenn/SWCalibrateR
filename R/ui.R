@@ -1,3 +1,8 @@
+if (!require("ggplot2")) install.packages("ggplot2")
+if (!require("Cairo")) install.packages("Cairo")
+if (!require("robustbase")) install.packages("robustbase")
+if (!require("tidyverse")) install.packages("tidyverse")
+
 data_def<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
 
 ui <- fluidPage(
@@ -25,12 +30,11 @@ ui <- fluidPage(
       #selectInput("Project", label = h4("project"), 
        #           choices = list("ALL","matsch","monalisa")),
       
-      selectInput("Landuse", label = h4("land use"),  "placeholder2",multiple=T,selected= data_def$landuse %>% levels),               
+      selectInput("Landuse", label = h4("land use"),  "placeholder2",multiple=T),               
       #selectInput("Landuse", label = h4("land use"), 
        #           choices = list("ALL","appleorchards","meadow","pasture","forest","grassland")),
       
-      selectInput("Depth", label = h4("soil depth"),"placeholder3",multiple=T, data_def$depth %>% unique %>% as.numeric
-                  ),#choices = list("ALL","5","20","40")
+      selectInput("Depth", label = h4("soil depth"),"placeholder3",multiple=T),#choices = list("ALL","5","20","40")
       
       #selectInput("Station", label = h4("station"), 
        #           choices = list("ALL","B1","B2","B3","domef1500","domes1500","eppanberg","girlan","gries","I1","I3",
