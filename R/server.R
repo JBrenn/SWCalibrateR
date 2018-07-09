@@ -1,6 +1,7 @@
 if (!require("ggplot2")) install.packages("ggplot2")
 if (!require("Cairo")) install.packages("Cairo")
 if (!require("robustbase")) install.packages("robustbase")
+if (!require("tidyverse")) install.packages("tidyverse")
 
 library(ggplot2)
 library(Cairo)
