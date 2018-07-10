@@ -1,10 +1,13 @@
 
 
+
 if (!require("Cairo")) install.packages("Cairo")
 if (!require("robustbase")) install.packages("robustbase")
 if (!require("dplyr")) install.packages("dplyr")
 if (!require("tidyr")) install.packages("tidyr")
 if (!require("ggplot2")) install.packages("ggplot2")
+if (!require("leaflet")) install.packages("leaflet")
+if (!require("leaflet.extras")) install.packages("leaflet.extras")
 
 data_def<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
 
