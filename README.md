@@ -15,7 +15,7 @@ First install the package with:
 ```R
 install.packages("devtools")
 library(devtools)
-install_github("GiulioGenova/SMCcalibration")
+install_github("JBrenn/SMCcalibration")
 ```
 
 and then import the library with:
@@ -29,15 +29,15 @@ library(SMCcalibration)
 For running the calibration shiny app:
 
 ```R
-library(shiny)
+if (!require("shiny")) install.packages("shiny")
 
 data("SensorVSample")
 data <- unique(data[,-8])
 
-shinyApp(ui, server)
+shiny::shinyApp(ui, server)
 ```
 
-An online version of the app is here:
+The online version of the app can be used as an working example:
 https://euracalpenv.shinyapps.io/SWC_Calibration/
 
 The same version runs with the following code:
@@ -46,6 +46,10 @@ if (!require("shiny")) install.packages("shiny")
 
 shiny::runGitHub('GiulioGenova/SMCcalibration',subdir="R",launch.browser = TRUE)
 ```
+## Acknowledgement
+
 For this application I got inspired by the RStudio shiny gallery and used these [code snippets](http://shiny.rstudio.com/gallery/plot-interaction-exclude.html).
+
+R developer of the packages [shiny](https://shiny.rstudio.com), [ggplot2](https://ggplot2.tidyverse.org), [robustbase](https://cran.r-project.org/web/packages/robustbase/index.html), [Cairo](https://cran.r-project.org/web/packages/Cairo/index.html).
 
 
