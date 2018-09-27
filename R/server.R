@@ -1,23 +1,119 @@
-server <- function(input, output) {
+
+if (!require("Cairo")) install.packages("Cairo")
+if (!require("robustbase")) install.packages("robustbase")
+if (!require("dplyr")) install.packages("dplyr")
+if (!require("tidyr")) install.packages("tidyr")
+if (!require("ggplot2")) install.packages("ggplot2")
+if (!require("leaflet")) install.packages("leaflet")
+if (!require("leaflet.extras")) install.packages("leaflet.extras")
+
+library(ggplot2)
+library(Cairo)
+library(robustbase)
+library(tidyr)
+library(dplyr)
+library(leaflet)
+library(leaflet.extras)
+
+source("CAL_doreg.R")
+source("CAL_doreg_data.R")
+source("CAL_updateRData.R")
+source("CAL_updatedb.R")
+source("dB_getSWC.R")
+source("dB_readStationData.R")
+source("fitSMDM.R")
+source("lm_eq.R")
+#load("SensorVSample.RData")
+data_def<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
+
+server <- function(input, output,session) {
+  
+  #filedata <- reactiveValues()
+  
+  datafile <- reactive({
+    
+    infile <- input$datafile
+    
+    if (is.null(infile)){
+       #User has not uploaded a file yet. Use NULL to prevent observeEvent from triggering
+    temp<-read.csv(file.path(getwd(),"SensorVSample_new.csv"),sep=",",dec=".")
+    return(temp)
+    
+    }else{
+    temp <- read.csv(infile$datapath,sep=",",dec=".")
+    return(temp)
+    }
+    
+   # assign('data',temp,envir=.GlobalEnv)
+ })
+  
+  observe({#data<-datafile
+  updateSelectInput(session, "Depth", choices = datafile()$depth %>% unique %>% as.numeric ) 
+})
+  
+  observe({ #data<-datafile
+  updateSelectInput(session, "Project", choices = datafile()$project %>% levels) 
+})
+  
+  observe({#data<-datafile
+  updateSelectInput(session, "Landuse", choices = datafile()$landuse %>% levels) 
+})
+  
+  observe({#data<-datafile
+  updateSelectInput(session, "Station", choices = datafile()$station %>% levels) 
+})
+  
+  observe({#data<-datafile
+  updateSelectInput(session, "Date", choices = datafile()$date_obs %>% levels) 
+})
+  
+  observe({#data<-datafile
+  updateSelectInput(session, "SensorType", choices = datafile()$sensorType %>% levels) 
+})
+  
+  observe({#data<-datafile
+  updateSelectInput(session, "SensorName", choices = datafile()$sensorName %>% levels) 
+})
+  observe({#data<-datafile
+  updateSelectInput(session, "SoilType", choices = datafile()$soilType %>% levels) 
+})
   
   # For storing which rows have been excluded
-  vals <- reactiveValues(
-    keeprows = rep(TRUE, nrow(data))
+  vals <- reactiveValues(#data<-datafile()
+    keeprows = rep(TRUE, nrow(data_def))#NULL
   )
   
+  
+  data <- reactive({
+    
+    if (length(input$Project)==0){  sproject <- c(NA,datafile()$project %>% levels)} else {sproject <- input$Project}
+    if (length(input$Landuse)==0){  slanduse <- c(NA,datafile()$landuse %>% levels)} else {slanduse <- input$Landuse}
+    if (length(input$Station)==0){  sstation <- c(NA,datafile()$station %>% levels)} else {sstation <- input$Station}
+    if (length(input$Date)==0){  sdate <- c(NA,datafile()$date %>% levels)} else {sdate <- input$Date}
+    if (length(input$Depth)==0){  sdepth  <- c(NA,datafile()$depth %>% unique %>% as.numeric)} else {sdepth  <- input$Depth}
+    if (length(input$SensorType)==0){  ssensorType   <- c(NA,datafile()$sensorType  %>% levels)} else {ssensorType  <- input$SensorType}
+    if (length(input$SensorName)==0){  ssensorName  <- c(NA,datafile()$sensorName  %>% levels)} else {ssensorName  <- input$SensorName}
+    if (length(input$SoilType)==0){  ssoilType  <- c(NA,datafile()$soilType  %>% levels)} else {ssoilType  <- input$SoilType}
+    
+    #data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
+    #                       depth = depth, sensorType = SensorType, sensorName = SensorName, soilType=SoilType, preserveStr = T)
+    
+    data<- datafile() %>% filter(project%in%sproject,
+                           station%in%sstation,
+                           landuse%in%slanduse,
+                           date_obs%in%sdate,
+                           sensorType%in%ssensorType,
+                           sensorName%in%ssensorName,
+                           soilType%in%ssoilType,
+                           depth%in%sdepth)
+    return(as.data.frame(data))
+})
+  
+  
   output$table <- renderDataTable({
-    
-    if (input$Project=="ALL")  project <- NA else project <- input$Project
-    if (input$Landuse=="ALL")  landuse <- NA else landuse <- input$Landuse
-    if (input$Station=="ALL")  station <- NA else station <- input$Station
-    if (input$Date=="ALL")  date <- NA else date <- input$Date
-    if (input$Depth=="ALL")  depth <- NA else depth <- input$Depth
-    if (input$SensorType=="ALL")  SensorType <- NA else SensorType <- input$SensorType
-    if (input$SensorName=="ALL")  SensorName <- NA else SensorName <- input$SensorName
-    
-    data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
-                           depth = depth, sensorType = SensorType, sensorName = SensorName, preserveStr = T)
-    
+    data<-data()
+   
+      
     data$row.name <- rownames(data)
     
     data[!is.na(data[,1]),]
@@ -25,18 +121,8 @@ server <- function(input, output) {
     }, list(pageLength = 20, lengthMenu = c(20, 30, 50, 100)) )
   
   output$plot1 <- renderPlot({
+    data<-data()
     
-    if (input$Project=="ALL")  project <- NA else project <- input$Project
-    if (input$Landuse=="ALL")  landuse <- NA else landuse <- input$Landuse
-    if (input$Station=="ALL")  station <- NA else station <- input$Station
-    if (input$Date=="ALL")  date <- NA else date <- input$Date
-    if (input$Depth=="ALL")  depth <- NA else depth <- input$Depth
-    if (input$SensorType=="ALL")  SensorType <- NA else SensorType <- input$SensorType
-    if (input$SensorName=="ALL")  SensorName <- NA else SensorName <- input$SensorName
-    
-    data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
-                           depth = depth, sensorType = SensorType, sensorName = SensorName, preserveStr = T)
-  
     data$ID <- rownames(data)
     
     # Plot the kept and excluded points as two separate data sets
@@ -91,18 +177,8 @@ server <- function(input, output) {
   })
   
   output$plot2 <- renderPlot({
-    
-    if (input$Project=="ALL")  project <- NA else project <- input$Project
-    if (input$Landuse=="ALL")  landuse <- NA else landuse <- input$Landuse
-    if (input$Station=="ALL")  station <- NA else station <- input$Station
-    if (input$Date=="ALL")  date <- NA else date <- input$Date
-    if (input$Depth=="ALL")  depth <- NA else depth <- input$Depth
-    if (input$SensorType=="ALL")  SensorType <- NA else SensorType <- input$SensorType
-    if (input$SensorName=="ALL")  SensorName <- NA else SensorName <- input$SensorName
-    
-    data <- CAL_doreg_data(data = data, project = project, station = station, landuse = landuse, date_obs = date, 
-                           depth = depth, sensorType = SensorType, sensorName = SensorName, preserveStr = T)
-    
+    data<-data()
+
     # Plot the kept and excluded points as two separate data sets
     keep    <- data[ vals$keeprows, , drop = FALSE]
     exclude <- data[!vals$keeprows, , drop = FALSE]
@@ -122,6 +198,9 @@ server <- function(input, output) {
   
   # Toggle points that are clicked
   observeEvent(input$plot1_click, {
+  data<-data()
+    
+    
     res <- nearPoints(data, input$plot1_click, allRows = TRUE)
     
     vals$keeprows <- xor(vals$keeprows, res$selected_)
@@ -129,6 +208,8 @@ server <- function(input, output) {
   
   # Toggle points that are brushed, when button is clicked
   observeEvent(input$exclude_toggle, {
+  data<-data()
+    
     res <- brushedPoints(data, input$plot1_brush, allRows = TRUE)
     
     vals$keeprows <- xor(vals$keeprows, res$selected_)
@@ -136,7 +217,46 @@ server <- function(input, output) {
   
   # Reset all points
   observeEvent(input$exclude_reset, {
+  data<-data()
+    
+    
     vals$keeprows <- rep(TRUE, nrow(data))
   })
   
+  
+  
+  
+    output$map<- renderLeaflet({
+ stations<-data()
+      if(any(names(stations)%in%c("lat","lon"))){
+      
+      
+    c1 <- awesomeIcons(icon = "ios-close", iconColor = "black", 
+                   library = "ion", markerColor = "blue")
+
+m <- leaflet() %>%addSearchOSM()%>%
+  #htmlwidgets::onRender(".leaflet-control {
+  #                     float: left;
+  #                    clear: both;}")%>% 
+  #addTiles()%>% 
+  addProviderTiles("OpenStreetMap.Mapnik", group = "OSM")%>% 
+  addProviderTiles("Esri.WorldImagery", group = "SAT") %>%
+  addAwesomeMarkers(lng = stations$lon %>% as.character %>% as.numeric, 
+                    lat = stations$lat %>% as.character %>% as.numeric, 
+                    icon = c1, popup = paste("Name:", stations$station,
+                                             "<br>","Landuse:", 
+                                             stations$landuse, 
+                                             "<br>", "Project:",
+                                             stations$project,
+                                             "<br>", "Altitude:",
+                                             stations$alt))%>%
+
+
+  addMeasure(position = "topleft",primaryLengthUnit = "meters")%>%
+  addLayersControl(baseGroups = c("OSM","SAT"),
+                   options = layersControlOptions(collapsed = FALSE),position = "topleft")
+m
+    }
+ })
+ 
 }
