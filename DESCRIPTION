@@ -1,10 +1,14 @@
 Package: SMCcalibration
-Version: 1.0.1
+Version: 2.0.0.9999
 Date: 2015-09-07
-Title: Calibration of SMC sensors (South Tyrol)
+Title: Calibration tool for soil moisture sensors
 Author: Johannes Brenner <Johannes.Brenner@eurac.com>
 Maintainer: Johannes Brenner <Johannes.Brenner@eurac.com>
-Description: Calibrates SMC sensors vs. Soil Samples, includes interactive shiny app.
+Description: Calibrates soil moisture sensors using volumetric
+    water content (VWC) measured in-situ by soil moisture sensors and retrieved 
+    from soil samples. Includes interactive shiny app for data upload and 
+    subseting, estimation of linear models (OLS and robust MM-type estimator), 
+    visualisation of data and model estimate.
 Depends: R (>= 3.0.0)
 License: LGPL (>= 2)
 LazyData: No
@@ -13,6 +17,8 @@ Imports:
     shiny,
     ggplot2,
     Cairo, 
-    robustbase
+    robustbase,
+    leaflet,
+    leaflet.extras
 	
 

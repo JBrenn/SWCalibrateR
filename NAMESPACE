@@ -5,6 +5,8 @@ import(shiny)
 import(ggplot2)
 import(Cairo)
 import(robustbase)
+import(leaflet)
+import(leaflet.extras)
 
 # Export all names
 exportPattern(".")
