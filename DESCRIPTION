@@ -1,9 +1,11 @@
 Package: SMCcalibration
-Version: 2.1.1.9999
+Version: 1.0.0.9999
 Date: 2015-09-07
 Title: Calibration tool for soil moisture sensors
-Author: Johannes Brenner <Johannes.Brenner@eurac.com>
-Maintainer: Johannes Brenner <Johannes.Brenner@eurac.com>
+Authors@R: person("Johannes", "Brenner", email = "johannes.brennner@ufz.de",
+    role = c("aut", "cre"))
+Maintainer@R: person("Johannes", "Brenner", email = "johannes.brennner@ufz.de",
+    role = c("aut", "cre"))
 Description: Calibrates soil moisture sensors using volumetric
     water content (VWC) measured in-situ by soil moisture sensors and retrieved 
     from soil samples. Includes interactive shiny app for data upload and 
@@ -15,12 +17,16 @@ LazyData: No
 LazyLoad: No
 Encoding: UTF-8
 Imports:
-    shiny,
-    ggplot2,
-    Cairo, 
-    robustbase,
-    leaflet,
-    leaflet.extras, 
-    tidyr,
-    dplyr
+    Cairo (>= 1.5-9), 
+    dplyr (>= 0.7.6),
+    ggplot2 (>= 3.0.0),
+    leaflet (>=2.0.2),
+    leaflet.extras (>=1.0.0), 
+    robustbase (0.93-3),
+    shiny (>= 1.1.0),
+    tidyr (>=0.8.1)
+    
+
+    
+    
 RoxygenNote: 6.1.0
