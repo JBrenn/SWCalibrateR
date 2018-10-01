@@ -1,3 +1,24 @@
+#' @title server for shiny app
+#' @description server for soil moisture calibration shiny app
+#' @param input input data set
+#' @param output output list
+#' @param session session info
+#' @return
+#' @details
+#' @examples 
+#' runApp(ui, server)
+#' @seealso 
+#'  \code{\link[dplyr]{filter}}
+#'  \code{\link[ggplot2]{ggplot}},\code{\link[ggplot2]{aes}},\code{\link[ggplot2]{geom_abline}},\code{\link[ggplot2]{geom_point}},\code{\link[ggplot2]{coord_cartesian}},\code{\link[ggplot2]{facet_grid}},\code{\link[ggplot2]{geom_label}},\code{\link[ggplot2]{geom_smooth}}
+#'  \code{\link[leaflet]{leafletOutput}},\code{\link[leaflet]{awesomeIcons}},\code{\link[leaflet]{leaflet}},\code{\link[leaflet]{addProviderTiles}},\code{\link[leaflet]{addAwesomeMarkers}},\code{\link[leaflet]{addMeasure}},\code{\link[leaflet]{addLayersControl}}
+#'  \code{\link[leaflet.extras]{addSearchOSM}}
+#' @rdname server
+#' @export 
+#' @importFrom dplyr filter
+#' @importFrom ggplot2 ggplot aes geom_abline geom_point coord_cartesian facet_grid geom_text geom_smooth
+#' @importFrom leaflet renderLeaflet awesomeIcons leaflet addProviderTiles addAwesomeMarkers addMeasure addLayersControl layersControlOptions
+#' @importFrom leaflet.extras addSearchOSM
+
 # --------------------------
 # shiny server
 server <- function(input, output, session) {
@@ -193,7 +214,7 @@ server <- function(input, output, session) {
       if (input$robust) {
         p <- p + 
           # add robust linear model to ggplot
-          ggplot2:: geom_smooth(method = SMCcalibration::fitSMDM, fullrange = TRUE, 
+          ggplot2:: geom_smooth(method = fitSMDM, fullrange = TRUE, 
                        color = "grey")
       # OLS method: stats::lm  
       } else {
@@ -206,11 +227,11 @@ server <- function(input, output, session) {
       if (input$robust) {
         p <- p +  
           # add robust linear model to ggplot
-          ggplot2::geom_smooth(method = SMCcalibration::fitSMDM, fullrange = TRUE,
+          ggplot2::geom_smooth(method = fitSMDM, fullrange = TRUE,
             color = "grey") +
           # add model fun, estimated equation
           ggplot2::geom_text(x = 0.45, y = 0.05, 
-            label = SMCcalibration::lm_eq(keep, method="rlm"), 
+            label = lm_eq(keep, method="rlm"), 
             parse = TRUE, size=6.5)
       # OLS method: stats::lm 
       } else {
@@ -219,7 +240,7 @@ server <- function(input, output, session) {
           ggplot2:: geom_smooth(method = lm, fullrange = TRUE, color = "grey") + 
           # add model fun, estimated equation
           ggplot2::geom_text(x = 0.45, y = 0.05, 
-            label = SMCcalibration::lm_eq(keep, method="lm"), 
+            label = lm_eq(keep, method="lm"), 
             parse = TRUE, size=6.5)
       }
     }
@@ -245,7 +266,7 @@ server <- function(input, output, session) {
     # MM-type regressor: SMCcalibration::fitSMDM
     if (input$robust) {
       # robust model estimation
-      fit_rlm <- SMCcalibration::fitSMDM(formula = meansample ~ meanstation,
+      fit_rlm <- fitSMDM(formula = meansample ~ meanstation,
         data = keep)
       # caption for MM-type dignostic plots
       caps = c("Standardized residuals vs. Robust Distances", 

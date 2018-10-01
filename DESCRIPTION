@@ -22,6 +22,5 @@ Imports:
     leaflet,
     leaflet.extras, 
     tidyr,
-    dplyr,
-    devtools
+    dplyr
 RoxygenNote: 6.1.0
