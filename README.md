@@ -13,8 +13,7 @@ R package providing functionality for calibration of soil moisture sensors.
 First install the package with:
 
 ```R
-install.packages("devtools")
-library(devtools)
+if (!require("devtools")) install.packages("devtools")
 install_github("JBrenn/SMCcalibration")
 ```
 
