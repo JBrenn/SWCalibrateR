@@ -12,7 +12,7 @@ if (!require("devtools")) install.packages("devtools")
 data("SensorVSample")
 #rm(data)
 #load("SensorVSample.RData")
-#data_def<-read.csv("../data/SensorVSample_new.csv",sep=",",dec=".")
+#data<-read.csv("../data/SensorVSample_new.csv",sep=",",dec=".")
 
 ui <- shiny::fluidPage(
   
@@ -24,14 +24,14 @@ ui <- shiny::fluidPage(
                              
                              
                              
-                             #data_def$depth %>% unique %>% as.numeric  
-                             #data_def$project %>% levels
-                             #data_def$landuse %>% levels
-                             #data_def$station %>% levels
-                             #data_def$date_obs %>% levels
-                             #data_def$sensorType %>% levels 
-                             #data_def$sensorName %>% levels 
-                             #data_def$soilType %>% levels
+                             #data$depth %>% unique %>% as.numeric  
+                             #data$project %>% levels
+                             #data$landuse %>% levels
+                             #data$station %>% levels
+                             #data$date_obs %>% levels
+                             #data$sensorType %>% levels 
+                             #data$sensorName %>% levels 
+                             #data$soilType %>% levels
                              
                              
                              shiny::selectInput("Project", label = shiny::h4("project"),"placeholder1",  
