@@ -36,7 +36,7 @@ server <- function(input, output,session) {
     if (is.null(infile)) {
 # User has not uploaded a file yet. Use NULL to prevent observeEvent 
 #      from triggering
-    temp<-read.csv(file.path(getwd(), "../data/SensorVSample_new.csv"), sep=",", 
+    temp<-read.csv(file.path(getwd(), "../data/data.csv"), sep=",", 
       dec=".")
     return(temp)
     
