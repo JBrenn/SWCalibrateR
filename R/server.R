@@ -7,6 +7,8 @@ if (!require("ggplot2")) install.packages("ggplot2")
 if (!require("leaflet")) install.packages("leaflet")
 if (!require("leaflet.extras")) install.packages("leaflet.extras")
 
+#if (!require("SMCcalibration")) devtools::install_github("JBrenn/SMCcalibration")
+
 library(ggplot2)
 library(Cairo)
 library(robustbase)
@@ -15,16 +17,13 @@ library(dplyr)
 library(leaflet)
 library(leaflet.extras)
 
-source("CAL_doreg.R")
-source("CAL_doreg_data.R")
-source("CAL_updateRData.R")
-source("CAL_updatedb.R")
-source("dB_getSWC.R")
-source("dB_readStationData.R")
-source("fitSMDM.R")
-source("lm_eq.R")
+#source("../R/fitSMDM.R")
+#source("../R/lm_eq.R")
+
+data("SensorVSample")
+#rm(data)
 #load("SensorVSample.RData")
-data_def<-read.csv("SensorVSample_new.csv",sep=",",dec=".")
+#data_def<-read.csv("../data/SensorVSample_new.csv",sep=",",dec=".")
 
 server <- function(input, output,session) {
   
@@ -34,13 +33,15 @@ server <- function(input, output,session) {
     
     infile <- input$datafile
     
-    if (is.null(infile)){
-       #User has not uploaded a file yet. Use NULL to prevent observeEvent from triggering
-    temp<-read.csv(file.path(getwd(),"SensorVSample_new.csv"),sep=",",dec=".")
+    if (is.null(infile)) {
+# User has not uploaded a file yet. Use NULL to prevent observeEvent 
+#      from triggering
+    temp<-read.csv(file.path(getwd(), "../data/SensorVSample_new.csv"), sep=",", 
+      dec=".")
     return(temp)
     
-    }else{
-    temp <- read.csv(infile$datapath,sep=",",dec=".")
+    } else {
+    temp <- read.csv(infile$datapath, sep=",", dec=".")
     return(temp)
     }
     
@@ -152,17 +153,21 @@ server <- function(input, output,session) {
     if (input$facet)
     {
       if (input$robust) {
-        p <- p +  geom_smooth(method = fitSMDM, fullrange = TRUE, color = "grey")
+        p <- p +  geom_smooth(method = SMCcalibration::fitSMDM, 
+          fullrange = TRUE, color = "grey")
       } else {
         p <- p + geom_smooth(method = lm, fullrange = TRUE, color = "grey")
       }
     } else {
       if (input$robust) {
-        p <- p +  geom_smooth(method = fitSMDM, fullrange = TRUE, color = "grey") +
-          geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="rlm"), parse = TRUE, size=6.5)
+        p <- p +  geom_smooth(method = SMCcalibration::fitSMDM, 
+          fullrange = TRUE, color = "grey") +
+          geom_text(x = 0.45, y = 0.05, label = SMCcalibration::lm_eq(keep,
+            method="rlm"), parse = TRUE, size=6.5)
       } else {
         p <- p + geom_smooth(method = lm, fullrange = TRUE, color = "grey") + 
-          geom_text(x = 0.45, y = 0.05, label = lm_eqn(keep, method="lm"), parse = TRUE, size=6.5)
+          geom_text(x = 0.45, y = 0.05, label = SMCcalibration::lm_eq(keep,
+            method="lm"), parse = TRUE, size=6.5)
       }
     }
 
@@ -184,7 +189,8 @@ server <- function(input, output,session) {
     exclude <- data[!vals$keeprows, , drop = FALSE]
     
     if (input$robust) {
-      fit_rlm <- fitSMDM(formula = meansample ~ meanstation, data = keep)
+      fit_rlm <- SMCcalibration::fitSMDM(formula = meansample ~ meanstation,
+        data = keep)
     } else {
       fit_rlm <- lm(formula = meansample ~ meanstation, data = keep)
     }
