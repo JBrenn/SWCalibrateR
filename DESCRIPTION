@@ -13,12 +13,15 @@ Depends: R (>= 3.0.0)
 License: LGPL (>= 2)
 LazyData: No
 LazyLoad: No
+Encoding: UTF-8
 Imports:
     shiny,
     ggplot2,
     Cairo, 
     robustbase,
     leaflet,
-    leaflet.extras
-	
-
+    leaflet.extras, 
+    tidyr,
+    dplyr,
+    devtools
+RoxygenNote: 6.1.0
