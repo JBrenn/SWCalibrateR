@@ -1,24 +1,4 @@
 # --------------------------
-# preface
-# install missing packages
-
-if (!require("Cairo")) install.packages("Cairo")
-if (!require("robustbase")) install.packages("robustbase")
-if (!require("dplyr")) install.packages("dplyr")
-if (!require("tidyr")) install.packages("tidyr")
-if (!require("ggplot2")) install.packages("ggplot2")
-if (!require("leaflet")) install.packages("leaflet")
-if (!require("leaflet.extras")) install.packages("leaflet.extras")
-if (!require("devtools")) install.packages("devtools")
-
-#if (!require("SMCcalibration")) devtools::install_github("JBrenn/SMCcalibration")
-
-#data("SensorVSample")
-#rm(data)
-#load("SensorVSample.RData")
-#data<-read.csv("../data/SensorVSample_new.csv",sep=",",dec=".")
-
-# --------------------------
 # shiny ui
 ui <- shiny::fluidPage(
   
@@ -91,7 +71,7 @@ ui <- shiny::fluidPage(
                       shiny::dataTableOutput("table")),
                     # 4 Map
                     shiny::tabPanel("Map", 
-                      leafletOutput("map")),
+                      leaflet::leafletOutput("map")),
                     # 5 Description
                     shiny::tabPanel("Description", 
                       shiny::br(),

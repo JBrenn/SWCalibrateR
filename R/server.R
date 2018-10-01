@@ -1,34 +1,4 @@
 # --------------------------
-# preface
-# install missing packages
-if (!require("Cairo")) install.packages("Cairo")
-if (!require("robustbase")) install.packages("robustbase")
-if (!require("dplyr")) install.packages("dplyr")
-if (!require("tidyr")) install.packages("tidyr")
-if (!require("ggplot2")) install.packages("ggplot2")
-if (!require("leaflet")) install.packages("leaflet")
-if (!require("leaflet.extras")) install.packages("leaflet.extras")
-
-#if (!require("SMCcalibration")) devtools::install_github("JBrenn/SMCcalibration")
-
-# install packages
-library(ggplot2)
-library(Cairo)
-library(robustbase)
-library(tidyr)
-library(dplyr)
-library(leaflet)
-library(leaflet.extras)
-
-#source("../R/fitSMDM.R")
-#source("../R/lm_eq.R")
-
-# load example data
-#data("SensorVSample")
-#load("SensorVSample.RData")
-#data<-read.csv("../data/data.csv",sep=",",dec=".")
-
-# --------------------------
 # shiny server
 server <- function(input, output, session) {
   
@@ -152,9 +122,10 @@ server <- function(input, output, session) {
       ssoilType  <- input$SoilType
     }
 # filter data object, due to user choice and give back as data.frame    
-    data <- datafile() %>% filter( project%in%sproject, station%in%sstation,
-      landuse%in%slanduse, date_obs%in%sdate, sensorType%in%ssensorType,
-      sensorName%in%ssensorName, soilType%in%ssoilType, depth%in%sdepth )
+    data <- datafile() %>% dplyr::filter(project %in% sproject, 
+      station %in% sstation, landuse %in% slanduse, date_obs %in% sdate, 
+      sensorType %in% ssensorType, sensorName %in% ssensorName, 
+      soilType %in% ssoilType, depth %in% sdepth)
     return(as.data.frame(data))
   })
   
@@ -182,16 +153,16 @@ server <- function(input, output, session) {
     # facet ggplot
     if (input$facet) {
       # ggplot meanstation vs. meansample
-      p <- ggplot( keep[!is.na(keep)[,1], ], 
-                   aes(x = meanstation, y = meansample, label=ID) ) +
+      p <- ggplot2::ggplot( keep[!is.na(keep)[,1], ],
+        ggplot2::aes(x = meanstation, y = meansample, label=ID) ) +
         # abline white x=y line
-        geom_abline(intercept = 0, slope = 1, colour = "white") + 
+        ggplot2::geom_abline(intercept = 0, slope = 1, colour = "white") + 
         # plot points - scatter with exclude data set
-        geom_point(data = exclude, fill = NA, color = "black", alpha = 0.25) +
+        ggplot2::geom_point(data = exclude, fill = NA, color = "black", alpha = 0.25) +
         # set limits of cartesian coordinate system (from 0 to 0.6)
-        coord_cartesian(xlim = c(0, .60), ylim = c(0, .60)) + 
+        ggplot2::coord_cartesian(xlim = c(0, .60), ylim = c(0, .60)) + 
         # apply facet grid: Soil depth vs. Land use
-        facet_grid(depth ~ landuse)
+        ggplot2::facet_grid(depth ~ landuse)
     # no facet grid ggplot  
     } else {
       # zoom in if input$Zoom = TRUE
@@ -203,16 +174,17 @@ server <- function(input, output, session) {
         xlim <- ylim <- c(0, .85); xypos <- .8
       }
       # ggplot meanstation vs. meansample
-      p <- ggplot(keep, aes(x = meanstation, y = meansample, label=ID)) +
+      p <- ggplot2::ggplot(keep, 
+        ggplot2:: aes(x = meanstation, y = meansample, label=ID)) +
         # abline white x=y line
-        geom_abline(intercept = 0, slope = 1, colour = "white") + 
+        ggplot2::geom_abline(intercept = 0, slope = 1, colour = "white") + 
         # write text x=y
-        geom_text(x = xypos, y = xypos, label = "y = x", color = "white") +
-        geom_text(x = 0.05, y = 0.05, label = "y = x", color = "white") +
+        ggplot2::geom_text(x = xypos, y = xypos, label = "y = x", color = "white") +
+        ggplot2::geom_text(x = 0.05, y = 0.05, label = "y = x", color = "white") +
         # plot points - scatter with exclude data set
-        geom_point(data = exclude, fill = NA, color = "black", alpha = 0.25) +
+        ggplot2::geom_point(data = exclude, fill = NA, color = "black", alpha = 0.25) +
         # set limits of cartesian coordinate system, defined above
-        coord_cartesian(xlim = xlim, ylim = ylim)
+        ggplot2::coord_cartesian(xlim = xlim, ylim = ylim)
     }
     # facte grid or not
     if (input$facet)
@@ -221,32 +193,32 @@ server <- function(input, output, session) {
       if (input$robust) {
         p <- p + 
           # add robust linear model to ggplot
-          geom_smooth(method = SMCcalibration::fitSMDM, fullrange = TRUE, 
+          ggplot2:: geom_smooth(method = SMCcalibration::fitSMDM, fullrange = TRUE, 
                        color = "grey")
       # OLS method: stats::lm  
       } else {
         p <- p + 
           # add linear model (OLS) to ggplot
-          geom_smooth(method = lm, fullrange = TRUE, color = "grey")
+          ggplot2::geom_smooth(method = lm, fullrange = TRUE, color = "grey")
       }
     } else {
       # MM-type regressor: SMCcalibration::fitSMDM
       if (input$robust) {
         p <- p +  
           # add robust linear model to ggplot
-          geom_smooth(method = SMCcalibration::fitSMDM, fullrange = TRUE,
+          ggplot2::geom_smooth(method = SMCcalibration::fitSMDM, fullrange = TRUE,
             color = "grey") +
           # add model fun, estimated equation
-          geom_text(x = 0.45, y = 0.05, 
+          ggplot2::geom_text(x = 0.45, y = 0.05, 
             label = SMCcalibration::lm_eq(keep, method="rlm"), 
             parse = TRUE, size=6.5)
       # OLS method: stats::lm 
       } else {
         p <- p + 
           # add linear model (OLS) to ggplot
-          geom_smooth(method = lm, fullrange = TRUE, color = "grey") + 
+          ggplot2:: geom_smooth(method = lm, fullrange = TRUE, color = "grey") + 
           # add model fun, estimated equation
-          geom_text(x = 0.45, y = 0.05, 
+          ggplot2::geom_text(x = 0.45, y = 0.05, 
             label = SMCcalibration::lm_eq(keep, method="lm"), 
             parse = TRUE, size=6.5)
       }
@@ -254,10 +226,10 @@ server <- function(input, output, session) {
     # show rownames
     if (input$Rownames) {
       # add rownames to ggplot
-      p <- p + geom_text()
+      p <- p + ggplot2::geom_text()
     } else {
       # add data points to ggplot
-      p <- p + geom_point()
+      p <- p + ggplot2::geom_point()
     }
     # return ggplot p
     p
@@ -336,31 +308,31 @@ server <- function(input, output, session) {
   })
   
     # add leaflet map to output
-    output$map<- renderLeaflet({
+    output$map<- leaflet::renderLeaflet({
       # define data
       stations <- data()
       # if there are geographic coordinates defined in data selection
       if (any(names(stations) %in% c("lat","lon"))) {
-        c1 <- awesomeIcons(icon = "ios-close", iconColor = "black", 
+        c1 <- leaflet::awesomeIcons(icon = "ios-close", iconColor = "black", 
           library = "ion", markerColor = "blue")
         # plot leaflet map 
-        m <- leaflet() %>% 
+        m <- leaflet::leaflet() %>% 
           # add open street map search
-          addSearchOSM() %>%
+          leaflet.extras::addSearchOSM() %>%
           # add open street map
-          addProviderTiles("OpenStreetMap.Mapnik", group = "OSM") %>% 
+          leaflet::addProviderTiles("OpenStreetMap.Mapnik", group = "OSM") %>% 
           # ad satellite image
-          addProviderTiles("Esri.WorldImagery", group = "SAT") %>%
+          leaflet::addProviderTiles("Esri.WorldImagery", group = "SAT") %>%
           # mark stations by lat/lon 
-          addAwesomeMarkers(lng = stations$lon %>% as.character %>% as.numeric, 
+          leaflet::addAwesomeMarkers(lng = stations$lon %>% as.character %>% as.numeric, 
             lat = stations$lat %>% as.character %>% as.numeric, icon = c1, 
             popup = paste("Name:", stations$station, "<br>","Landuse:", 
               "<br>", "Project:", stations$project, "<br>", "Altitude:", 
               stations$alt)) %>%
           # add measure in meters
-          addMeasure(position = "topleft", primaryLengthUnit = "meters") %>%
-          addLayersControl(baseGroups = c("OSM","SAT"), 
-            options = layersControlOptions(collapsed = FALSE), 
+          leaflet::addMeasure(position = "topleft", primaryLengthUnit = "meters") %>%
+          leaflet::addLayersControl(baseGroups = c("OSM","SAT"), 
+            options = leaflet::layersControlOptions(collapsed = FALSE), 
             position = "topleft")
         # return map m
         m
