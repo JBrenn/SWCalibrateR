@@ -41,7 +41,9 @@ server <- function(input, output, session) {
     if (is.null(infile)) {
 # User has not uploaded a file yet. 
 # Use NULL to prevent observeEvent from triggering.
-# Read example data      
+# Read example data   
+    #data("SensorVSample")
+    #temp <- data  
     temp <- read.csv(file.path(getwd(), "../data/data.csv"), sep=",", dec=".")
     return(temp)
     } else {
@@ -276,15 +278,15 @@ server <- function(input, output, session) {
       # caption for MM-type dignostic plots
       caps = c("Standardized residuals vs. Robust Distances", 
         "Normal Q-Q vs. Residuals", "Response vs. Fitted Values", 
-        "Scale-Location" , "Residuals vs Fitted")
+        "Residuals vs Fitted", "Scale-Location")
       # define visualization paramter
       op <- par(mfrow=c(2,2))
       # Residuals vs Fitted
-      plot(fit_rlm, 5, caption = caps)
+      plot(fit_rlm, 4, caption = caps)
       # Normal Q-Q vs. Residuals
       plot(fit_rlm, 2, caption = caps)
       # Scale-Location
-      plot(fit_rlm, 4, caption = caps)
+      plot(fit_rlm, 5, caption = caps)
       # Standardized residuals vs. Robust Distances
       plot(fit_rlm, 1, caption = caps)
       # return to standard par
