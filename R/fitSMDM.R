@@ -22,6 +22,7 @@
 #' @export 
 #' @importFrom robustbase lmrob
 fitSMDM <- function(formula, data, ...) {
-  robustbase::lmrob(formula, data, setting = "KS2011",
-        maxit.scale = 1000)
+  roblm <- robustbase::lmrob(formula, data, setting = "KS2011",
+             maxit.scale = 1000)
+  return(roblm)
 }

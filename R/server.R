@@ -264,8 +264,7 @@ server <- function(input, output, session) {
     # MM-type regressor: SMCcalibration::fitSMDM
     if (input$robust) {
       # robust model estimation
-      fit_rlm <- fitSMDM(formula = meansample ~ meanstation,
-        data = keep)
+      fit_rlm <- fitSMDM(formula = meansample ~ meanstation, data = keep)
       # caption for MM-type dignostic plots
       caps = c("Standardized residuals vs. Robust Distances", 
         "Normal Q-Q vs. Residuals", "Response vs. Fitted Values", 
