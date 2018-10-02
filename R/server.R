@@ -3,8 +3,6 @@
 #' @param input input data set
 #' @param output output list
 #' @param session session info
-#' @return
-#' @details
 #' @examples 
 #' runApp(ui, server)
 #' @seealso 
