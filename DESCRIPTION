@@ -3,10 +3,10 @@ Version: 1.0.0.9999
 Date: 2018-10-01
 Title: Calibration tool for soil moisture sensors
 Authors@R: c(
-person("Johannes", "Brenner", email = "johannes.brennner@ufz.de",
-    role = c("aut", "cre")),
+    person("Johannes", "Brenner", email = "johannes.brennner@ufz.de",
+        role = c("aut", "cre")),
     person("Giulio", "Genova", email = "Giulio.Genova@eurac.edu",
-    role = c("aut")) )
+        role = c("aut")))
 Maintainer@R: person("Johannes", "Brenner", email = "johannes.brennner@ufz.de",
     role = c("aut", "cre"))
 Description: Calibrates soil moisture sensors using volumetric
