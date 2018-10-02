@@ -20,13 +20,9 @@ Imports:
     Cairo (>= 1.5-9), 
     dplyr (>= 0.7.6),
     ggplot2 (>= 3.0.0),
-    leaflet (>=2.0.2),
-    leaflet.extras (>=1.0.0), 
-    robustbase (0.93-3),
+    leaflet (>= 2.0.2),
+    leaflet.extras (>= 1.0.0), 
+    robustbase (>= 0.93-3),
     shiny (>= 1.1.0),
-    tidyr (>=0.8.1)
-    
-
-    
-    
+    tidyr (>= 0.8.1)
 RoxygenNote: 6.1.0
