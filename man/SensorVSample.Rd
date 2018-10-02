@@ -5,12 +5,11 @@
 Calibration data for soil moisture sensors.
 }
 \description{
-data.frame for soil moisture sensor calibration for the LTsER site Matsch/Mazia (South Tyrol, Italy) and multiple sites all over South Tyrol 
-(Projects: MONALISA, HiResAlp).
+Example data set for soil moisture sensor calibration. Generally loads if shiny app is started. 
 }
 \usage{data("SensorVSample")}
 \format{
-  A data frame with 620 observations on the following 14 variables.
+  A data frame with 200 observations on the following 14 variables.
   \describe{
     \item{\code{project}}{a factor, project name}
     \item{\code{station}}{a factor,name of micro-meteorological station equiped with soil moisture sensors}
