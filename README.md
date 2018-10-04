@@ -32,7 +32,7 @@ runShinyapp()
 ```
 
 The online version of the app can be used as an working example:
-https://euracalpenv.shinyapps.io/SWC_Calibration/
+https://jgbr.shinyapps.io/shiny/
 
 The same version runs with the following code:
 ```R
