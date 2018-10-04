@@ -38,7 +38,9 @@ server <- function(input, output, session) {
 # Read example data   
     #data("SensorVSample")
     #temp <- data  
-    temp <- read.csv(file.path(getwd(), "../../data/data.csv"), sep=",", dec=".")
+    temp <- read.csv(
+      file.path(system.file("data", package = "SMCcalibration"), "data.csv"), 
+      sep=",", dec=".")
     return(temp)
     } else {
     temp <- read.csv(infile$datapath, sep=",", dec=".")
