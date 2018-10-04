@@ -17,7 +17,7 @@ Description: Calibrates soil moisture sensors using volumetric
     visualisation of data and model estimate as well as model dignostics,
     in order to be able to indentify leverage outlier points.
 Depends: R (>= 3.5.0)
-License: LGPL (>= 2)
+License: MIT + file LICENSE
 LazyData: No
 LazyLoad: No
 Encoding: UTF-8
