@@ -76,14 +76,34 @@ ui <- shiny::fluidPage(
                     shiny::tabPanel("Description", 
                       shiny::br(),
                       shiny::h4("Side Panel for Data Subsetting"),
-shiny::p("The left side panel enables subsetting of the data set. 
-By default the whole unique data set is used. An option for ggplot's facet_grid 
-functionality is included. Klick", shiny::em("facet grid"), "and the data set 
-will be shown grouped by landuse and soil depth in the Model Fit panel. 
-One can enable", shiny::em("Show row.names"), "to easily choose points to remove. 
-Zooming to the data range of 0 to 60 %vol is also possible."),
+shiny::p("The left side panel enables subsetting of the data set. Use the 
+integrated example data set to trial or choose a data set to upload. 
+The data set requires the following column categories (column names in bold): 
+(1) name of the research" , shiny::strong("project"),  
+"(2) ", shiny::strong("station"), "name, 
+geographic coordinates at station consisting of 
+(3) ", shiny::strong("lat"),"itude and 
+(4) ", shiny::strong("lon"),"gitude, 
+(5) ", shiny::strong("alt"),"itude of station in m a.s.l. 
+(6) ", shiny::strong("date_obs"),": date of observation, 
+(7) ", shiny::strong("landuse")," type at station, 
+(8) soil ", shiny::strong("depth")," of soil moisture measurement, 
+(9) ", shiny::strong("soilType"),": soil type at station, 
+(10) ", shiny::strong("sensorType"),": generic soil moisture sensor type and 
+(11) ", shiny::strong("sensorName"),": specific soil moisture sensor name of taking in-situ measurement, 
+(12) ", shiny::strong("meanstation"),": average VWC measured by soil moisture sensor 
+(±1h time of observation) 
+(13) ", shiny::strong("samples"),": soil core VWC 
+(14) ", shiny::strong("meansample"),": average soil core VWC (by default three soil core replicates are sampled per station, date time and soil depth). 
+After data is loaded a handful of these categories can be used to subset the data set. 
+Multiple selection for all categorical variables is implemented. 
+An option for ggplot's facet_grid functionality is included. Klick", shiny::em("facet grid")," and the data set will be shown grouped by landuse and soil depth 
+in the Model Fit panel. 
+One can enable", shiny::em("Show row.names"), "to easily choose specific 
+outlier to toggle. 
+Zooming to a range of 0 to 60 %vol VWC is possible."),
                       shiny::p("For a description of the data set have a look at",
-                        shiny::code("?SensorVSample")),
+                        shiny::code("?SMCcalibration::SensorVSample")),
                       shiny::p(""),
                       shiny::br(),
                       shiny::hr(),
@@ -92,18 +112,38 @@ Zooming to the data range of 0 to 60 %vol is also possible."),
                       shiny::br(),
                       shiny::hr(),
                       shiny::h4("Diagnostics"),
-                      shiny::p("Four diagostic plots for the roblm object are visualised: (1) Standardized residuals vs. Robust Distances, (2) Normal Q-Q vs. Residuals, 
-(3) Residuals vs. Fitted Values, (4) Sqrt of abs(Residuals) vs. Fitted Values"),
+                      shiny::p("Four diagostic plots for the lm or roblm object 
+are visualised: 
+(1) Residuals vs. Fitted Values: 
+Do the model residuals have non-linear patterns? 
+Besides non-linearity of the residuals, this plot inherits a first hint towards
+unequal error variances, and outliers. 
+(2) Normal Q−Q vs. Residuals:
+Are the model residuals normally distributed? 
+Normal distribution of the residual is an underlying assumption for OLS. 
+Strong deviations from the 1:1 line support the suspicion that this 
+assumtion is violated.
+(3) Scale-Location:
+Are the model residuals spread equally along the ranges of predictors? 
+Alike in plot 1 we check the assumption of equal variance in the residuals
+(homoscedasticity) this time applying standardised residuals.
+(4) Residuals vs. Leverage (lm) or Robust Distances (lmrob):
+Which are the influential outliers? 
+Unlike the other plots, here patterns are not relevant. 
+We simple look for cases outside the dashed line, Cook’s distance, for lm.
+For lmrob the plot is divided in four regions marked by dashed lines: 
+(1) Regular , (2) Outlier, (3) Leverage, (4) Outlier and Leverage. 
+For detail on the methods we refer to Rousseeuw and van Zomeren (1990). "),
                       shiny::br(),
                       shiny::hr(),
                       shiny::h4("Data Table"),
                       shiny::p("This panel contains the data table of the 
-                        data subset."),
+data subset."),
                       shiny::br(),
                       shiny::hr(),
                       shiny::h4("Map"),
-                      shiny::p("This panel contains a leaflet map of the locations
-                        of the data subset.")
+                      shiny::p("This panel contains a leaflet map of the 
+locations of the data subset.")
                       )
                     )
                   )
