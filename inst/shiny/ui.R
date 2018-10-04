@@ -138,7 +138,7 @@ For detail on the methods we refer to Rousseeuw and van Zomeren (1990)."),
                       shiny::hr(),
                       shiny::h4("Data Table"),
                       shiny::p("This panel contains the data table of the 
-data subset."),
+data subset. Sort and search is enabled for each category as well as global search."),
                       shiny::br(),
                       shiny::hr(),
                       shiny::h4("Map"),
