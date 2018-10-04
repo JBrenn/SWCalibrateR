@@ -36,7 +36,7 @@ https://euracalpenv.shinyapps.io/SWC_Calibration/
 
 The same version runs with the following code:
 ```R
-shiny::runGitHub('JBrenn/SMCcalibration', subdir="inst/shiny", launch.browser = TRUE)
+shiny::runGitHub('JBrenn/SMCcalibration', subdir="inst/shiny/", launch.browser = TRUE)
 ```
 ## Acknowledgement
 
