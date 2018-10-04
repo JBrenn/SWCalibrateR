@@ -37,8 +37,8 @@ server <- function(input, output, session) {
 # Use NULL to prevent observeEvent from triggering.
 # Read example data   
     #data("SensorVSample")
-    temp <- data  
-    #temp <- read.csv(file.path(getwd(), "../data/data.csv"), sep=",", dec=".")
+    #temp <- data  
+    temp <- read.csv(file.path(getwd(), "../../data/data.csv"), sep=",", dec=".")
     return(temp)
     } else {
     temp <- read.csv(infile$datapath, sep=",", dec=".")
