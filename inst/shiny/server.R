@@ -16,7 +16,12 @@
 #' @importFrom ggplot2 ggplot aes geom_abline geom_point coord_cartesian facet_grid geom_text geom_smooth
 #' @importFrom leaflet renderLeaflet awesomeIcons leaflet addProviderTiles addAwesomeMarkers addMeasure addLayersControl layersControlOptions
 #' @importFrom leaflet.extras addSearchOSM
-
+#' 
+#' 
+# --------------------------
+# load package dependencies and data
+library(SMCcalibration)
+data("SensorVSample")
 # --------------------------
 # shiny server
 server <- function(input, output, session) {

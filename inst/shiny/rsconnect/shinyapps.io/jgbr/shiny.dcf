@@ -1,0 +1,10 @@
+name: shiny
+title:
+username:
+account: jgbr
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 490022
+bundleId: 1622206
+url: https://jgbr.shinyapps.io/shiny/
+when: 1538644109.72252
