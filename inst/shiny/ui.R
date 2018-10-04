@@ -114,7 +114,7 @@ Zooming to a range of 0 to 60 %vol VWC is possible."),
                       shiny::h4("Diagnostics"),
                       shiny::p("Four diagostic plots for the lm or roblm object 
 are visualised:"), 
-  shiny::p("(1) Residuals vs. Fitted Values: 
+  shiny::p("(1) Residuals vs. Fitted Values:
 Do the model residuals have non-linear patterns? 
 Besides non-linearity of the residuals, this plot inherits a first hint towards
 unequal error variances, and outliers."),
