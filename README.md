@@ -28,8 +28,7 @@ library(SMCcalibration)
 For running the calibration shiny app:
 
 ```R
-data("SensorVSample")
-shiny::shinyApp(ui, server)
+runShinyapp()
 ```
 
 The online version of the app can be used as an working example:
@@ -37,7 +36,7 @@ https://euracalpenv.shinyapps.io/SWC_Calibration/
 
 The same version runs with the following code:
 ```R
-shiny::runGitHub('JBrenn/SMCcalibration', subdir="R", launch.browser = TRUE)
+shiny::runGitHub('JBrenn/SMCcalibration', subdir="inst/shiny", launch.browser = TRUE)
 ```
 ## Acknowledgement
 
