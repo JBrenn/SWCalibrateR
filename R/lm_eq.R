@@ -1,23 +1,23 @@
-#' @title Expression linear model mquation and r-square.
+#' @title Expression linear model equation and r-square.
 #' @description Computes and returns (as.character) linear model equation and R-square value.
-#' @param df input dataframe including columns "meansample" \code{y} and "meanstation"  \code{x}
+#' @param df input dataframe including columns "Sample.VWC" \code{y} and "Station.VWC"  \code{x}
 #' @param method define method, \code{lm} for OLS estimator, \code{rlm} for MM-type estimator (robust).
 #' @return character of linear model equation and R-square value
 #' @details DETAILS
 #' @examples 
-#' data("SensorVSample")
+#' data("data")
 #' lm_eq(df = data, method = "rlm")
 #' @rdname lm_eq
 #' @export 
 lm_eq <- function(df, method){
   
   if (method == "lm") {
-    m <- lm(meansample ~ meanstation, df)
+    m <- lm(Sample.VWC ~ Station.VWC, df)
   }
   
   if (method == "rlm") {
     require(robustbase)
-    m <- robustbase::lmrob(meansample ~ meanstation, df, setting = "KS2011", 
+    m <- robustbase::lmrob(Sample.VWC ~ Station.VWC, df, setting = "KS2011", 
       maxit.scale = 1000)
   }
   
