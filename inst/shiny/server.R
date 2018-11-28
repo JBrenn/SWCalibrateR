@@ -345,7 +345,7 @@ server <- function(input, output, session) {
       # define data
       stations <- data()
       # if there are geographic coordinates defined in data selection
-      if (any(names(stations) %in% c("Latitude","Longitude"))) {
+      if (any(names(stations) %in% c("Latitude", "Longitude"))) {
         c1 <- leaflet::awesomeIcons(icon = "ios-close", iconColor = "black", 
           library = "ion", markerColor = "blue")
         # plot leaflet map 
@@ -359,9 +359,8 @@ server <- function(input, output, session) {
           # mark stations by lat/lon 
           leaflet::addAwesomeMarkers(lng = stations$Longitude %>% as.character %>% as.numeric, 
             lat = stations$Latitude %>% as.character %>% as.numeric, icon = c1, 
-            popup = paste("Name:", stations$`Station ID`, "<br>","Landuse:", 
-              "<br>", "Project:", stations$`Project ID`, "<br>", "Altitude:", 
-              stations$Altitude)) %>%
+            popup = paste("Name:", stations$Station.ID, "<br>","Landuse:", stations$Landuse,
+              "<br>", "Altitude:", stations$Altitude)) %>%
           # add measure in meters
           leaflet::addMeasure(position = "topleft", primaryLengthUnit = "meters") %>%
           leaflet::addLayersControl(baseGroups = c("OSM","SAT"), 
