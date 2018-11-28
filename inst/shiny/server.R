@@ -21,7 +21,7 @@
 # --------------------------
 # load package dependencies and data
 library(SMCcalibration)
-data("SensorVSample")
+data("data")
 # --------------------------
 # shiny server
 server <- function(input, output, session) {
@@ -53,43 +53,43 @@ server <- function(input, output, session) {
 # reactive observer for input data set
   # Soil depth
   observe({
-  updateSelectInput(session, "Depth", 
-    choices = datafile()$depth %>% unique %>% as.numeric) 
+  updateSelectInput(session, "Soil.depth",
+    choices = datafile()$Soil.depth %>% unique %>% as.numeric) 
   })
   # Project
   observe({
-  updateSelectInput(session, "Project", 
-    choices = datafile()$project %>% levels) 
+  updateSelectInput(session, "Project.ID", 
+    choices = datafile()$Project.ID %>% levels) 
   })
   # Land use
   observe({
   updateSelectInput(session, "Landuse", 
-    choices = datafile()$landuse %>% levels) 
+    choices = datafile()$Landuse %>% levels) 
   })
   # Station
   observe({
-  updateSelectInput(session, "Station", 
-    choices = datafile()$station %>% levels) 
+  updateSelectInput(session, "Station.ID", 
+    choices = datafile()$Station.ID %>% levels) 
   })
   # Date of observation
   observe({
   updateSelectInput(session, "Date", 
-    choices = datafile()$date_obs %>% levels) 
+    choices = datafile()$Date %>% levels) 
   })
   # Sensor Type
   observe({
-  updateSelectInput(session, "SensorType", 
-    choices = datafile()$sensorType %>% levels) 
+  updateSelectInput(session, "Sensor.type", 
+    choices = datafile()$Sensor.type %>% levels) 
   })
   # Sensor Name
   observe({
-  updateSelectInput(session, "SensorName", 
-    choices = datafile()$sensorName %>% levels) 
+  updateSelectInput(session, "Sensor.ID", 
+    choices = datafile()$Sensor.ID %>% levels) 
   })
   # Soil Type
   observe({
-  updateSelectInput(session, "SoilType", 
-    choices = datafile()$soilType %>% levels) 
+  updateSelectInput(session, "Soil.type", 
+    choices = datafile()$Soil.type %>% levels) 
   })
   
 # For storing which rows have been excluded by "toggle points".
@@ -99,59 +99,60 @@ server <- function(input, output, session) {
   
 # Create new data object (reactive)
   data <- reactive ({
-    # Project
-    if ( length(input$Project) == 0 ) {  
-      sproject <- c(NA, datafile()$project %>% levels)
+    # Project ID
+    if ( length(input$Project.ID) == 0 ) {  
+      sproject <- c(NA, datafile()$Project.ID %>% levels)
     } else {
-      sproject <- input$Project
+      sproject <- input$Project.ID
     }
     # Landuse
     if ( length(input$Landuse) == 0 ) {
-      slanduse <- c(NA, datafile()$landuse %>% levels)
+      slanduse <- c(NA, datafile()$Landuse %>% levels)
     } else {
       slanduse <- input$Landuse
     }
     # Station
-    if ( length(input$Station) == 0 ) {
-      sstation <- c(NA, datafile()$station %>% levels)
+    if ( length(input$Station.ID) == 0 ) {
+      sstation <- c(NA, datafile()$Station.ID %>% levels)
     } else {
-      sstation <- input$Station
+      sstation <- input$Station.ID
     }
     # Date
     if ( length(input$Date) == 0 ) {
-      sdate <- c(NA, datafile()$date %>% levels)
+      sdate <- c(NA, datafile()$Date %>% levels)
     } else {
       sdate <- input$Date
     }
     # Soil depth
-    if ( length(input$Depth) == 0 ) {
-      sdepth  <- c(NA, datafile()$depth %>% unique %>% as.numeric)
+    if ( length(input$Soil.depth) == 0 ) {
+      sdepth  <- c(NA, datafile()$Soil.depth %>% unique %>% as.numeric)
     } else {
-      sdepth  <- input$Depth
+      sdepth  <- input$Soil.depth
     }
     # Sensor Type
-    if ( length(input$SensorType) == 0 ){
-      ssensorType   <- c(NA, datafile()$sensorType  %>% levels)
+    if ( length(input$Sensor.type) == 0 ){
+      ssensorType   <- c(NA, datafile()$Sensor.type %>% levels)
     } else {
-      ssensorType  <- input$SensorType
+      ssensorType  <- input$Sensor.type
     }
     # Sensor Name
-    if ( length(input$SensorName) == 0 ){
-      ssensorName  <- c(NA, datafile()$sensorName  %>% levels)
+    if ( length(input$Sensor.ID) == 0 ){
+      ssensorName  <- c(NA, datafile()$Sensor.ID %>% levels)
     } else {
-      ssensorName  <- input$SensorName
+      ssensorName  <- input$Sensor.ID
     }
     # Soil Type
-    if ( length(input$SoilType) == 0 ){
-      ssoilType  <- c(NA, datafile()$soilType  %>% levels)
+    if ( length(input$Soil.type) == 0 ){
+      ssoilType  <- c(NA, datafile()$Soil.type %>% levels)
     } else {
-      ssoilType  <- input$SoilType
+      ssoilType  <- input$Soil.type
     }
 # filter data object, due to user choice and give back as data.frame    
-    data <- datafile() %>% dplyr::filter(project %in% sproject, 
-      station %in% sstation, landuse %in% slanduse, date_obs %in% sdate, 
-      sensorType %in% ssensorType, sensorName %in% ssensorName, 
-      soilType %in% ssoilType, depth %in% sdepth)
+    data <- datafile() %>% dplyr::filter(Project.ID %in% sproject,
+      Station.ID %in% sstation, Landuse %in% slanduse,
+      Date %in% sdate,  Sensor.type %in% ssensorType,
+      Sensor.ID %in% ssensorName, Soil.type %in% ssoilType,
+      Soil.depth %in% sdepth)
     return(as.data.frame(data))
   })
   
@@ -159,6 +160,12 @@ server <- function(input, output, session) {
   output$table <- renderDataTable({
     # define data
     data <- data()
+    # # round to 2 digits
+    data$Sensor.VWC <- round(data$Sensor.VWC, 2)
+    data$Sample.VWC <- round(data$Sample.VWC, 2)
+    data$Latitude   <- round(data$Latitude,   2)
+    data$Longitude  <- round(data$Longitude,  2)
+    data$Altitude   <- round(data$Altitude,   0)
     # rownames 
     data$row.name <- rownames(data)
     # delete NA 
@@ -178,9 +185,9 @@ server <- function(input, output, session) {
     
     # facet ggplot
     if (input$facet) {
-      # ggplot meanstation vs. meansample
+      # ggplot Sensor .VWC vs. Sample.SWC
       p <- ggplot2::ggplot( keep[!is.na(keep)[,1], ],
-        ggplot2::aes(x = meanstation, y = meansample, label=ID) ) +
+        ggplot2::aes(x = Sensor.VWC, y = Sample.VWC, label = ID) ) +
         # abline white x=y line
         ggplot2::geom_abline(intercept = 0, slope = 1, colour = "white") + 
         # plot points - scatter with exclude data set
@@ -188,7 +195,8 @@ server <- function(input, output, session) {
         # set limits of cartesian coordinate system (from 0 to 0.6)
         ggplot2::coord_cartesian(xlim = c(0, .60), ylim = c(0, .60)) + 
         # apply facet grid: Soil depth vs. Land use
-        ggplot2::facet_grid(depth ~ landuse)
+        #ggplot2::facet_grid(depth ~ landuse)
+        ggplot2::facet_grid(Soil.depth ~ Landuse)
     # no facet grid ggplot  
     } else {
       # zoom in if input$Zoom = TRUE
@@ -199,9 +207,9 @@ server <- function(input, output, session) {
         # set limits for no zoom
         xlim <- ylim <- c(0, .85); xypos <- .8
       }
-      # ggplot meanstation vs. meansample
+      # ggplot Sensor.VWC vs. Sample.VWC
       p <- ggplot2::ggplot(keep, 
-        ggplot2:: aes(x = meanstation, y = meansample, label=ID)) +
+        ggplot2:: aes(x = Sensor.VWC, y = Sample.VWC, label = ID)) +
         # abline white x=y line
         ggplot2::geom_abline(intercept = 0, slope = 1, colour = "white") + 
         # write text x=y
@@ -271,7 +279,7 @@ server <- function(input, output, session) {
     # MM-type regressor: SMCcalibration::fitSMDM
     if (input$robust) {
       # robust model estimation
-      fit_rlm <- fitSMDM(formula = meansample ~ meanstation, data = keep)
+      fit_rlm <- fitSMDM(formula = Sample.VWC ~ Sensor.VWC, data = keep)
       # caption for MM-type dignostic plots
       caps = c("Standardized residuals vs. Robust Distances", 
         "Normal Q-Q vs. Residuals", "Response vs. Fitted Values", 
@@ -291,7 +299,7 @@ server <- function(input, output, session) {
     # OLS method: stats::lm 
     } else {
       # linear model estimatin (OLS)
-      fit_rlm <- lm(formula = meansample ~ meanstation, data = keep)
+      fit_rlm <- lm(formula = Sample.VWC ~ Sensor.VWC, data = keep)
       # define visualization paramter
       op <- par(mfrow=c(2,2))
       # plot model dignostics - OLS
@@ -337,7 +345,7 @@ server <- function(input, output, session) {
       # define data
       stations <- data()
       # if there are geographic coordinates defined in data selection
-      if (any(names(stations) %in% c("lat","lon"))) {
+      if (any(names(stations) %in% c("Latitude","Longitude"))) {
         c1 <- leaflet::awesomeIcons(icon = "ios-close", iconColor = "black", 
           library = "ion", markerColor = "blue")
         # plot leaflet map 
@@ -349,11 +357,11 @@ server <- function(input, output, session) {
           # ad satellite image
           leaflet::addProviderTiles("Esri.WorldImagery", group = "SAT") %>%
           # mark stations by lat/lon 
-          leaflet::addAwesomeMarkers(lng = stations$lon %>% as.character %>% as.numeric, 
-            lat = stations$lat %>% as.character %>% as.numeric, icon = c1, 
-            popup = paste("Name:", stations$station, "<br>","Landuse:", 
-              "<br>", "Project:", stations$project, "<br>", "Altitude:", 
-              stations$alt)) %>%
+          leaflet::addAwesomeMarkers(lng = stations$Longitude %>% as.character %>% as.numeric, 
+            lat = stations$Latitude %>% as.character %>% as.numeric, icon = c1, 
+            popup = paste("Name:", stations$`Station ID`, "<br>","Landuse:", 
+              "<br>", "Project:", stations$`Project ID`, "<br>", "Altitude:", 
+              stations$Altitude)) %>%
           # add measure in meters
           leaflet::addMeasure(position = "topleft", primaryLengthUnit = "meters") %>%
           leaflet::addLayersControl(baseGroups = c("OSM","SAT"), 

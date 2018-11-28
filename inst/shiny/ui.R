@@ -8,29 +8,29 @@ ui <- shiny::fluidPage(
                 shiny::sidebarPanel(width=2,
                   # multiple selection for:
                   # Project
-                  shiny::selectInput("Project", label = shiny::h4("project"),
+                  shiny::selectInput("Project.ID", label = shiny::h4("Project ID"),
                     "placeholder1", multiple=T),
                   # Land use
-                  shiny::selectInput("Landuse", label = shiny::h4("land use"),
-                    "placeholder2",multiple=T),
+                  shiny::selectInput("Landuse", label = shiny::h4("Landuse"),
+                    "placeholder2", multiple=T),
                   # Soil depth
-                  shiny::selectInput("Depth", label = shiny::h4("soil depth"),
-                    "placeholder3",multiple=T),
+                  shiny::selectInput("Soil.depth", label = shiny::h4("Soil depth"),
+                    "placeholder3", multiple=T),
                   # Station
-                  shiny::selectInput("Station", label = shiny::h4("station"),  
-                    "placeholder4",multiple=T),
+                  shiny::selectInput("Station.ID", label = shiny::h4("Station ID"),  
+                    "placeholder4", multiple=T),
                   # Date
-                  shiny::selectInput("Date", label = shiny::h4("date"),  
-                    "placeholder5",multiple=T),
+                  shiny::selectInput("Date", label = shiny::h4("Date"),  
+                    "placeholder5", multiple=T),
                   # Soil Type
-                  shiny::selectInput("SoilType", label = shiny::h4("soil type"),  
-                    "placeholder6",multiple=T),
+                  shiny::selectInput("Soil.type", label = shiny::h4("Soil type"),  
+                    "placeholder6", multiple=T),
                   # Sensor Type
-                  shiny::selectInput("SensorType", label = shiny::h4("sensor type"),
-                    "placeholder7",multiple=T), 
+                  shiny::selectInput("Sensor.type", label = shiny::h4("Sensor type"),
+                    "placeholder7", multiple=T), 
                   # Sensor Name
-                  shiny::selectInput("SensorName", label = shiny::h4("sensor name"),
-                    "placeholder8",multiple=T),
+                  shiny::selectInput("Sensor.ID", label = shiny::h4("Sensor ID"),
+                    "placeholder8", multiple=T),
                   shiny::br(),
                   # checkbox "robust estimates"
                   shiny::checkboxInput("robust", label = "robust estimates", 
@@ -79,24 +79,22 @@ ui <- shiny::fluidPage(
 shiny::p("The left side panel enables subsetting of the data set. Use the 
 integrated example data set to trial or choose a data set to upload. 
 The data set requires the following column categories (column names in bold): 
-(1) name of the research" , shiny::strong("project"),  
-"(2) ", shiny::strong("station"), "name, 
-geographic coordinates at station consisting of 
-(3) ", shiny::strong("lat"),"itude and 
-(4) ", shiny::strong("lon"),"gitude, 
-(5) ", shiny::strong("alt"),"itude of station in m a.s.l. 
-(6) ", shiny::strong("date_obs"),": date of observation, 
-(7) ", shiny::strong("landuse")," type at station, 
-(8) soil ", shiny::strong("depth")," of soil moisture measurement, 
-(9) ", shiny::strong("soilType"),": soil type at station, 
-(10) ", shiny::strong("sensorType"),": generic soil moisture sensor type and 
-(11) ", shiny::strong("sensorName"),": specific soil moisture sensor name of taking in-situ measurement, 
-(12) ", shiny::strong("meanstation"),": average VWC measured by soil moisture sensor 
+(1) name of the research" , shiny::strong("Project ID"),  
+", (2) ", shiny::strong("Station ID"), ", 
+geographic coordinates of the station consisting of 
+(3) ", shiny::strong("Latitude")," and 
+(4) ", shiny::strong("Longitude"),", 
+(5) ", shiny::strong("Altitude"),"of station in m a.s.l. 
+(6) ", shiny::strong("Date")," of observation [DD/MM/YYYY], 
+(7) ", shiny::strong("Landuse")," type at station, 
+(8) soil ", shiny::strong("Soil depth")," of soil moisture measurement [cm], 
+(9) ", shiny::strong("Soil type"),": soil type at station, 
+(10) ", shiny::strong("Sensor Type"),": generic soil moisture sensor type and 
+(11) ", shiny::strong("Sensor ID"),": specific soil moisture sensor name, taking in-situ measurements, 
+(12) ", shiny::strong("Sensor VWC"),": average VWC measured by soil moisture sensor 
 (±1h time of observation) 
-(13) ", shiny::strong("samples"),": soil core VWC 
-(14) ", shiny::strong("meansample"),": average soil core VWC (by default three soil core replicates are sampled per station, date time and soil depth). 
-After data is loaded a handful of these categories can be used to subset the data set. 
-Multiple selection for all categorical variables is implemented. 
+(13) ", shiny::strong("Sample VWC"),": average soil core VWC (by default three soil core replicates are sampled per station, date time and soil depth). VWC value range is [0;1]."), 
+                      shiny::p("After data is loaded a handful of these categories can be used to subset the data set. Multiple selection for all categorical variables is implemented. 
 An option for ggplot's facet_grid functionality is included. Klick", shiny::em("facet grid")," and the data set will be shown grouped by landuse and soil depth 
 in the Model Fit panel. 
 One can enable", shiny::em("Show row.names"), "to easily choose specific 
