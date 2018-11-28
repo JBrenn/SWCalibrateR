@@ -93,7 +93,7 @@ geographic coordinates of the station consisting of
 (11) ", shiny::strong("Sensor ID"),": specific soil moisture sensor name, taking in-situ measurements, 
 (12) ", shiny::strong("Sensor VWC"),": average VWC measured by soil moisture sensor 
 (±1h time of observation) 
-(13) ", shiny::strong("Sample VWC"),": average soil core VWC (by default three soil core replicates are sampled per station, date time and soil depth). VWC value range is [0;1]."), 
+(13) ", shiny::strong("Sample VWC"),": average soil core VWC (by default three soil core replicates are sampled and averaged per station, date time and soil depth). VWC value range is [0;1]."), 
                       shiny::p("After data is loaded a handful of these categories can be used to subset the data set. Multiple selection for all categorical variables is implemented. 
 An option for ggplot's facet_grid functionality is included. Klick", shiny::em("facet grid")," and the data set will be shown grouped by landuse and soil depth 
 in the Model Fit panel. 
