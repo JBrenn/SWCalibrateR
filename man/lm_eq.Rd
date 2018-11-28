@@ -2,12 +2,12 @@
 % Please edit documentation in R/lm_eq.R
 \name{lm_eq}
 \alias{lm_eq}
-\title{Expression linear model mquation and r-square.}
+\title{Expression linear model equation and r-square.}
 \usage{
 lm_eq(df, method)
 }
 \arguments{
-\item{df}{input dataframe including columns "meansample" \code{y} and "meanstation"  \code{x}}
+\item{df}{input dataframe including columns "Sample.VWC" \code{y} and "Sensor.VWC"  \code{x}}
 
 \item{method}{define method, \code{lm} for OLS estimator, \code{rlm} for MM-type estimator (robust).}
 }
@@ -21,6 +21,6 @@ Computes and returns (as.character) linear model equation and R-square value.
 DETAILS
 }
 \examples{
-data("SensorVSample")
+data("data")
 lm_eq(df = data, method = "rlm")
 }

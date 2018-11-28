@@ -4,13 +4,13 @@
 \name{SMCcalibration}
 \alias{SMCcalibration}
 \alias{SMCcalibration-package}
-\title{SMCcalibration: A package for estimate and dignose soil moisture sensor
-claibration.}
+\title{SMCcalibration: A package for estimate and diagnose soil moisture sensor
+calibration.}
 \description{
 The SMCcalibration package provides an interactive shiny framework.
 }
 \section{SMCcalibration functions}{
 
-The SMCcalibration functions ...
+The SMCcalibration functions ...···
 }
 

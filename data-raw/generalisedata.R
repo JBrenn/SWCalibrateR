@@ -78,6 +78,9 @@ data$`Sensor ID` <- factor(data$`Sensor ID`)
 # reduce data set to 200 entries
 data <- data[sample(x = 1:length(data$`Station ID`), 200), ]
 
+# remove data row with NA data in SWC
+data <- data[!(is.na(data$`Sensor VWC`) | is.na(data$`Sample VWC`)), ]
+
 # save .RData in /data
 devtools::use_data(data, overwrite = TRUE)
 
