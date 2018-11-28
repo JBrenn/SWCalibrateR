@@ -76,8 +76,10 @@ ui <- shiny::fluidPage(
                     shiny::tabPanel("Description", 
                       shiny::br(),
                       shiny::h4("Side Panel for Data Subset"),
-shiny::p("The left side panel enables subsetting of the data set. Use the 
-integrated example data set to trial or choose a data set to upload. 
+shiny::p("The left side panel enables subsetting of the data set. You can familiarise with the 
+apps features using the integrated example data set. Upload your own data set via the
+", shiny::em("Choose CSV file"), "tab and you are ready to analyse it. Keep care about 
+the data set headers! See " , shiny::code("data('data')"), " for orientation.
 The data set requires the following column categories (column names in bold): 
 (1) name of the research" , shiny::strong("Project ID"),  
 ", (2) ", shiny::strong("Station ID"), ", 
