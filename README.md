@@ -2,7 +2,7 @@
 =======
 # SMC calibration
 R package providing functionality for calibration of soil moisture sensors.
-* Get example data for calibration via data("SensorVSample").
+* Get example data for calibration via data("data").
 * Query sites to calibrate and retrieve filtered data frame.
 * Perform linear calibration with standars OLS or MM-type regressor.
 * Visualize result.
