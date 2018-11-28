@@ -1,201 +1,201 @@
 Project ID,Station ID,Landuse,Date,Soil depth,Sensor type,Sensor VWC,Sample VWC,Sensor ID,Soil type,Latitude,Longitude,Altitude
-Project 2,Station 8,Sparsely vegetated areas,18/06/2015,5,CS655,0.3735,0.425,SensorMean,NA,NA,NA,NA
-Project 2,Station 4,Fruit trees and berry plantations,01/09/2014,5,CS655,0.335,0.537,SensorMean,NA,NA,NA,NA
-Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,20,CS655,0.359,0.3977867,CI,NA,NA,NA,NA
-Project 2,Station 13,Vineyards,15/07/2014,5,Decagon10HS,0.316,0.359,SensorMean,NA,NA,NA,NA
-Project 2,Station 11,Natural grassland,23/07/2014,5,OnsetSMB005,0.199,0.453,SensorMean,NA,NA,NA,NA
-Project 2,Station 18,Sparsely vegetated areas,2010-2011,20,OnsetSMB005,0.23214,0.333256013,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,19/07/2013,20,Decagon10HS,0.115,0.198,SensorMean,NA,NA,NA,NA
-Project 1,Station 28,Coniferous forest,24/07/2015,40,CS655,0.23,0.2545,SensorMean,NA,NA,NA,NA
-Project 3,Station 44,Natural grassland,24/04/2018,40,CS655,0.162,0.3626,NA,Sabbioso limoso,46.6200053,10.8477652,641
-Project 2,Station 10,Transitional woodland/shrub,18/06/2015,5,NA,0.261,0.3861,TSn,NA,NA,NA,NA
-Project 2,Station 7,Coniferous forest,21/09/2015,5,CS655,0.1440952,0.23902,SensorMean,NA,NA,NA,NA
-Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,5,CS655,0.3879091,0.4130133,C,NA,NA,NA,NA
-Project 2,Station 18,Sparsely vegetated areas,01/09/2014,20,OnsetSMB005,0.284,0.215,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,27/05/2014,5,Decagon10HS,0.177,0.387,CSn,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,15/07/2014,5,Decagon10HS,0.163,0.418,LSt,NA,NA,NA,NA
-Project 2,Station 9,Sparsely vegetated areas,2010-2011,20,Decagon10HS,0.201350694,0.29273173,SensorMean,NA,NA,NA,NA
-Project 2,Station 7,Coniferous forest,14/07/2014,20,CS655,0.178,0.122,SensorMean,NA,NA,NA,NA
-Project 2,Station 16,Broad-leaved forest,2010-2011,20,OnsetSMB005,0.138719583,0.276805578,SensorMean,NA,NA,NA,NA
-Project 2,Station 12,Coniferous forest,19/07/2013,5,OnsetSMB005,0.127,0.26,SensorMean,NA,NA,NA,NA
-Project 1,Station 35,Natural grassland,27/07/2015,20,CS655,0.365,0.2877,SensorMean	,NA,NA,NA,NA
-Project 2,Station 7,Coniferous forest,18/06/2015,20,CS655,0.221,0.204,SensorMean,NA,NA,NA,NA
-Project 1,Station 2,Transitional woodland/shrub,26/08/2014,40,CS655,0.368,0.291,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,18/06/2015,5,Decagon10HS,0.261,0.3861,CSn,NA,NA,NA,NA
-Project 1,Station 29,Mixed forest,31/07/2015,20,CS655,0.224,0.124,SensorMean,NA,NA,NA,NA
-Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,5,CS655,0.361303,0.4130133,SensorMean,NA,NA,NA,NA
-Project 2,Station 15,Transitional woodland/shrub,2010-2011,5,OnsetSMB005,0.17754,0.204175976,SensorMean,NA,NA,NA,NA
-Project 2,Station 12,Coniferous forest,31/07/2014,20,OnsetSMB005,0.2047,0.2768,SensorMean,NA,NA,NA,NA
-Project 2,Station 4,Fruit trees and berry plantations,18/06/2015,5,CS655,0.374,0.396,SensorMean,NA,NA,NA,NA
-Project 2,Station 4,Fruit trees and berry plantations,01/09/2014,20,CS655,0.274,0.402,SensorMean,NA,NA,NA,NA
-Project 1,Station 32,Broad-leaved forest,07/08/2015,20,CS655,0.205,0.3012,SensorMean,NA,NA,NA,NA
-Project 2,Station 4,Fruit trees and berry plantations,27/05/2014,5,CS655,0.256,0.322,SensorMean,NA,NA,NA,NA
-Project 2,Station 6,Broad-leaved forest,20/06/2014,20,CS655,0.071,0.081,SensorMean,NA,NA,NA,NA
-Project 1,Station 23,Natural grassland,24/07/2015,20,CS655,0.23,0.3254,SensorMean,NA,NA,NA,NA
-Project 1,Station 1,Fruit trees and berry plantations,26/08/2014,40,CS655,0.236,0.256,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,18/06/2015,5,Decagon10HS,0.345,0.3861,LSt,NA,NA,NA,NA
-Project 2,Station 13,Vineyards,2010-2011,5,OnsetSMB005,0.12988,0.321581579,SensorMean,NA,NA,NA,NA
-Project 1,Station 38,Natural grassland,20/08/2015,20,CS655,0.2123,0.2827,SensorMean,NA,NA,NA,NA
-Project 1,Station 37,Mixed forest,06/08/2015,5,CS655,0.216,0.3042,SensorMean,NA,NA,NA,NA
-Project 3,Station 46,Sparsely vegetated areas,22/03/2021,40,CS655,0.426,0.4226,NA,Sabbioso limoso,46.5013333,11.2802777,241
-Project 1,Station 2,Transitional woodland/shrub,22/09/2014,40,CS655,NA,0.292,SensorMean,NA,NA,NA,NA
-Project 1,Station 33,Sparsely vegetated areas,07/08/2015,20,CS655,0.222,0.464,SensorMean,NA,NA,NA,NA
-Project 1,Station 32,Broad-leaved forest,07/08/2015,40,CS655,0.196,0.2691,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,15/07/2014,5,Decagon10HS,0.252,0.418,CSn,NA,NA,NA,NA
+Project 2,Station 17,Pastures,01/09/2014,5,OnsetSMB005,0.254,0.436,SensorMean,NA,NA,NA,NA
 Project 2,Station 10,Transitional woodland/shrub,12/10/2015,5,NA,0.2537,0.51005,Csn,NA,NA,NA,NA
-Project 2,Station 9,Sparsely vegetated areas,2010-2011,20,Decagon10HS,0.12896,0.169896655,SensorMean,NA,NA,NA,NA
-Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,20,CS655,0.3150606,0.3977867,SensorMean,NA,NA,NA,NA
-Project 2,Station 5,Vineyards,01/09/2014,5,CS655,0.311,0.292,SensorMean,NA,NA,NA,NA
-Project 2,Station 5,Vineyards,18/06/2015,5,CS655,0.309,0.2446,SensorMean,NA,NA,NA,NA
-Project 2,Station 8,Sparsely vegetated areas,12/10/2015,5,CS655,0.2572963,0.2989733,SensorMean,NA,NA,NA,NA
-Project 1,Station 39,Mixed forest,20/08/2015,20,CS655,0.2,0.3363,SensorMean,NA,NA,NA,NA
-Project 2,Station 8,Sparsely vegetated areas,18/06/2015,20,CS655,0.255,0.215,SensorMean,NA,NA,NA,NA
-Project 2,Station 11,Natural grassland,15/07/2014,5,OnsetSMB005,0.264,0.494,SensorMean,NA,NA,NA,NA
-Project 2,Station 7,Coniferous forest,18/06/2015,5,CS655,0.283,0.303,SensorMean,NA,NA,NA,NA
-Project 2,Station 8,Sparsely vegetated areas,01/09/2014,5,CS655,0.389,0.379,SensorMean,NA,NA,NA,NA
-Project 2,Station 17,Broad-leaved forest,01/09/2014,5,OnsetSMB005,0.254,0.436,SensorMean,NA,NA,NA,NA
-Project 2,Station 25,Sparsely vegetated areas,2010-2011,20,OnsetSMB005,0.0139,0.039721329,SensorMean,NA,NA,NA,NA
-Project 2,Station 25,Sparsely vegetated areas,2010-2011,5,OnsetSMB005,0.09572,0.046522104,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,12/10/2015,5,NA,0.252,0.51005,TSn,NA,NA,NA,NA
-Project 2,Station 6,Broad-leaved forest,24/06/2014,5,CS655,0.141,0.118,SensorMean,NA,NA,NA,NA
-Project 1,Station 29,Mixed forest,31/07/2015,40,CS655,0.227,0.259,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,18/06/2015,5,NA,0.1365,0.3861,T,NA,NA,NA,NA
-Project 2,Station 9,Sparsely vegetated areas,19/07/2013,5,Decagon10HS,0.279,0.339,SensorMean,NA,NA,NA,NA
-Project 2,Station 16,Broad-leaved forest,2010-2011,20,OnsetSMB005,0.16866,0.229105592,SensorMean,NA,NA,NA,NA
-Project 2,Station 11,Natural grassland,2010-2011,5,Decagon10HS,0.247708333,0.42734467,SensorMean,NA,NA,NA,NA
-Project 1,Station 22,Coniferous forest,22/09/2014,20,CS655,NA,0.335,SensorMean,NA,NA,NA,NA
-Project 2,Station 18,Sparsely vegetated areas,2010-2011,5,OnsetSMB005,0.272681771,0.433701093,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,18/06/2015,20,NA,0.228,0.4056,TSn,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,12/10/2015,20,NA,0.161,0.39816,CSt,NA,NA,NA,NA
-Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,20,CS655,0.18,0.3977867,B,NA,NA,NA,NA
-Project 2,Station 11,Natural grassland,2010-2011,20,Decagon10HS,0.161192708,0.22332365,SensorMean,NA,NA,NA,NA
-Project 1,Station 20,Natural grassland,31/07/2015,40,CS655,0.211,0.2177,SensorMean,NA,NA,NA,NA
-Project 2,Station 9,Sparsely vegetated areas,05/08/2014,5,Decagon10HS,0.287,0.374,SensorMean,NA,NA,NA,NA
-Project 2,Station 8,Sparsely vegetated areas,01/09/2014,20,CS655,0.236,0.261,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,19/07/2013,20,Decagon10HS,0.115,0.198,LSt,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,19/07/2013,5,Decagon10HS,0.135,0.301,SensorMean,NA,NA,NA,NA
-Project 2,Station 11,Natural grassland,2010-2011,5,Decagon10HS,0.21767,0.2922265,SensorMean,NA,NA,NA,NA
-Project 1,Station 34,Broad-leaved forest,27/07/2015,20,CS655,0.338,0.3695,SensorMean,NA,NA,NA,NA
-Project 2,Station 12,Coniferous forest,2010-2011,5,OnsetSMB005,0.2786,0.33318768,SensorMean,NA,NA,NA,NA
-Project 2,Station 14,Coniferous forest,2010-2011,5,OnsetSMB005,0.112000208,0.126506335,SensorMean,NA,NA,NA,NA
-Project 2,Station 6,Broad-leaved forest,12/10/2015,5,CS655,0.211,0.2834267,CI,NA,NA,NA,NA
-Project 2,Station 5,Vineyards,27/05/2014,5,CS655,0.313,0.32,SensorMean,NA,NA,NA,NA
-Project 2,Station 6,Broad-leaved forest,12/10/2015,5,CS655,0.3314,0.2834267,C,NA,NA,NA,NA
-Project 3,Station 46,Sparsely vegetated areas,22/03/2018,20,CS655,0.317,0.365266667,NA,Limoso sabbioso,46.5013333,11.2802777,241
-Project 1,Station 2,Transitional woodland/shrub,25/05/2015,40,CS655,0.3543,0.3338,SensorMean,NA,NA,NA,NA
-Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,20,CS655,0.406,0.3977867,C,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,19/07/2013,5,Decagon10HS,0.083,0.301,LSt,NA,NA,NA,NA
-Project 2,Station 16,Broad-leaved forest,2010-2011,5,OnsetSMB005,0.173698646,0.349227004,SensorMean,NA,NA,NA,NA
-Project 1,Station 30,Natural grassland,31/07/2015,20,CS655,0.224,0.3642,SensorMean,NA,NA,NA,NA
-Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,5,CS655,0.3995455,0.4130133,CI,NA,NA,NA,NA
-Project 3,Station 49,Transitional woodland/shrub,22/03/2021,40,CS655,0.225,0.413266667,NA,Limoso sabbioso,46.5004444,11.2485833,243
-Project 2,Station 10,Transitional woodland/shrub,27/05/2014,5,Decagon10HS,0.083,0.387,LSt,NA,NA,NA,NA
-Project 2,Station 6,Broad-leaved forest,18/06/2015,5,CS655,0.315,0.381,SensorMean,NA,NA,NA,NA
-Project 2,Station 6,Broad-leaved forest,14/07/2014,5,CS655,0.321,0.293,SensorMean,NA,NA,NA,NA
-Project 1,Station 37,Mixed forest,06/08/2015,20,CS655,0.2337,0.2413,SensorMean,NA,NA,NA,NA
-Project 2,Station 8,Sparsely vegetated areas,18/06/2015,5,CS655,0.255,0.215,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,15/07/2014,5,Decagon10HS,0.207,0.418,SensorMean,NA,NA,NA,NA
-Project 2,Station 11,Natural grassland,23/07/2014,20,Decagon10HS,0.21,0.262,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,18/06/2015,5,NA,0.212,0.3861,LBL,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,18/06/2015,20,NA,0.248,0.4056,T,NA,NA,NA,NA
-Project 1,Station 31,Mixed forest,07/08/2015,40,CS655,0.196,0.2823,SensorMean,NA,NA,NA,NA
-Project 2,Station 12,Coniferous forest,31/07/2014,5,OnsetSMB005,0.2099,0.44126,SensorMean,NA,NA,NA,NA
-Project 3,Station 50,Vineyards,24/04/2018,20,CS655,0.432,0.453266667,NA,Limoso sabbioso,46.6085277,10.8376388,678
-Project 1,Station 33,Sparsely vegetated areas,07/08/2015,40,CS655,0.213,0.4899,SensorMean,NA,NA,NA,NA
-Project 2,Station 19,Fruit trees and berry plantations,29/09/2013,5,OnsetSMB005,0.356,0.639,SensorMean,NA,NA,NA,NA
-Project 2,Station 7,Coniferous forest,12/10/2015,5,CS655,0.1627407,0.2799333,SensorMean,NA,NA,NA,NA
-Project 2,Station 17,Broad-leaved forest,27/05/2014,5,OnsetSMB005,0.04,0.449,SensorMean,NA,NA,NA,NA
-Project 1,Station 35,Natural grassland,27/07/2015,20,CS655,0.365,0.2877,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,18/06/2015,5,NA,0.226,0.3861,L,NA,NA,NA,NA
-Project 1,Station 2,Transitional woodland/shrub,25/05/2015,20,CS655,0.3568,0.3617,SensorMean,NA,NA,NA,NA
-Project 2,Station 17,Broad-leaved forest,2010-2011,20,OnsetSMB005,0.208572917,0.336273811,SensorMean,NA,NA,NA,NA
-Project 2,Station 7,Coniferous forest,27/05/2014,5,CS655,0.156,0.234,SensorMean,NA,NA,NA,NA
-Project 2,Station 12,Coniferous forest,15/06/2015,20,OnsetSMB005,0.193852,0.4078,SensorMean,NA,NA,NA,NA
-Project 2,Station 18,Sparsely vegetated areas,29/09/2013,5,OnsetSMB005,0.199,0.148,SensorMean,NA,NA,NA,NA
-Project 2,Station 12,Coniferous forest,01/09/2014,5,OnsetSMB005,NA,0.516,SensorMean,NA,NA,NA,NA
-Project 3,Station 41,Pastures,26/03/2018,40,CS655,0.255,0.2826,NA,Sabbioso franco,46.6164275,11.1517024,297
-Project 3,Station 41,Pastures,26/03/2018,20,CS655,0.29,0.367933333,NA,mediamente dotato di humus Sabbioso franco,46.6164275,11.1517024,297
-Project 1,Station 1,Fruit trees and berry plantations,25/05/2015,20,CS655,0.295,0.2836,SensorMean,NA,NA,NA,NA
-Project 2,Station 7,Coniferous forest,01/09/2014,5,CS655,0.329,0.372,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,12/10/2015,20,NA,0.229,0.39816,T,NA,NA,NA,NA
-Project 1,Station 26,Sparsely vegetated areas,24/07/2015,20,CS655,0.23,0.435,SensorMean,NA,NA,NA,NA
-Project 2,Station 24,Transitional woodland/shrub,2010-2011,5,OnsetSMB005,0.39952,0.82502741,SensorMean,NA,NA,NA,NA
-Project 2,Station 14,Coniferous forest,2010-2011,20,OnsetSMB005,0.189070313,0.235228998,SensorMean,NA,NA,NA,NA
-Project 2,Station 17,Broad-leaved forest,27/05/2014,20,OnsetSMB005,0.168,0.375,SensorMean,NA,NA,NA,NA
-Project 2,Station 6,Broad-leaved forest,12/10/2015,5,CS655,0.193,0.2834267,B,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,29/09/2013,5,OnsetSMB005,0.26,0.43,SensorMean,NA,NA,NA,NA
-Project 3,Station 47,Pastures,18/05/2018,40,CS655,0.473,0.453266667,NA,Sabbioso limoso,46.3047777,11.2626666,214
-Project 1,Station 22,Coniferous forest,22/09/2014,40,CS655,NA,0.355,SensorMean,NA,NA,NA,NA
-Project 2,Station 17,Broad-leaved forest,15/07/2014,5,OnsetSMB005,0.209,0.317,SensorMean,NA,NA,NA,NA
-Project 1,Station 3,Broad-leaved forest,25/05/2015,40,CS655,0.3904,0.4425,SensorMean,NA,NA,NA,NA
-Project 2,Station 7,Coniferous forest,14/07/2014,5,CS655,0.265,0.233,SensorMean,NA,NA,NA,NA
-Project 2,Station 8,Sparsely vegetated areas,14/07/2014,20,CS655,0.223,0.28,SensorMean,NA,NA,NA,NA
-Project 1,Station 20,Natural grassland,22/09/2014,40,CS655,0.3355,0.329,SensorMean,NA,NA,NA,NA
-Project 1,Station 30,Natural grassland,31/07/2015,40,CS655,0.218,0.3496,SensorMean,NA,NA,NA,NA
-Project 2,Station 14,Coniferous forest,01/09/2014,5,OnsetSMB005,0.3567,0.409,SensorMean,NA,NA,NA,NA
-Project 2,Station 17,Broad-leaved forest,19/07/2013,5,OnsetSMB005,0.186,0.392,SensorMean,NA,NA,NA,NA
-Project 2,Station 4,Fruit trees and berry plantations,15/07/2014,5,CS655,0.379,0.403,SensorMean,NA,NA,NA,NA
-Project 2,Station 18,Sparsely vegetated areas,15/06/2015,20,OnsetSMB005,0.2228143,0.3072,SensorMean,NA,NA,NA,NA
-Project 2,Station 14,Coniferous forest,15/07/2014,5,OnsetSMB005,0.337,0.419,SensorMean,NA,NA,NA,NA
-Project 2,Station 18,Sparsely vegetated areas,15/06/2015,5,OnsetSMB005,0.2276,0.3530933,SensorMean,NA,NA,NA,NA
-Project 2,Station 13,Vineyards,15/06/2015,5,OnsetSMB005,0.2272824,0.48448,SensorMean,NA,NA,NA,NA
+Project 2,Station 8,Fruit trees and berry plantations,27/05/2014,5,CS655,0.29,0.263,SensorMean,NA,NA,NA,NA
+Project 2,Station 16,Natural grassland,2010-2011,5,OnsetSMB005,0.22858,0.247505149,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,29/09/2013,5,OnsetSMB005,0.271,0.43,CSn,NA,NA,NA,NA
+Project 2,Station 16,Natural grassland,24/06/2014,5,OnsetSMB005,0.19,0.309,SensorMean,NA,NA,NA,NA
+Project 2,Station 5,Fruit trees and berry plantations,27/05/2014,5,CS655,0.313,0.32,SensorMean,NA,NA,NA,NA
+Project 2,Station 6,Fruit trees and berry plantations,24/06/2014,20,CS655,0.123,0.064,SensorMean,NA,NA,NA,NA
+Project 2,Station 6,Fruit trees and berry plantations,20/06/2014,20,CS655,0.071,0.081,SensorMean,NA,NA,NA,NA
+Project 2,Station 14,Sparsely vegetated areas,2010-2011,5,OnsetSMB005,0.112000208,0.126506335,SensorMean,NA,NA,NA,NA
+Project 1,Station 22,Natural grassland,24/07/2015,20,CS655,0.22,0.3699,SensorMean,NA,NA,NA,NA
+Project 2,Station 16,Natural grassland,2010-2011,5,OnsetSMB005,0.173698646,0.349227004,SensorMean,NA,NA,NA,NA
+Project 1,Station 29,Sparsely vegetated areas,31/07/2015,40,CS655,0.227,0.259,SensorMean,NA,NA,NA,NA
+Project 3,Station 48,Mixed forest,16/05/2018,40,CS655,NA,0.3986,NA,mediamente dotato di humus Limoso sabbioso,46.3294166,11.2446388,212
+Project 3,Station 50,Sparsely vegetated areas,24/04/2018,40,CS655,0.373,0.4266,NA,Limoso sabbioso,46.6085277,10.8376388,678
+Project 2,Station 19,Natural grassland,15/07/2014,5,OnsetSMB005,0.397,0.594,SensorMean,NA,NA,NA,NA
+Project 2,Station 7,Natural grassland,18/06/2015,5,CS655,0.283,0.303,SensorMean,NA,NA,NA,NA
+Project 1,Station 28,Vineyards,24/07/2015,40,CS655,0.23,0.2545,SensorMean,NA,NA,NA,NA
 Project 2,Station 10,Transitional woodland/shrub,18/06/2015,20,Decagon10HS,0.178,0.4056,LSt,NA,NA,NA,NA
-Project 1,Station 21,Vineyards,22/09/2014,40,CS655,NA,0.34,SensorMean,NA,NA,NA,NA
-Project 2,Station 14,Coniferous forest,27/05/2014,20,OnsetSMB005,0.146,0.14,SensorMean,NA,NA,NA,NA
-Project 2,Station 8,Sparsely vegetated areas,20/06/2014,5,CS655,0.099,0.181,SensorMean,NA,NA,NA,NA
-Project 1,Station 35,Natural grassland,27/07/2015,5,CS655,0.3159,0.4197,SensorMean,NA,NA,NA,NA
-Project 3,Station 40,Natural grassland,16/05/2018,20,CS655,0.261,0.241266667,NA,Sabbioso debolmente franco,46.6855833,11.124,393
-Project 2,Station 10,Transitional woodland/shrub,27/05/2014,5,Decagon10HS,0.13,0.387,SensorMean,NA,NA,NA,NA
-Project 1,Station 23,Natural grassland,22/09/2014,20,CS655,0.14,0.297,SensorMean,NA,NA,NA,NA
-Project 3,Station 49,Transitional woodland/shrub,22/03/2018,20,CS655,0.339,0.407933333,NA,Sabbioso franco limoso,46.5004444,11.2485833,243
-Project 2,Station 10,Transitional woodland/shrub,18/06/2015,20,NA,0.243,0.4056,LBL,NA,NA,NA,NA
-Project 3,Station 47,Pastures,18/05/2018,20,CS655,0.407,0.385266667,NA,Sabbioso limoso,46.3047777,11.2626666,214
-Project 1,Station 2,Transitional woodland/shrub,26/08/2014,20,CS655,0.381,0.31,SensorMean,NA,NA,NA,NA
-Project 3,Station 43,Pastures,24/04/2018,40,CS655,0.298,0.317266667,NA,Limoso sabbioso,46.6080442,10.8580219,671
-Project 2,Station 6,Broad-leaved forest,27/05/2014,5,CS655,0.233,0.194,SensorMean,NA,NA,NA,NA
-Project 2,Station 8,Sparsely vegetated areas,12/10/2015,5,CS655,0.30555,0.2989733,B,NA,NA,NA,NA
-Project 2,Station 13,Vineyards,31/07/2014,5,OnsetSMB005,0.34612,0.5198,SensorMean,NA,NA,NA,NA
-Project 2,Station 18,Sparsely vegetated areas,19/07/2013,5,OnsetSMB005,0.193,0.301,SensorMean,NA,NA,NA,NA
-Project 2,Station 5,Vineyards,15/07/2014,5,CS655,0.219866667,0.416,SensorMean,NA,NA,NA,NA
-Project 1,Station 38,Natural grassland,20/08/2015,5,CS655,0.309,0.3157,SensorMean,NA,NA,NA,NA
-Project 3,Station 42,Vineyards,23/03/2018,40,CS655,0.245,0.317266667,NA,Sabbioso limoso,46.5411666,11.2288611,249
-Project 2,Station 5,Vineyards,12/10/2015,5,CS655,0.2868095,0.31512,SensorMean,NA,NA,NA,NA
-Project 2,Station 18,Sparsely vegetated areas,2010-2011,5,OnsetSMB005,0.30692,0.335695168,SensorMean,NA,NA,NA,NA
-Project 2,Station 9,Sparsely vegetated areas,05/08/2014,20,Decagon10HS,0.289,0.206,SensorMean,NA,NA,NA,NA
-Project 2,Station 19,Fruit trees and berry plantations,19/07/2013,5,OnsetSMB005,0.369,0.288,SensorMean,NA,NA,NA,NA
-Project 1,Station 34,Broad-leaved forest,27/07/2015,5,CS655,0.3663,0.3424,SensorMean,NA,NA,NA,NA
-Project 3,Station 48,Vineyards,16/05/2018,40,CS655,NA,0.3986,NA,mediamente dotato di humus Limoso sabbioso,46.3294166,11.2446388,212
-Project 2,Station 19,Fruit trees and berry plantations,15/07/2014,5,OnsetSMB005,0.397,0.594,SensorMean,NA,NA,NA,NA
-Project 1,Station 21,Vineyards,24/07/2015,40,CS655,0.21,0.2188,SensorMean,NA,NA,NA,NA
-Project 1,Station 23,Natural grassland,22/09/2014,40,CS655,0.209,0.317,SensorMean,NA,NA,NA,NA
-Project 1,Station 22,Coniferous forest,24/07/2015,40,CS655,0.21,0.4267,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,15/07/2014,20,Decagon10HS,0.21,0.42,LSt,NA,NA,NA,NA
-Project 2,Station 17,Broad-leaved forest,01/09/2014,20,OnsetSMB005,0.186,0.342,SensorMean,NA,NA,NA,NA
-Project 2,Station 6,Broad-leaved forest,24/06/2014,20,CS655,0.123,0.064,SensorMean,NA,NA,NA,NA
-Project 1,Station 39,Mixed forest,20/08/2015,5,CS655,0.35,0.3637,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,12/10/2015,5,NA,0.254,0.51005,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,29/09/2013,5,OnsetSMB005,0.25,0.43,LSt,NA,NA,NA,NA
+Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,20,CS655,0.359,0.3977867,CI,NA,NA,NA,NA
+Project 1,Station 36,Fruit trees and berry plantations,06/08/2015,20,CS655,0.455,0.476,SensorMean,NA,NA,NA,NA
+Project 3,Station 44,Coniferous forest,24/04/2018,20,CS655,0.162,0.329266667,NA,Sabbioso limoso,46.6200053,10.8477652,641
 Project 2,Station 10,Transitional woodland/shrub,12/10/2015,20,NA,0.447,0.39816,TSt,NA,NA,NA,NA
-Project 1,Station 3,Broad-leaved forest,28/08/2014,20,CS655,0.333,0.405,SensorMean,NA,NA,NA,NA
-Project 3,Station 45,Broad-leaved forest,23/03/2018,20,CS655,0.205,0.361266667,NA,Sabbioso limoso,46.5600277,11.20575,253
-Project 1,Station 27,Fruit trees and berry plantations,24/07/2015,40,CS655,0.22,0.217,SensorMean,NA,NA,NA,NA
-Project 2,Station 6,Broad-leaved forest,20/06/2014,5,CS655,0.07,0.166,SensorMean,NA,NA,NA,NA
-Project 3,Station 40,Natural grassland,16/05/2018,40,CS655,0.172,0.2066,NA,Sabbioso debolmente franco,46.6855833,11.124,393
-Project 2,Station 8,Sparsely vegetated areas,12/10/2015,5,CS655,0.1867,0.2989733,CI,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,18/06/2015,20,NA,0.135,0.4056,CSn,NA,NA,NA,NA
-Project 1,Station 23,Natural grassland,24/07/2015,20,CS655,0.23,0.3245,SensorMean,NA,NA,NA,NA
-Project 2,Station 24,Transitional woodland/shrub,2010-2011,20,OnsetSMB005,0.3516,0.690919629,SensorMean,NA,NA,NA,NA
-Project 2,Station 12,Coniferous forest,15/07/2014,5,OnsetSMB005,0.167,0.243,SensorMean,NA,NA,NA,NA
-Project 2,Station 13,Vineyards,29/09/2013,5,OnsetSMB005,0.233,0.265,SensorMean,NA,NA,NA,NA
-Project 1,Station 27,Fruit trees and berry plantations,24/07/2015,20,CS655,0.23,0.2569,SensorMean,NA,NA,NA,NA
-Project 1,Station 3,Broad-leaved forest,25/05/2015,20,CS655,0.3114,0.311,SensorMean,NA,NA,NA,NA
-Project 3,Station 44,Natural grassland,24/04/2018,20,CS655,0.162,0.329266667,NA,Sabbioso limoso,46.6200053,10.8477652,641
-Project 2,Station 16,Broad-leaved forest,24/06/2014,5,OnsetSMB005,0.19,0.309,SensorMean,NA,NA,NA,NA
-Project 2,Station 18,Sparsely vegetated areas,2010-2011,20,OnsetSMB005,0.23411125,0.280453984,SensorMean,NA,NA,NA,NA
-Project 2,Station 9,Sparsely vegetated areas,19/07/2013,20,Decagon10HS,0.172,0.234,SensorMean,NA,NA,NA,NA
+Project 2,Station 6,Fruit trees and berry plantations,12/10/2015,5,CS655,0.2452593,0.2834267,SensorMean,NA,NA,NA,NA
+Project 2,Station 18,Transitional woodland/shrub,2010-2011,20,OnsetSMB005,0.23214,0.333256013,SensorMean,NA,NA,NA,NA
+Project 1,Station 36,Fruit trees and berry plantations,06/08/2015,5,CS655,0.3403,0.4926,SensorMean,NA,NA,NA,NA
+Project 1,Station 27,Vineyards,24/07/2015,20,CS655,0.23,0.2569,SensorMean,NA,NA,NA,NA
+Project 2,Station 15,Fruit trees and berry plantations,24/06/2014,5,OnsetSMB005,0.127,0.109,SensorMean,NA,NA,NA,NA
+Project 2,Station 18,Transitional woodland/shrub,01/09/2014,5,OnsetSMB005,0.33,0.419,SensorMean,NA,NA,NA,NA
+Project 2,Station 7,Natural grassland,14/07/2014,5,CS655,0.265,0.233,SensorMean,NA,NA,NA,NA
+Project 2,Station 6,Fruit trees and berry plantations,01/09/2014,5,CS655,0.362,0.291,SensorMean,NA,NA,NA,NA
+Project 2,Station 6,Fruit trees and berry plantations,14/07/2014,5,CS655,0.321,0.293,SensorMean,NA,NA,NA,NA
+Project 1,Station 23,Natural grassland,22/09/2014,40,CS655,0.209,0.317,SensorMean,NA,NA,NA,NA
+Project 1,Station 20,Sparsely vegetated areas,22/09/2014,20,CS655,0.3507,0.323,SensorMean,NA,NA,NA,NA
+Project 2,Station 11,Natural grassland,23/07/2014,5,OnsetSMB005,0.199,0.453,SensorMean,NA,NA,NA,NA
+Project 2,Station 17,Pastures,19/07/2013,5,OnsetSMB005,0.186,0.392,SensorMean,NA,NA,NA,NA
+Project 2,Station 12,Coniferous forest,2010-2011,5,OnsetSMB005,0.2786,0.33318768,SensorMean,NA,NA,NA,NA
+Project 1,Station 38,Pastures,20/08/2015,5,CS655,0.309,0.3157,SensorMean,NA,NA,NA,NA
 Project 2,Station 10,Transitional woodland/shrub,12/10/2015,5,NA,0.247,0.51005,L,NA,NA,NA,NA
-Project 1,Station 28,Coniferous forest,24/07/2015,20,CS655,0.24,0.2799,SensorMean,NA,NA,NA,NA
-Project 2,Station 14,Coniferous forest,19/07/2013,5,OnsetSMB005,NA,0.25,SensorMean,NA,NA,NA,NA
-Project 2,Station 10,Transitional woodland/shrub,12/10/2015,20,NA,0.264,0.39816,SensorMean,NA,NA,NA,NA
-Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,5,CS655,0.2964545,0.4130133,B,NA,NA,NA,NA
-Project 2,Station 14,Coniferous forest,2010-2011,5,OnsetSMB005,0.214831771,0.369867164,SensorMean,NA,NA,NA,NA
+Project 2,Station 18,Transitional woodland/shrub,19/07/2013,5,OnsetSMB005,0.193,0.301,SensorMean,NA,NA,NA,NA
+Project 1,Station 3,Vineyards,25/05/2015,40,CS655,0.3904,0.4425,SensorMean,NA,NA,NA,NA
+Project 2,Station 8,Fruit trees and berry plantations,20/06/2014,5,CS655,0.099,0.181,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,18/06/2015,5,NA,0.261,0.3861,TSn,NA,NA,NA,NA
+Project 2,Station 11,Natural grassland,2010-2011,20,Decagon10HS,0.14967,0.357872186,SensorMean,NA,NA,NA,NA
+Project 2,Station 18,Transitional woodland/shrub,2010-2011,5,OnsetSMB005,0.30692,0.335695168,SensorMean,NA,NA,NA,NA
+Project 2,Station 11,Natural grassland,2010-2011,5,Decagon10HS,0.21767,0.2922265,SensorMean,NA,NA,NA,NA
+Project 3,Station 48,Mixed forest,16/05/2018,20,CS655,NA,0.407933333,NA,mediamente dotato di humus Limoso sabbioso,46.3294166,11.2446388,212
+Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,20,CS655,0.3150606,0.3977867,SensorMean,NA,NA,NA,NA
+Project 1,Station 31,Natural grassland,07/08/2015,40,CS655,0.196,0.2823,SensorMean,NA,NA,NA,NA
+Project 2,Station 12,Coniferous forest,01/09/2014,5,OnsetSMB005,NA,0.516,SensorMean,NA,NA,NA,NA
+Project 1,Station 21,Fruit trees and berry plantations,24/07/2015,40,CS655,0.21,0.2188,SensorMean,NA,NA,NA,NA
+Project 3,Station 41,Transitional woodland/shrub,26/03/2018,40,CS655,0.255,0.2826,NA,Sabbioso franco,46.6164275,11.1517024,297
+Project 2,Station 11,Natural grassland,19/07/2013,20,OnsetSMB005,0.026,0.124,SensorMean,NA,NA,NA,NA
+Project 2,Station 8,Fruit trees and berry plantations,12/10/2015,5,CS655,0.30555,0.2989733,B,NA,NA,NA,NA
+Project 2,Station 18,Transitional woodland/shrub,15/06/2015,20,OnsetSMB005,0.2228143,0.3072,SensorMean,NA,NA,NA,NA
+Project 3,Station 46,Broad-leaved forest,22/03/2021,40,CS655,0.426,0.4226,NA,Sabbioso limoso,46.5013333,11.2802777,241
+Project 3,Station 47,Pastures,18/05/2018,20,CS655,0.407,0.385266667,NA,Sabbioso limoso,46.3047777,11.2626666,214
+Project 2,Station 12,Coniferous forest,15/06/2015,20,OnsetSMB005,0.193852,0.4078,SensorMean,NA,NA,NA,NA
+Project 1,Station 31,Natural grassland,07/08/2015,20,CS655,0.204,0.2498,SensorMean,NA,NA,NA,NA
+Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,5,CS655,0.361303,0.4130133,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,18/06/2015,20,NA,0.243,0.4056,LBL,NA,NA,NA,NA
+Project 2,Station 17,Pastures,2010-2011,20,OnsetSMB005,0.20186,0.401347762,SensorMean,NA,NA,NA,NA
+Project 2,Station 9,Coniferous forest,2010-2011,20,Decagon10HS,0.12896,0.169896655,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,18/06/2015,20,NA,0.228,0.4056,TSn,NA,NA,NA,NA
+Project 2,Station 14,Sparsely vegetated areas,2010-2011,20,OnsetSMB005,0.189070313,0.235228998,SensorMean,NA,NA,NA,NA
+Project 2,Station 14,Sparsely vegetated areas,27/05/2014,5,OnsetSMB005,0.221,0.257,SensorMean,NA,NA,NA,NA
+Project 1,Station 30,Coniferous forest,31/07/2015,20,CS655,0.224,0.3642,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,18/06/2015,5,Decagon10HS,0.261,0.3861,CSn,NA,NA,NA,NA
+Project 1,Station 22,Natural grassland,22/09/2014,20,CS655,NA,0.335,SensorMean,NA,NA,NA,NA
+Project 2,Station 4,Fruit trees and berry plantations,01/09/2014,20,CS655,0.274,0.402,SensorMean,NA,NA,NA,NA
+Project 2,Station 12,Coniferous forest,31/07/2014,20,OnsetSMB005,0.2047,0.2768,SensorMean,NA,NA,NA,NA
+Project 2,Station 13,Vineyards,29/09/2013,5,OnsetSMB005,0.233,0.265,SensorMean,NA,NA,NA,NA
+Project 3,Station 45,Mixed forest,23/03/2018,40,CS655,0.285,0.3706,NA,Sabbioso limoso,46.5600277,11.20575,253
+Project 2,Station 11,Natural grassland,2010-2011,5,Decagon10HS,0.247708333,0.42734467,SensorMean,NA,NA,NA,NA
+Project 1,Station 22,Natural grassland,22/09/2014,40,CS655,NA,0.355,SensorMean,NA,NA,NA,NA
+Project 2,Station 14,Sparsely vegetated areas,01/09/2014,5,OnsetSMB005,0.3567,0.409,SensorMean,NA,NA,NA,NA
+Project 2,Station 5,Fruit trees and berry plantations,12/10/2015,20,CS655,0.2126667,0.25248,SensorMean,NA,NA,NA,NA
+Project 3,Station 42,Vineyards,23/03/2018,40,CS655,0.245,0.317266667,NA,Sabbioso limoso,46.5411666,11.2288611,249
+Project 2,Station 9,Coniferous forest,2010-2011,20,Decagon10HS,0.201350694,0.29273173,SensorMean,NA,NA,NA,NA
+Project 2,Station 8,Fruit trees and berry plantations,14/07/2014,5,CS655,0.32,0.328,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,15/07/2014,5,Decagon10HS,0.252,0.418,CSn,NA,NA,NA,NA
+Project 3,Station 41,Transitional woodland/shrub,26/03/2018,20,CS655,0.29,0.367933333,NA,mediamente dotato di humus Sabbioso franco,46.6164275,11.1517024,297
+Project 3,Station 49,Transitional woodland/shrub,22/03/2018,20,CS655,0.339,0.407933333,NA,Sabbioso franco limoso,46.5004444,11.2485833,243
+Project 2,Station 12,Coniferous forest,15/07/2014,5,OnsetSMB005,0.167,0.243,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,12/10/2015,5,NA,0.252,0.51005,TSn,NA,NA,NA,NA
+Project 1,Station 20,Sparsely vegetated areas,31/07/2015,40,CS655,0.211,0.2177,SensorMean,NA,NA,NA,NA
+Project 2,Station 16,Natural grassland,2010-2011,20,OnsetSMB005,0.138719583,0.276805578,SensorMean,NA,NA,NA,NA
+Project 2,Station 18,Transitional woodland/shrub,2010-2011,20,OnsetSMB005,0.23411125,0.280453984,SensorMean,NA,NA,NA,NA
 Project 2,Station 13,Vineyards,19/07/2013,5,OnsetSMB005,0.161,0.22,SensorMean,NA,NA,NA,NA
+Project 1,Station 2,Sparsely vegetated areas,26/08/2014,20,CS655,0.381,0.31,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,15/07/2014,5,Decagon10HS,0.163,0.418,LSt,NA,NA,NA,NA
+Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,20,CS655,0.18,0.3977867,B,NA,NA,NA,NA
+Project 2,Station 24,Natural grassland,2010-2011,20,OnsetSMB005,0.3516,0.690919629,SensorMean,NA,NA,NA,NA
+Project 2,Station 7,Natural grassland,27/05/2014,5,CS655,0.156,0.234,SensorMean,NA,NA,NA,NA
+Project 2,Station 11,Natural grassland,2010-2011,20,Decagon10HS,0.161192708,0.22332365,SensorMean,NA,NA,NA,NA
+Project 1,Station 29,Sparsely vegetated areas,31/07/2015,20,CS655,0.224,0.124,SensorMean,NA,NA,NA,NA
+Project 1,Station 3,Vineyards,28/08/2014,20,CS655,0.333,0.405,SensorMean,NA,NA,NA,NA
+Project 2,Station 11,Natural grassland,29/09/2013,5,OnsetSMB005,0.255,0.221,SensorMean,NA,NA,NA,NA
+Project 2,Station 6,Fruit trees and berry plantations,18/06/2015,20,CS655,0.267,0.321,SensorMean,NA,NA,NA,NA
+Project 3,Station 47,Pastures,18/05/2018,40,CS655,0.473,0.453266667,NA,Sabbioso limoso,46.3047777,11.2626666,214
+Project 2,Station 14,Sparsely vegetated areas,15/07/2014,5,OnsetSMB005,0.337,0.419,SensorMean,NA,NA,NA,NA
+Project 2,Station 19,Natural grassland,01/09/2014,5,OnsetSMB005,NA,0.473,SensorMean,NA,NA,NA,NA
+Project 1,Station 3,Vineyards,28/08/2014,40,CS655,0.367,0.38,SensorMean,NA,NA,NA,NA
+Project 1,Station 39,Vineyards,20/08/2015,20,CS655,0.2,0.3363,SensorMean,NA,NA,NA,NA
+Project 2,Station 8,Fruit trees and berry plantations,18/06/2015,5,CS655,0.255,0.215,SensorMean,NA,NA,NA,NA
+Project 1,Station 20,Sparsely vegetated areas,31/07/2015,20,CS655,0.211,0.191,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,19/07/2013,5,Decagon10HS,0.187,0.301,CSn,NA,NA,NA,NA
+Project 2,Station 6,Fruit trees and berry plantations,12/10/2015,5,CS655,0.193,0.2834267,B,NA,NA,NA,NA
+Project 2,Station 18,Transitional woodland/shrub,2010-2011,5,OnsetSMB005,0.272681771,0.433701093,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,12/10/2015,20,NA,0.264,0.39816,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,29/09/2013,5,OnsetSMB005,0.26,0.43,SensorMean,NA,NA,NA,NA
+Project 1,Station 35,Broad-leaved forest,27/07/2015,20,CS655,0.365,0.2877,SensorMean	,NA,NA,NA,NA
+Project 2,Station 16,Natural grassland,2010-2011,20,OnsetSMB005,0.16866,0.229105592,SensorMean,NA,NA,NA,NA
+Project 1,Station 2,Sparsely vegetated areas,25/05/2015,20,CS655,0.3568,0.3617,SensorMean,NA,NA,NA,NA
+Project 1,Station 23,Natural grassland,24/07/2015,20,CS655,0.23,0.3245,SensorMean,NA,NA,NA,NA
+Project 2,Station 8,Fruit trees and berry plantations,12/10/2015,5,CS655,0.2795,0.2989733,C,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,15/07/2014,20,Decagon10HS,0.21,0.42,SensorMean,NA,NA,NA,NA
+Project 2,Station 12,Coniferous forest,19/07/2013,5,OnsetSMB005,0.127,0.26,SensorMean,NA,NA,NA,NA
+Project 1,Station 34,Vineyards,27/07/2015,20,CS655,0.338,0.3695,SensorMean,NA,NA,NA,NA
+Project 2,Station 5,Fruit trees and berry plantations,18/06/2015,5,CS655,0.309,0.2446,SensorMean,NA,NA,NA,NA
+Project 2,Station 13,Vineyards,31/07/2014,5,OnsetSMB005,0.34612,0.5198,SensorMean,NA,NA,NA,NA
+Project 2,Station 8,Fruit trees and berry plantations,14/07/2014,20,CS655,0.223,0.28,SensorMean,NA,NA,NA,NA
+Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,20,CS655,0.406,0.3977867,C,NA,NA,NA,NA
+Project 2,Station 17,Pastures,27/05/2014,20,OnsetSMB005,0.168,0.375,SensorMean,NA,NA,NA,NA
+Project 2,Station 7,Natural grassland,01/09/2014,5,CS655,0.329,0.372,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,27/05/2014,5,Decagon10HS,0.13,0.387,SensorMean,NA,NA,NA,NA
+Project 1,Station 2,Sparsely vegetated areas,26/08/2014,40,CS655,0.368,0.291,SensorMean,NA,NA,NA,NA
+Project 1,Station 26,Vineyards,24/07/2015,20,CS655,0.23,0.435,SensorMean,NA,NA,NA,NA
+Project 1,Station 20,Sparsely vegetated areas,22/09/2014,40,CS655,0.3355,0.329,SensorMean,NA,NA,NA,NA
+Project 2,Station 17,Pastures,2010-2011,5,OnsetSMB005,0.09649,0.310050875,SensorMean,NA,NA,NA,NA
+Project 1,Station 33,Fruit trees and berry plantations,07/08/2015,20,CS655,0.222,0.464,SensorMean,NA,NA,NA,NA
+Project 1,Station 27,Vineyards,24/07/2015,40,CS655,0.22,0.217,SensorMean,NA,NA,NA,NA
+Project 3,Station 45,Mixed forest,23/03/2018,20,CS655,0.205,0.361266667,NA,Sabbioso limoso,46.5600277,11.20575,253
+Project 2,Station 4,Fruit trees and berry plantations,01/09/2014,5,CS655,0.335,0.537,SensorMean,NA,NA,NA,NA
+Project 1,Station 33,Fruit trees and berry plantations,07/08/2015,40,CS655,0.213,0.4899,SensorMean,NA,NA,NA,NA
+Project 2,Station 8,Fruit trees and berry plantations,01/09/2014,5,CS655,0.389,0.379,SensorMean,NA,NA,NA,NA
+Project 1,Station 21,Fruit trees and berry plantations,22/09/2014,40,CS655,NA,0.34,SensorMean,NA,NA,NA,NA
+Project 2,Station 14,Sparsely vegetated areas,19/07/2013,5,OnsetSMB005,NA,0.25,SensorMean,NA,NA,NA,NA
+Project 2,Station 12,Coniferous forest,31/07/2014,5,OnsetSMB005,0.2099,0.44126,SensorMean,NA,NA,NA,NA
+Project 2,Station 15,Fruit trees and berry plantations,2010-2011,5,OnsetSMB005,0.17754,0.204175976,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,12/10/2015,5,NA,0.2632,0.51005,LSp,NA,NA,NA,NA
+Project 2,Station 17,Pastures,01/09/2014,20,OnsetSMB005,0.186,0.342,SensorMean,NA,NA,NA,NA
+Project 2,Station 18,Transitional woodland/shrub,29/09/2013,5,OnsetSMB005,0.199,0.148,SensorMean,NA,NA,NA,NA
+Project 1,Station 1,Sparsely vegetated areas,25/05/2015,40,CS655,0.262,0.2977,SensorMean,NA,NA,NA,NA
+Project 2,Station 7,Natural grassland,12/10/2015,5,CS655,0.1627407,0.2799333,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,12/10/2015,20,NA,0.161,0.39816,CSt,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,27/05/2014,5,Decagon10HS,0.177,0.387,CSn,NA,NA,NA,NA
+Project 3,Station 46,Broad-leaved forest,22/03/2018,20,CS655,0.317,0.365266667,NA,Limoso sabbioso,46.5013333,11.2802777,241
+Project 2,Station 7,Natural grassland,18/06/2015,20,CS655,0.221,0.204,SensorMean,NA,NA,NA,NA
+Project 1,Station 37,Coniferous forest,06/08/2015,5,CS655,0.216,0.3042,SensorMean,NA,NA,NA,NA
+Project 2,Station 14,Sparsely vegetated areas,29/09/2013,5,OnsetSMB005,0.121,0.197,SensorMean,NA,NA,NA,NA
+Project 2,Station 17,Pastures,27/05/2014,5,OnsetSMB005,0.04,0.449,SensorMean,NA,NA,NA,NA
+Project 3,Station 49,Transitional woodland/shrub,22/03/2021,40,CS655,0.225,0.413266667,NA,Limoso sabbioso,46.5004444,11.2485833,243
+Project 3,Station 40,Broad-leaved forest,16/05/2018,20,CS655,0.261,0.241266667,NA,Sabbioso debolmente franco,46.6855833,11.124,393
+Project 2,Station 14,Sparsely vegetated areas,2010-2011,5,OnsetSMB005,0.214831771,0.369867164,SensorMean,NA,NA,NA,NA
+Project 2,Station 4,Fruit trees and berry plantations,18/06/2015,20,CS655,0.334,0.378,SensorMean,NA,NA,NA,NA
+Project 2,Station 6,Fruit trees and berry plantations,27/05/2014,5,CS655,0.233,0.194,SensorMean,NA,NA,NA,NA
+Project 2,Station 4,Fruit trees and berry plantations,15/07/2014,5,CS655,0.379,0.403,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,18/06/2015,5,NA,0.1365,0.3861,T,NA,NA,NA,NA
+Project 1,Station 23,Natural grassland,22/09/2014,20,CS655,0.14,0.297,SensorMean,NA,NA,NA,NA
+Project 1,Station 1,Sparsely vegetated areas,25/05/2015,20,CS655,0.295,0.2836,SensorMean,NA,NA,NA,NA
+Project 1,Station 1,Sparsely vegetated areas,26/08/2014,20,CS655,0.303,0.282,SensorMean,NA,NA,NA,NA
+Project 2,Station 5,Fruit trees and berry plantations,12/10/2015,5,CS655,0.2868095,0.31512,SensorMean,NA,NA,NA,NA
+Project 2,Station 8,Fruit trees and berry plantations,12/10/2015,5,CS655,0.2572963,0.2989733,SensorMean,NA,NA,NA,NA
+Project 2,Station 6,Fruit trees and berry plantations,20/06/2014,5,CS655,0.07,0.166,SensorMean,NA,NA,NA,NA
+Project 2,Station 17,Pastures,29/09/2013,5,OnsetSMB005,0.075,0.353,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,19/07/2013,5,Decagon10HS,0.135,0.301,SensorMean,NA,NA,NA,NA
+Project 2,Station 9,Coniferous forest,05/08/2014,20,Decagon10HS,0.289,0.206,SensorMean,NA,NA,NA,NA
+Project 2,Station 14,Sparsely vegetated areas,27/05/2014,20,OnsetSMB005,0.146,0.14,SensorMean,NA,NA,NA,NA
+Project 2,Station 13,Vineyards,2010-2011,5,OnsetSMB005,0.12988,0.321581579,SensorMean,NA,NA,NA,NA
+Project 1,Station 2,Sparsely vegetated areas,22/09/2014,40,CS655,NA,0.292,SensorMean,NA,NA,NA,NA
+Project 2,Station 18,Transitional woodland/shrub,01/09/2014,20,OnsetSMB005,0.284,0.215,SensorMean,NA,NA,NA,NA
+Project 2,Station 11,Natural grassland,19/07/2013,5,OnsetSMB005,0.249,0.207,SensorMean,NA,NA,NA,NA
+Project 2,Station 8,Fruit trees and berry plantations,12/10/2015,5,CS655,0.1867,0.2989733,CI,NA,NA,NA,NA
+Project 2,Station 12,Coniferous forest,29/09/2013,5,OnsetSMB005,NA,0.255,SensorMean,NA,NA,NA,NA
+Project 2,Station 4,Fruit trees and berry plantations,27/05/2014,5,CS655,0.256,0.322,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,19/07/2013,20,Decagon10HS,0.115,0.198,LSt,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,19/07/2013,5,Decagon10HS,0.083,0.301,LSt,NA,NA,NA,NA
+Project 1,Station 26,Vineyards,24/07/2015,20,CS655,0.23,0.2236,SensorMean,NA,NA,NA,NA
+Project 3,Station 42,Vineyards,23/03/2018,20,CS655,0.198,0.3106,NA,Sabbioso limoso,46.5411666,11.2288611,249
+Project 3,Station 44,Coniferous forest,24/04/2018,40,CS655,0.162,0.3626,NA,Sabbioso limoso,46.6200053,10.8477652,641
+Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,5,CS655,0.2964545,0.4130133,B,NA,NA,NA,NA
+Project 2,Station 9,Coniferous forest,19/07/2013,5,Decagon10HS,0.279,0.339,SensorMean,NA,NA,NA,NA
+Project 2,Station 9,Coniferous forest,05/08/2014,5,Decagon10HS,0.287,0.374,SensorMean,NA,NA,NA,NA
+Project 2,Station 5,Fruit trees and berry plantations,15/07/2014,5,CS655,0.219866667,0.416,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,12/10/2015,20,NA,0.222,0.39816,SensorMean,NA,NA,NA,NA
+Project 2,Station 18,Transitional woodland/shrub,15/06/2015,5,OnsetSMB005,0.2276,0.3530933,SensorMean,NA,NA,NA,NA
+Project 1,Station 2,Sparsely vegetated areas,25/05/2015,40,CS655,0.3543,0.3338,SensorMean,NA,NA,NA,NA
+Project 1,Station 37,Coniferous forest,06/08/2015,20,CS655,0.2337,0.2413,SensorMean,NA,NA,NA,NA
+Project 2,Station 5,Fruit trees and berry plantations,01/09/2014,5,CS655,0.311,0.292,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,18/06/2015,5,NA,0.212,0.3861,LBL,NA,NA,NA,NA
+Project 2,Station 8,Fruit trees and berry plantations,01/09/2014,20,CS655,0.236,0.261,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,18/06/2015,5,NA,0.226,0.3861,L,NA,NA,NA,NA
+Project 2,Station 8,Fruit trees and berry plantations,18/06/2015,5,CS655,0.3735,0.425,SensorMean,NA,NA,NA,NA
+Project 1,Station 39,Vineyards,20/08/2015,5,CS655,0.35,0.3637,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,18/06/2015,20,NA,0.248,0.4056,T,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,18/06/2015,20,NA,0.215,0.4056,SensorMean,NA,NA,NA,NA
+Project 2,Station 10,Transitional woodland/shrub,12/10/2015,5,NA,0.254,0.51005,SensorMean,NA,NA,NA,NA
+Project 2,Station 4,Fruit trees and berry plantations,12/10/2015,5,CS655,0.3879091,0.4130133,C,NA,NA,NA,NA
