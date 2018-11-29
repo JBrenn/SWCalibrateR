@@ -5,6 +5,6 @@ account: jgbr
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 490022
-bundleId: 1622545
+bundleId: 1728767
 url: https://jgbr.shinyapps.io/shiny/
-when: 1538657755.88664
+when: 1543499897.00301
