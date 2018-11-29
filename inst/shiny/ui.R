@@ -78,18 +78,18 @@ ui <- shiny::fluidPage(
                       shiny::h4("Side Panel for Data Subset"),
 shiny::p("The left side panel enables subsetting of the data set. Familiarise yourself with the features the application offers by using the integrated example data set. Upload your own data set via the
 ", shiny::em("Choose CSV file"), "tab and you are ready to analyse it. Keep care about 
-the data set headers! See " , shiny::code("data('data')"), " for orientation.
-The data set requires the following column categories (column names in bold): 
-(1) name of the research" , shiny::strong("Project ID"),  
-", (2) name of the measurement", shiny::strong("Station ID"), ", 
+the data set headers! For orientation you can load the example data set in your workspace:" , shiny::code("data('data')"), "."), 
+shiny::p("The data set does require the following categories (header names in bold): 
+(1) name of the research"   , shiny::strong("Project ID"), ", 
+(2) name of the measurement", shiny::strong("Station ID"), ", 
 geographic coordinates of the station consisting of 
-(3) ", shiny::strong("Latitude")," and 
-(4) ", shiny::strong("Longitude"),", 
-(5) ", shiny::strong("Altitude"),"of station in m a.s.l. 
-(6) ", shiny::strong("Date"),"of observation [format: DD/MM/YYYY], 
-(7) ", shiny::strong("Landuse"),"type at station, 
-(8) ", shiny::strong("Soil depth"),"of soil moisture measurement in cm, 
-(9) ", shiny::strong("Soil type:"),"soil type at station, 
+(3) " , shiny::strong("Latitude")," and 
+(4) " , shiny::strong("Longitude"),", 
+(5) " , shiny::strong("Altitude"),"of station in m a.s.l. 
+(6) " , shiny::strong("Date"),"of observation [DD/MM/YYYY], 
+(7) " , shiny::strong("Landuse"),"type at station, 
+(8) " , shiny::strong("Soil depth"),"of soil moisture measurement in cm, 
+(9) " , shiny::strong("Soil type:"),"soil type at station, 
 (10) ", shiny::strong("Sensor Type:"),"generic soil moisture sensor type and 
 (11) ", shiny::strong("Sensor ID:"),"specific soil moisture sensor name, measuring VWC in-situ, 
 (12) ", shiny::strong("Sensor VWC:"),"average VWC measured by soil moisture sensor 
@@ -102,13 +102,13 @@ One can enable", shiny::em("Show row.names"), "to easily choose specific
 outlier to toggle. 
 Zooming to a range of 0 to 0.6 [%vol/%vol] VWC is possible."),
                       shiny::p("For a description of the data set have a look at",
-                        shiny::code("?SMCcalibration::SensorVSample")), ". You can load the example data set with",
-                      shiny::code("data('data')")),".",
+                        shiny::code("?SMCcalibration::SensorVSample"), ". You can load the example data set in R with",
+                      shiny::code("data('data')"),"."),
                       shiny::p(""),
                       shiny::br(),
                       shiny::hr(),
                       shiny::h4("Model Fit"),
-                      shiny::p("The data subset is visualised in a scatter plot. Moreover, the statistical model is ablined with its 95% confidence intervall for the estimate. The model is estimated either by means of ordinary-least squares (OLS fit of lm function of R-base package", shiny::strong("stats"),") or by robust statistics (SMDM fit of the R-package", shiny::strong("robustbase"), "). One can toogle outlying points by klicking a single one or mark multiple and apply", shiny::em("Toogle points"), ". Outlier points may influence your model estimate. A helpful descision tool for indicating such points are the diagnostic plots on the next panel."),
+                      shiny::p("The data subset is visualised in a scatter plot. Moreover, the statistical model is ablined with its 95% confidence intervall for the estimate. The model is estimated either by means of ordinary-least squares (OLS fit with", shiny::a("stats::lm", href="https://www.rdocumentation.org/packages/stats/versions/3.5.1/topics/lm"), ") or by robust statistics (SMDM fit with" , shiny::a("robustbase::lmrob", href="https://www.rdocumentation.org/packages/robustbase/versions/0.93-3/topics/lmrob"), "). One can toogle outlying points by klicking a single one or mark multiple and apply", shiny::em("Toogle points"), ". Outlier points may influence your model estimate. A helpful descision tool for indicating such points are the diagnostic plots on the next panel."),
                       shiny::br(),
                       shiny::hr(),
                       shiny::h4("Diagnostics"),
