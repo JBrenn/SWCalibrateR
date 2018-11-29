@@ -191,12 +191,15 @@ server <- function(input, output, session) {
         # abline white x=y line
         ggplot2::geom_abline(intercept = 0, slope = 1, colour = "white") + 
         # plot points - scatter with exclude data set
-        ggplot2::geom_point(data = exclude, fill = NA, color = "black", alpha = 0.25) +
+        ggplot2::geom_point(data = exclude, fill = NA, color = "black", 
+          alpha = 0.25) +
         # set limits of cartesian coordinate system (from 0 to 0.6)
         ggplot2::coord_cartesian(xlim = c(0, .60), ylim = c(0, .60)) + 
         # apply facet grid: Soil depth vs. Land use
         #ggplot2::facet_grid(depth ~ landuse)
-        ggplot2::facet_grid(Soil.depth ~ Landuse)
+        ggplot2::facet_grid(Soil.depth ~ Landuse) +
+        ggplot2::xlab("Sensor VWC [%vol/%vol]") + 
+        ggplot2::ylab("Sample VWC [%vol/%vol]")
     # no facet grid ggplot  
     } else {
       # zoom in if input$Zoom = TRUE
@@ -218,7 +221,9 @@ server <- function(input, output, session) {
         # plot points - scatter with exclude data set
         ggplot2::geom_point(data = exclude, fill = NA, color = "black", alpha = 0.25) +
         # set limits of cartesian coordinate system, defined above
-        ggplot2::coord_cartesian(xlim = xlim, ylim = ylim)
+        ggplot2::coord_cartesian(xlim = xlim, ylim = ylim) +
+        ggplot2::xlab("Sensor VWC [%vol/%vol]") + 
+        ggplot2::ylab("Sample VWC [%vol/%vol]")
     }
     # facte grid or not
     if (input$facet)
