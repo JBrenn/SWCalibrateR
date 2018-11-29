@@ -1,53 +1,53 @@
 Project ID,Station ID,Landuse,Date,Soil depth,Sensor type,Sensor VWC,Sample VWC,Sensor ID,Soil type,Latitude,Longitude,Altitude
 Project 01,Station 01,Broad-leaved forest,26/08/2014,20,CS655,0.3,0.28,Sensor 01,sandy loam,46.65,10.61,1800
 Project 01,Station 01,Broad-leaved forest,26/08/2014,40,CS655,0.24,0.26,Sensor 01,sandy loam,46.65,10.61,1800
-Project 01,Station 02,Natural grassland,26/08/2014,20,CS655,0.38,0.31,Sensor 01,silt loam,46.59,10.86,1700
-Project 01,Station 02,Natural grassland,25/05/2015,20,CS655,0.36,0.36,Sensor 01,silt loam,46.59,10.86,1700
-Project 01,Station 02,Natural grassland,25/05/2015,40,CS655,0.35,0.33,Sensor 01,silt,46.59,10.86,1700
-Project 01,Station 03,Sparsely vegetated areas,28/08/2014,20,CS655,0.33,0.4,Sensor 01,silt loam,46.44,11.23,240
-Project 01,Station 03,Sparsely vegetated areas,25/05/2015,40,CS655,0.39,0.44,Sensor 01,sandy loam,46.44,11.23,240
-Project 02,Station 04,Broad-leaved forest,15/07/2014,20,CS655,0.3,0.41,Sensor 01,sandy loam,46.61,11.45,2100
-Project 02,Station 04,Broad-leaved forest,01/09/2014,5,CS655,0.24,0.74,Sensor 01,silt loam,46.61,11.45,2100
-Project 02,Station 04,Broad-leaved forest,01/09/2014,20,CS655,0.27,0.4,Sensor 01,sandy loam,46.61,11.45,2100
-Project 02,Station 04,Broad-leaved forest,12/10/2015,20,CS655,0.41,0.4,Sensor 08,silt loam,46.61,11.45,2100
-Project 02,Station 04,Broad-leaved forest,12/10/2015,5,CS655,0.4,0.41,Sensor 06,silt loam,46.61,11.45,2100
-Project 02,Station 04,Broad-leaved forest,12/10/2015,5,CS655,0.39,0.41,Sensor 08,sandy loam,46.61,11.45,2100
-Project 02,Station 04,Broad-leaved forest,12/10/2015,5,CS655,0.3,0.41,Sensor 11,sandy loam,46.61,11.45,2100
-Project 02,Station 04,Broad-leaved forest,12/10/2015,20,CS655,0.32,0.4,Sensor 01,sandy loam,46.61,11.45,2100
-Project 02,Station 04,Broad-leaved forest,12/10/2015,20,CS655,0.36,0.4,Sensor 06,loam,46.61,11.45,2100
-Project 02,Station 05,Natural grassland,27/05/2014,5,CS655,0.31,0.32,Sensor 01,silt loam,46.38,11.42,1500
-Project 02,Station 05,Natural grassland,12/10/2015,20,CS655,0.21,0.25,Sensor 01,sandy loam,46.38,11.42,1500
-Project 02,Station 06,Sparsely vegetated areas,27/05/2014,5,CS655,0.23,0.19,Sensor 01,sandy loam,46.62,10.9,600
-Project 02,Station 06,Sparsely vegetated areas,24/06/2014,5,CS655,0.14,0.12,Sensor 01,sandy loam,46.62,10.9,600
-Project 02,Station 06,Sparsely vegetated areas,14/07/2014,5,CS655,0.32,0.29,Sensor 01,silt loam,46.62,10.9,600
-Project 02,Station 06,Sparsely vegetated areas,12/10/2015,5,CS655,0.25,0.28,Sensor 01,clay loam,46.62,10.9,600
-Project 02,Station 06,Sparsely vegetated areas,12/10/2015,5,CS655,0.21,0.28,Sensor 06,silt loam,46.62,10.9,600
-Project 02,Station 06,Sparsely vegetated areas,12/10/2015,5,CS655,0.19,0.28,Sensor 11,silt loam,46.62,10.9,600
-Project 02,Station 06,Sparsely vegetated areas,12/10/2015,5,CS655,0.33,0.28,Sensor 08,sandy clay,46.62,10.9,600
-Project 02,Station 07,Transitional woodland/shrub,14/07/2014,5,CS655,0.26,0.23,Sensor 01,silt loam,46.68,10.61,1500
-Project 02,Station 07,Transitional woodland/shrub,14/07/2014,20,CS655,0.18,0.12,Sensor 01,silt loam,46.68,10.61,1500
-Project 02,Station 07,Transitional woodland/shrub,18/06/2015,20,CS655,0.22,0.2,Sensor 01,sandy loam,46.68,10.61,1500
-Project 02,Station 07,Transitional woodland/shrub,18/06/2015,5,CS655,0.28,0.3,Sensor 01,silt,46.68,10.61,1500
-Project 02,Station 07,Transitional woodland/shrub,21/09/2015,5,CS655,0.14,0.24,Sensor 01,silt loam,46.68,10.61,1500
-Project 02,Station 08,Natural grassland,27/05/2014,5,CS655,0.29,0.26,Sensor 01,loam,46.62,11.46,2100
-Project 02,Station 08,Natural grassland,14/07/2014,20,CS655,0.22,0.28,Sensor 01,silt loam,46.62,11.46,2100
-Project 02,Station 08,Natural grassland,01/09/2014,5,CS655,0.39,0.38,Sensor 01,clay loam,46.62,11.46,2100
-Project 02,Station 08,Natural grassland,12/10/2015,5,CS655,0.19,0.3,Sensor 06,clay loam,46.62,11.46,2100
-Project 02,Station 08,Natural grassland,12/10/2015,5,CS655,0.28,0.3,Sensor 08,sandy loam,46.62,11.46,2100
-Project 02,Station 09,Vineyards,06/06/2010,20,Decagon10HS,0.2,0.29,Sensor 01,silt loam,46.63,11.47,2100
-Project 02,Station 09,Vineyards,05/08/2014,5,Decagon10HS,0.29,0.37,Sensor 01,clay loam,46.63,11.47,2100
-Project 02,Station 10,Sparsely vegetated areas,27/05/2014,5,Decagon10HS,0.18,0.39,Sensor 08,silt loam,46.57,10.88,1700
-Project 02,Station 10,Sparsely vegetated areas,15/07/2014,5,Decagon10HS,0.25,0.42,Sensor 08,silt loam,46.57,10.88,1700
-Project 02,Station 10,Sparsely vegetated areas,15/07/2014,5,Decagon10HS,0.16,0.42,Sensor 06,silt loam,46.57,10.88,1700
-Project 02,Station 10,Sparsely vegetated areas,15/07/2014,20,Decagon10HS,0.21,0.42,Sensor 06,silt loam,46.57,10.88,1700
-Project 02,Station 10,Sparsely vegetated areas,18/06/2015,20,Decagon10HS,0.18,0.41,Sensor 06,silt loam,46.57,10.88,1700
-Project 02,Station 10,Sparsely vegetated areas,18/06/2015,5,CS655,0.14,0.39,Sensor 07,silt loam,46.57,10.88,1700
-Project 02,Station 10,Sparsely vegetated areas,18/06/2015,5,CS655,0.26,0.39,Sensor 08,sandy clay,46.57,10.88,1700
-Project 02,Station 10,Sparsely vegetated areas,12/10/2015,5,CS655,0.25,0.51,Sensor 11,silt loam,46.57,10.88,1700
-Project 02,Station 10,Sparsely vegetated areas,12/10/2015,20,CS655,0.22,0.4,Sensor 01,sandy loam,46.57,10.88,1700
-Project 02,Station 10,Sparsely vegetated areas,12/10/2015,5,CS655,0.26,0.51,Sensor 11,loam,46.57,10.88,1700
-Project 02,Station 10,Sparsely vegetated areas,12/10/2015,20,CS655,0.16,0.4,Sensor 11,silt,46.57,10.88,1700
-Project 02,Station 10,Sparsely vegetated areas,12/10/2015,5,CS655,0.25,0.51,Sensor 01,silt,46.57,10.88,1700
+Project 01,Station 02,Transitional woodland/shrub,26/08/2014,20,CS655,0.38,0.31,Sensor 01,silt loam,46.59,10.86,1700
+Project 01,Station 02,Transitional woodland/shrub,25/05/2015,20,CS655,0.36,0.36,Sensor 01,silt loam,46.59,10.86,1700
+Project 01,Station 02,Transitional woodland/shrub,25/05/2015,40,CS655,0.35,0.33,Sensor 01,silt,46.59,10.86,1700
+Project 01,Station 03,Broad-leaved forest,28/08/2014,20,CS655,0.33,0.4,Sensor 01,silt loam,46.44,11.23,240
+Project 01,Station 03,Broad-leaved forest,25/05/2015,40,CS655,0.39,0.44,Sensor 01,sandy loam,46.44,11.23,240
+Project 02,Station 04,Mixed forest,15/07/2014,20,CS655,0.3,0.41,Sensor 01,sandy loam,46.61,11.45,2100
+Project 02,Station 04,Mixed forest,01/09/2014,5,CS655,0.55,0.12,Sensor 01,silt loam,46.61,11.45,2100
+Project 02,Station 04,Mixed forest,01/09/2014,20,CS655,0.27,0.4,Sensor 01,sandy loam,46.61,11.45,2100
+Project 02,Station 04,Mixed forest,12/10/2015,20,CS655,0.41,0.4,Sensor 08,silt loam,46.61,11.45,2100
+Project 02,Station 04,Mixed forest,12/10/2015,5,CS655,0.4,0.41,Sensor 06,silt loam,46.61,11.45,2100
+Project 02,Station 04,Mixed forest,12/10/2015,5,CS655,0.39,0.41,Sensor 08,sandy loam,46.61,11.45,2100
+Project 02,Station 04,Mixed forest,12/10/2015,5,CS655,0.3,0.41,Sensor 11,sandy loam,46.61,11.45,2100
+Project 02,Station 04,Mixed forest,12/10/2015,20,CS655,0.32,0.4,Sensor 01,sandy loam,46.61,11.45,2100
+Project 02,Station 04,Mixed forest,12/10/2015,20,CS655,0.36,0.4,Sensor 06,loam,46.61,11.45,2100
+Project 02,Station 05,Pastures,27/05/2014,5,CS655,0.31,0.32,Sensor 01,silt loam,46.38,11.42,1500
+Project 02,Station 05,Pastures,12/10/2015,20,CS655,0.21,0.25,Sensor 01,sandy loam,46.38,11.42,1500
+Project 02,Station 06,Mixed forest,27/05/2014,5,CS655,0.23,0.19,Sensor 01,sandy loam,46.62,10.9,600
+Project 02,Station 06,Mixed forest,24/06/2014,5,CS655,0.14,0.12,Sensor 01,sandy loam,46.62,10.9,600
+Project 02,Station 06,Mixed forest,14/07/2014,5,CS655,0.32,0.29,Sensor 01,silt loam,46.62,10.9,600
+Project 02,Station 06,Mixed forest,12/10/2015,5,CS655,0.25,0.28,Sensor 01,clay loam,46.62,10.9,600
+Project 02,Station 06,Mixed forest,12/10/2015,5,CS655,0.21,0.28,Sensor 06,silt loam,46.62,10.9,600
+Project 02,Station 06,Mixed forest,12/10/2015,5,CS655,0.19,0.28,Sensor 11,silt loam,46.62,10.9,600
+Project 02,Station 06,Mixed forest,12/10/2015,5,CS655,0.33,0.28,Sensor 08,sandy clay,46.62,10.9,600
+Project 02,Station 07,Broad-leaved forest,14/07/2014,5,CS655,0.26,0.23,Sensor 01,silt loam,46.68,10.61,1500
+Project 02,Station 07,Broad-leaved forest,14/07/2014,20,CS655,0.18,0.12,Sensor 01,silt loam,46.68,10.61,1500
+Project 02,Station 07,Broad-leaved forest,18/06/2015,20,CS655,0.22,0.2,Sensor 01,sandy loam,46.68,10.61,1500
+Project 02,Station 07,Broad-leaved forest,18/06/2015,5,CS655,0.28,0.3,Sensor 01,silt,46.68,10.61,1500
+Project 02,Station 07,Broad-leaved forest,21/09/2015,5,CS655,0.14,0.24,Sensor 01,silt loam,46.68,10.61,1500
+Project 02,Station 08,Broad-leaved forest,27/05/2014,5,CS655,0.29,0.26,Sensor 01,loam,46.62,11.46,2100
+Project 02,Station 08,Broad-leaved forest,14/07/2014,20,CS655,0.22,0.28,Sensor 01,silt loam,46.62,11.46,2100
+Project 02,Station 08,Broad-leaved forest,01/09/2014,5,CS655,0.39,0.38,Sensor 01,clay loam,46.62,11.46,2100
+Project 02,Station 08,Broad-leaved forest,12/10/2015,5,CS655,0.19,0.3,Sensor 06,clay loam,46.62,11.46,2100
+Project 02,Station 08,Broad-leaved forest,12/10/2015,5,CS655,0.28,0.3,Sensor 08,sandy loam,46.62,11.46,2100
+Project 02,Station 09,Coniferous forest,06/06/2010,20,Decagon10HS,0.2,0.29,Sensor 01,silt loam,46.63,11.47,2100
+Project 02,Station 09,Coniferous forest,05/08/2014,5,Decagon10HS,0.29,0.37,Sensor 01,clay loam,46.63,11.47,2100
+Project 02,Station 10,Pastures,27/05/2014,5,Decagon10HS,0.18,0.39,Sensor 08,silt loam,46.57,10.88,1700
+Project 02,Station 10,Pastures,15/07/2014,5,Decagon10HS,0.25,0.42,Sensor 08,silt loam,46.57,10.88,1700
+Project 02,Station 10,Pastures,15/07/2014,5,Decagon10HS,0.16,0.42,Sensor 06,silt loam,46.57,10.88,1700
+Project 02,Station 10,Pastures,15/07/2014,20,Decagon10HS,0.21,0.42,Sensor 06,silt loam,46.57,10.88,1700
+Project 02,Station 10,Pastures,18/06/2015,20,Decagon10HS,0.18,0.41,Sensor 06,silt loam,46.57,10.88,1700
+Project 02,Station 10,Pastures,18/06/2015,5,CS655,0.14,0.39,Sensor 07,silt loam,46.57,10.88,1700
+Project 02,Station 10,Pastures,18/06/2015,5,CS655,0.26,0.39,Sensor 08,sandy clay,46.57,10.88,1700
+Project 02,Station 10,Pastures,12/10/2015,5,CS655,0.25,0.51,Sensor 11,silt loam,46.57,10.88,1700
+Project 02,Station 10,Pastures,12/10/2015,20,CS655,0.22,0.4,Sensor 01,sandy loam,46.57,10.88,1700
+Project 02,Station 10,Pastures,12/10/2015,5,CS655,0.26,0.51,Sensor 11,loam,46.57,10.88,1700
+Project 02,Station 10,Pastures,12/10/2015,20,CS655,0.16,0.4,Sensor 11,silt,46.57,10.88,1700
+Project 02,Station 10,Pastures,12/10/2015,5,CS655,0.25,0.51,Sensor 01,silt,46.57,10.88,1700
 Project 02,Station 11,Coniferous forest,06/06/2010,20,Decagon10HS,0.16,0.22,Sensor 01,clay loam,46.685,10.614,1500
 Project 02,Station 11,Coniferous forest,06/06/2010,5,Decagon10HS,0.25,0.43,Sensor 01,sandy loam,46.685,10.614,1500
 Project 02,Station 11,Coniferous forest,06/06/2010,5,Decagon10HS,0.22,0.29,Sensor 01,sandy clay,46.685,10.614,1500
@@ -59,43 +59,43 @@ Project 02,Station 12,Broad-leaved forest,15/07/2014,5,OnsetSMB005,0.17,0.24,Sen
 Project 02,Station 12,Broad-leaved forest,31/07/2014,5,OnsetSMB005,0.21,0.44,Sensor 01,sandy loam,46.61,11.47,2100
 Project 02,Station 12,Broad-leaved forest,15/06/2015,20,OnsetSMB005,0.19,0.41,Sensor 01,silt loam,46.61,11.47,2100
 Project 02,Station 12,Broad-leaved forest,15/06/2015,5,OnsetSMB005,0.18,0.4,Sensor 01,loam,46.61,11.47,2100
-Project 02,Station 13,Natural grassland,06/06/2010,5,OnsetSMB005,0.13,0.32,Sensor 01,sandy loam,46.7,10.61,2000
-Project 02,Station 13,Natural grassland,15/06/2015,5,OnsetSMB005,0.23,0.48,Sensor 01,silt loam,46.7,10.61,2000
-Project 02,Station 14,Transitional woodland/shrub,29/09/2013,5,OnsetSMB005,0.12,0.2,Sensor 01,clay loam,46.69,10.6,1500
-Project 02,Station 14,Transitional woodland/shrub,27/05/2014,20,OnsetSMB005,0.15,0.14,Sensor 01,clay loam,46.69,10.6,1500
-Project 02,Station 14,Transitional woodland/shrub,15/07/2014,5,OnsetSMB005,0.34,0.42,Sensor 01,sandy loam,46.69,10.6,1500
-Project 02,Station 15,Broad-leaved forest,24/06/2014,5,OnsetSMB005,0.13,0.11,Sensor 01,sandy clay,46.39,11.43,1500
-Project 02,Station 16,Vineyards,06/06/2010,5,OnsetSMB005,0.17,0.35,Sensor 01,clay loam,46.72,10.64,2500
-Project 02,Station 17,Fruit trees and berry plantations,06/06/2010,5,OnsetSMB005,0.1,0.31,Sensor 01,loam,46.64,10.6,1800
-Project 02,Station 17,Fruit trees and berry plantations,19/07/2013,5,OnsetSMB005,0.19,0.39,Sensor 01,silt loam,46.64,10.6,1800
-Project 02,Station 17,Fruit trees and berry plantations,27/05/2014,5,OnsetSMB005,0.04,0.45,Sensor 01,sandy loam,46.64,10.6,1800
-Project 02,Station 18,Transitional woodland/shrub,06/06/2010,5,OnsetSMB005,0.21,0.24,Sensor 01,sandy loam,46.45,11.24,230
-Project 02,Station 18,Transitional woodland/shrub,19/07/2013,5,OnsetSMB005,0.19,0.3,Sensor 01,sandy loam,46.45,11.24,230
-Project 02,Station 18,Transitional woodland/shrub,29/09/2013,5,OnsetSMB005,0.2,0.15,Sensor 01,silt loam,46.45,11.24,250
-Project 02,Station 18,Transitional woodland/shrub,15/06/2015,20,OnsetSMB005,0.22,0.31,Sensor 01,silt loam,46.45,11.24,250
-Project 02,Station 19,Broad-leaved forest,29/09/2013,5,OnsetSMB005,0.36,0.64,Sensor 01,silt loam,46.66,10.61,1800
-Project 01,Station 20,Transitional woodland/shrub,22/09/2014,20,CS655,0.35,0.32,Sensor 01,silt loam,46.4,11.44,1500
-Project 01,Station 20,Transitional woodland/shrub,31/07/2015,40,CS655,0.21,0.22,Sensor 01,clay loam,46.4,11.44,1500
-Project 01,Station 20,Transitional woodland/shrub,31/07/2015,20,CS655,0.21,0.19,Sensor 01,sandy clay,46.4,11.44,1500
-Project 01,Station 21,Broad-leaved forest,24/07/2015,40,CS655,0.21,0.22,Sensor 01,clay loam,46.6,11.44,2100
-Project 01,Station 22,Natural grassland,22/09/2014,40,CS655,0.21,0.32,Sensor 01,loam,46.71,10.62,2000
-Project 02,Station 23,Sparsely vegetated areas,06/06/2010,20,OnsetSMB005,0.35,0.69,Sensor 01,silt loam,46.46,11.28,250
-Project 02,Station 24,Broad-leaved forest,06/06/2010,20,OnsetSMB005,0.01,0.04,Sensor 01,silt loam,46.48,11.29,250
-Project 01,Station 25,Pastures,24/07/2015,20,CS655,0.23,0.44,Sensor 01,sandy loam,46.7,10.62,1500
-Project 01,Station 26,Coniferous forest,24/07/2015,20,CS655,0.24,0.28,Sensor 01,clay loam,46.72,10.62,2500
-Project 01,Station 26,Coniferous forest,24/07/2015,40,CS655,0.23,0.25,Sensor 01,silt loam,46.72,10.62,2500
-Project 01,Station 27,Mixed forest,31/07/2015,40,CS655,0.23,0.26,Sensor 01,sandy loam,46.7,10.63,1500
-Project 01,Station 28,Coniferous forest,31/07/2015,40,CS655,0.22,0.35,Sensor 01,silt loam,46.41,11.45,1500
-Project 01,Station 29,Sparsely vegetated areas,07/08/2015,40,CS655,0.21,0.49,Sensor 01,silt loam,46.47,11.25,250
-Project 01,Station 29,Sparsely vegetated areas,07/08/2015,20,CS655,0.22,0.46,Sensor 01,silt loam,46.47,11.25,250
-Project 01,Station 30,Coniferous forest,27/07/2015,20,CS655,0.34,0.37,Sensor 01,clay loam,46.65,10.62,1800
-Project 01,Station 31,Natural grassland,06/08/2015,5,CS655,0.34,0.49,Sensor 01,silt loam,46.4,11.45,1500
-Project 01,Station 32,Coniferous forest,20/08/2015,5,CS655,0.31,0.32,Sensor 01,loam,46.6,11.45,2100
-Project 01,Station 33,Coniferous forest,20/08/2015,5,CS655,0.35,0.36,Sensor 01,silt,46.4,11.42,1500
-Project 03,Station 34,Vineyards,16/05/2018,20,CS655,0.26,0.24,Sensor 01,clay loam,46.69,11.12,1800
-Project 03,Station 35,Broad-leaved forest,26/03/2018,40,CS655,0.26,0.28,Sensor 01,silt loam,46.62,11.15,2100
-Project 03,Station 36,Sparsely vegetated areas,24/04/2018,20,CS655,0.26,0.36,Sensor 01,sandy loam,46.61,10.86,2100
-Project 03,Station 37,Transitional woodland/shrub,23/03/2018,40,CS655,0.28,0.37,Sensor 01,sandy loam,46.56,11.21,1500
-Project 03,Station 38,Vineyards,22/03/2018,20,CS655,0.32,0.37,Sensor 01,silt loam,46.5,11.28,241
-Project 03,Station 39,Fruit trees and berry plantations,06/06/2010,20,CS655,0.41,0.39,Sensor 01,silt loam,46.3,11.26,214
-Project 03,Station 40,Sparsely vegetated areas,24/04/2018,40,CS655,0.37,0.43,Sensor 01,silt loam,46.61,10.84,678
+Project 02,Station 13,Mixed forest,06/06/2010,5,OnsetSMB005,0.13,0.32,Sensor 01,sandy loam,46.7,10.61,2000
+Project 02,Station 13,Mixed forest,15/06/2015,5,OnsetSMB005,0.23,0.48,Sensor 01,silt loam,46.7,10.61,2000
+Project 02,Station 14,Broad-leaved forest,29/09/2013,5,OnsetSMB005,0.12,0.2,Sensor 01,clay loam,46.69,10.6,1500
+Project 02,Station 14,Broad-leaved forest,27/05/2014,20,OnsetSMB005,0.15,0.14,Sensor 01,clay loam,46.69,10.6,1500
+Project 02,Station 14,Broad-leaved forest,15/07/2014,5,OnsetSMB005,0.34,0.42,Sensor 01,sandy loam,46.69,10.6,1500
+Project 02,Station 15,Pastures,24/06/2014,5,OnsetSMB005,0.13,0.11,Sensor 01,sandy clay,46.39,11.43,1500
+Project 02,Station 16,Broad-leaved forest,06/06/2010,5,OnsetSMB005,0.17,0.35,Sensor 01,clay loam,46.72,10.64,2500
+Project 02,Station 17,Coniferous forest,06/06/2010,5,OnsetSMB005,0.1,0.31,Sensor 01,loam,46.64,10.6,1800
+Project 02,Station 17,Coniferous forest,19/07/2013,5,OnsetSMB005,0.19,0.39,Sensor 01,silt loam,46.64,10.6,1800
+Project 02,Station 17,Coniferous forest,27/05/2014,5,OnsetSMB005,0.04,0.45,Sensor 01,sandy loam,46.64,10.6,1800
+Project 02,Station 18,Mixed forest,06/06/2010,5,OnsetSMB005,0.21,0.24,Sensor 01,sandy loam,46.45,11.24,230
+Project 02,Station 18,Mixed forest,19/07/2013,5,OnsetSMB005,0.19,0.3,Sensor 01,sandy loam,46.45,11.24,230
+Project 02,Station 18,Mixed forest,29/09/2013,5,OnsetSMB005,0.2,0.15,Sensor 01,silt loam,46.45,11.24,250
+Project 02,Station 18,Mixed forest,15/06/2015,20,OnsetSMB005,0.22,0.31,Sensor 01,silt loam,46.45,11.24,250
+Project 02,Station 19,Fruit trees and berry plantations,29/09/2013,5,OnsetSMB005,0.36,0.64,Sensor 01,silt loam,46.66,10.61,1800
+Project 01,Station 20,Coniferous forest,22/09/2014,20,CS655,0.35,0.32,Sensor 01,silt loam,46.4,11.44,1500
+Project 01,Station 20,Coniferous forest,31/07/2015,40,CS655,0.21,0.22,Sensor 01,clay loam,46.4,11.44,1500
+Project 01,Station 20,Coniferous forest,31/07/2015,20,CS655,0.21,0.19,Sensor 01,sandy clay,46.4,11.44,1500
+Project 01,Station 21,Fruit trees and berry plantations,24/07/2015,40,CS655,0.21,0.22,Sensor 01,clay loam,46.6,11.44,2100
+Project 01,Station 22,Broad-leaved forest,22/09/2014,40,CS655,0.21,0.32,Sensor 01,loam,46.71,10.62,2000
+Project 02,Station 23,Broad-leaved forest,06/06/2010,20,OnsetSMB005,0.35,0.69,Sensor 01,silt loam,46.46,11.28,250
+Project 02,Station 24,Sparsely vegetated areas,06/06/2010,20,OnsetSMB005,0.01,0.04,Sensor 01,silt loam,46.48,11.29,250
+Project 01,Station 25,Coniferous forest,24/07/2015,20,CS655,0.23,0.44,Sensor 01,sandy loam,46.7,10.62,1500
+Project 01,Station 26,Vineyards,24/07/2015,20,CS655,0.24,0.28,Sensor 01,clay loam,46.72,10.62,2500
+Project 01,Station 26,Vineyards,24/07/2015,40,CS655,0.23,0.25,Sensor 01,silt loam,46.72,10.62,2500
+Project 01,Station 27,Transitional woodland/shrub,31/07/2015,40,CS655,0.23,0.26,Sensor 01,sandy loam,46.7,10.63,1500
+Project 01,Station 28,Broad-leaved forest,31/07/2015,40,CS655,0.22,0.35,Sensor 01,silt loam,46.41,11.45,1500
+Project 01,Station 29,Coniferous forest,07/08/2015,40,CS655,0.21,0.49,Sensor 01,silt loam,46.47,11.25,250
+Project 01,Station 29,Coniferous forest,07/08/2015,20,CS655,0.22,0.46,Sensor 01,silt loam,46.47,11.25,250
+Project 01,Station 30,Transitional woodland/shrub,27/07/2015,20,CS655,0.34,0.37,Sensor 01,clay loam,46.65,10.62,1800
+Project 01,Station 31,Coniferous forest,06/08/2015,5,CS655,0.34,0.49,Sensor 01,silt loam,46.4,11.45,1500
+Project 01,Station 32,Sparsely vegetated areas,20/08/2015,5,CS655,0.31,0.32,Sensor 01,loam,46.6,11.45,2100
+Project 01,Station 33,Mixed forest,20/08/2015,5,CS655,0.35,0.36,Sensor 01,silt,46.4,11.42,1500
+Project 03,Station 34,Mixed forest,16/05/2018,20,CS655,0.26,0.24,Sensor 01,clay loam,46.69,11.12,1800
+Project 03,Station 35,Natural grassland,26/03/2018,40,CS655,0.26,0.28,Sensor 01,silt loam,46.62,11.15,2100
+Project 03,Station 36,Transitional woodland/shrub,24/04/2018,20,CS655,0.26,0.36,Sensor 01,sandy loam,46.61,10.86,2100
+Project 03,Station 37,Pastures,23/03/2018,40,CS655,0.28,0.37,Sensor 01,sandy loam,46.56,11.21,1500
+Project 03,Station 38,Natural grassland,22/03/2018,20,CS655,0.32,0.37,Sensor 01,silt loam,46.5,11.28,241
+Project 03,Station 39,Pastures,06/06/2010,20,CS655,0.41,0.39,Sensor 01,silt loam,46.3,11.26,214
+Project 03,Station 40,Coniferous forest,24/04/2018,40,CS655,0.37,0.43,Sensor 01,silt loam,46.61,10.84,678
