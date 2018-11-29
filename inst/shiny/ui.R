@@ -76,34 +76,34 @@ ui <- shiny::fluidPage(
                     shiny::tabPanel("Description", 
                       shiny::br(),
                       shiny::h4("Side Panel for Data Subset"),
-shiny::p("The left side panel enables subsetting of the data set. You can familiarise with the 
-apps features using the integrated example data set. Upload your own data set via the
+shiny::p("The left side panel enables subsetting of the data set. Familiarise yourself with the features the application offers by using the integrated example data set. Upload your own data set via the
 ", shiny::em("Choose CSV file"), "tab and you are ready to analyse it. Keep care about 
 the data set headers! See " , shiny::code("data('data')"), " for orientation.
 The data set requires the following column categories (column names in bold): 
 (1) name of the research" , shiny::strong("Project ID"),  
-", (2) ", shiny::strong("Station ID"), ", 
+", (2) name of the measurement", shiny::strong("Station ID"), ", 
 geographic coordinates of the station consisting of 
 (3) ", shiny::strong("Latitude")," and 
 (4) ", shiny::strong("Longitude"),", 
 (5) ", shiny::strong("Altitude"),"of station in m a.s.l. 
-(6) ", shiny::strong("Date")," of observation [DD/MM/YYYY], 
-(7) ", shiny::strong("Landuse")," type at station, 
-(8) soil ", shiny::strong("Soil depth")," of soil moisture measurement [cm], 
-(9) ", shiny::strong("Soil type"),": soil type at station, 
-(10) ", shiny::strong("Sensor Type"),": generic soil moisture sensor type and 
-(11) ", shiny::strong("Sensor ID"),": specific soil moisture sensor name, taking in-situ measurements, 
-(12) ", shiny::strong("Sensor VWC"),": average VWC measured by soil moisture sensor 
+(6) ", shiny::strong("Date"),"of observation [format: DD/MM/YYYY], 
+(7) ", shiny::strong("Landuse"),"type at station, 
+(8) ", shiny::strong("Soil depth"),"of soil moisture measurement in cm, 
+(9) ", shiny::strong("Soil type:"),"soil type at station, 
+(10) ", shiny::strong("Sensor Type:"),"generic soil moisture sensor type and 
+(11) ", shiny::strong("Sensor ID:"),"specific soil moisture sensor name, measuring VWC in-situ, 
+(12) ", shiny::strong("Sensor VWC:"),"average VWC measured by soil moisture sensor 
 (±1h time of observation) 
-(13) ", shiny::strong("Sample VWC"),": average soil core VWC (by default three soil core replicates are sampled and averaged per station, date time and soil depth). VWC value range is [0;1]."), 
+(13) ", shiny::strong("Sample VWC:"),"average soil core VWC (by default three soil core replicates are sampled and averaged per station, date time and soil depth). VWC value range is [0;1]."), 
                       shiny::p("After data is loaded a handful of these categories can be used to subset the data set. Multiple selection for all categorical variables is implemented. 
 An option for ggplot's facet_grid functionality is included. Klick", shiny::em("facet grid")," and the data set will be shown grouped by landuse and soil depth 
 in the Model Fit panel. 
 One can enable", shiny::em("Show row.names"), "to easily choose specific 
 outlier to toggle. 
-Zooming to a range of 0 to 60 %vol VWC is possible."),
+Zooming to a range of 0 to 0.6 [%vol/%vol] VWC is possible."),
                       shiny::p("For a description of the data set have a look at",
-                        shiny::code("?SMCcalibration::SensorVSample")),
+                        shiny::code("?SMCcalibration::SensorVSample")), ". You can load the example data set with",
+                      shiny::code("data('data')")),".",
                       shiny::p(""),
                       shiny::br(),
                       shiny::hr(),
