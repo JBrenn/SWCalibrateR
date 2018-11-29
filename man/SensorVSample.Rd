@@ -9,7 +9,7 @@ Example data set for soil moisture sensor calibration. Generally loads if shiny 
 }
 \usage{data("SensorVSample")}
 \format{
-  A data frame with 192 observations on the following 13 variables.
+  A data frame with 100 observations on the following 13 variables.
   \describe{
     \item{\code{Project ID}}{a factor, project name}
     \item{\code{Station ID}}{a factor,name of micro-meteorological station equiped with soil moisture sensors.}
