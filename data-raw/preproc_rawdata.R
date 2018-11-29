@@ -3,12 +3,7 @@
 data <- read.csv("data-raw/data.csv.back")
 
 # rename col
-colnames(data) <- c("Project ID", "Station ID", "Landuse", "Date", "Soil depth",
-  "Sensor type", "Sensor VWC", "Samples", "Sample VWC", "Sensor ID", "Soil type", 
-  "Latitude", "Longitude", "Altitude")
-
-# remove Samples col
-data <- data[,-8]
+colnames(data) <- c("Project ID", "Station ID", "Landuse", "Date", "Soil depth", "Sensor type", "Sensor VWC", "Sample VWC", "Sensor ID", "Soil type", "Latitude", "Longitude", "Altitude")
 
 # unique rows
 data <- unique(data)
