@@ -76,44 +76,44 @@ ui <- shiny::fluidPage(
                     shiny::tabPanel("Description", 
                       shiny::br(),
                       shiny::h4("Side Panel for Data Subset"),
-shiny::p("The left side panel enables subsetting of the data set. You can familiarise with the 
-apps features using the integrated example data set. Upload your own data set via the
+shiny::p("The left side panel enables subsetting of the data set. Familiarise yourself with the features the application offers by using the integrated example data set. Upload your own data set via the
 ", shiny::em("Choose CSV file"), "tab and you are ready to analyse it. Keep care about 
 the data set headers! See " , shiny::code("data('data')"), " for orientation.
 The data set requires the following column categories (column names in bold): 
 (1) name of the research" , shiny::strong("Project ID"),  
-", (2) ", shiny::strong("Station ID"), ", 
+", (2) name of the measurement", shiny::strong("Station ID"), ", 
 geographic coordinates of the station consisting of 
 (3) ", shiny::strong("Latitude")," and 
 (4) ", shiny::strong("Longitude"),", 
 (5) ", shiny::strong("Altitude"),"of station in m a.s.l. 
-(6) ", shiny::strong("Date")," of observation [DD/MM/YYYY], 
-(7) ", shiny::strong("Landuse")," type at station, 
-(8) soil ", shiny::strong("Soil depth")," of soil moisture measurement [cm], 
-(9) ", shiny::strong("Soil type"),": soil type at station, 
-(10) ", shiny::strong("Sensor Type"),": generic soil moisture sensor type and 
-(11) ", shiny::strong("Sensor ID"),": specific soil moisture sensor name, taking in-situ measurements, 
-(12) ", shiny::strong("Sensor VWC"),": average VWC measured by soil moisture sensor 
+(6) ", shiny::strong("Date"),"of observation [format: DD/MM/YYYY], 
+(7) ", shiny::strong("Landuse"),"type at station, 
+(8) ", shiny::strong("Soil depth"),"of soil moisture measurement in cm, 
+(9) ", shiny::strong("Soil type:"),"soil type at station, 
+(10) ", shiny::strong("Sensor Type:"),"generic soil moisture sensor type and 
+(11) ", shiny::strong("Sensor ID:"),"specific soil moisture sensor name, measuring VWC in-situ, 
+(12) ", shiny::strong("Sensor VWC:"),"average VWC measured by soil moisture sensor 
 (±1h time of observation) 
-(13) ", shiny::strong("Sample VWC"),": average soil core VWC (by default three soil core replicates are sampled and averaged per station, date time and soil depth). VWC value range is [0;1]."), 
+(13) ", shiny::strong("Sample VWC:"),"average soil core VWC (by default three soil core replicates are sampled and averaged per station, date time and soil depth). VWC value range is [0;1]."), 
                       shiny::p("After data is loaded a handful of these categories can be used to subset the data set. Multiple selection for all categorical variables is implemented. 
 An option for ggplot's facet_grid functionality is included. Klick", shiny::em("facet grid")," and the data set will be shown grouped by landuse and soil depth 
 in the Model Fit panel. 
 One can enable", shiny::em("Show row.names"), "to easily choose specific 
 outlier to toggle. 
-Zooming to a range of 0 to 60 %vol VWC is possible."),
+Zooming to a range of 0 to 0.6 [%vol/%vol] VWC is possible."),
                       shiny::p("For a description of the data set have a look at",
-                        shiny::code("?SMCcalibration::SensorVSample")),
+                        shiny::code("?SMCcalibration::SensorVSample")), ". You can load the example data set with",
+                      shiny::code("data('data')")),".",
                       shiny::p(""),
                       shiny::br(),
                       shiny::hr(),
                       shiny::h4("Model Fit"),
-                      shiny::p("The data subset is visualised in a scatter plot. Moreover, the statistical model with the 95% confidence intervall for the estimates is ablined. Estimates are computed either with the lm() function or with robust statistics (SMDM fit from the", shiny::strong("robustbase"), "R-package). One can toogle outlying points by klicking one or mark multiple and apply", shiny::em("Toogle points"), ". A helpful descision tool for indicating possible outliers are the diagnostic plots on the next panel."),
+                      shiny::p("The data subset is visualised in a scatter plot. Moreover, the statistical model is ablined with its 95% confidence intervall for the estimate. The model is estimated either by means of ordinary-least squares (OLS fit of lm function of R-base package", shiny::strong("stats"),") or by robust statistics (SMDM fit of the R-package", shiny::strong("robustbase"), "). One can toogle outlying points by klicking a single one or mark multiple and apply", shiny::em("Toogle points"), ". Outlier points may influence your model estimate. A helpful descision tool for indicating such points are the diagnostic plots on the next panel."),
                       shiny::br(),
                       shiny::hr(),
                       shiny::h4("Diagnostics"),
                       shiny::p("Four diagostic plots for the lm or roblm object 
-are visualised:"), 
+are visualised. All of them aim to answer a specific question we do have in mind when identifying influencing leverage outlier points."), 
   shiny::p("(1) Residuals vs. Fitted Values:
 Do the model residuals have non-linear patterns? 
 Besides non-linearity of the residuals, this plot inherits a first hint towards
@@ -121,7 +121,7 @@ unequal error variances, and outliers."),
   shiny::p("(2) Normal Q−Q vs. Residuals:
 Are the model residuals normally distributed? 
 Normal distribution of the residual is an underlying assumption for OLS. 
-Strong deviations from the 1:1 line support the suspicion that this 
+Strong deviations from the x=y line support the suspicion that this 
 assumtion is violated."),
   shiny::p("(3) Scale-Location:
 Are the model residuals spread equally along the ranges of predictors? 
@@ -143,7 +143,7 @@ data subset. Sort and search is enabled for each category as well as global sear
                       shiny::hr(),
                       shiny::h4("Map"),
                       shiny::p("This panel contains a leaflet map of the 
-locations of the data subset.")
+locations of the data subset observation points.")
                       )
                     )
                   )
