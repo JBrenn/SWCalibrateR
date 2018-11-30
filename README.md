@@ -1,5 +1,3 @@
-
-=======
 # SWCalibrateR
 
 Interactive R-shiny application providing functionality for flexible calibration of soil moisture sensors.
