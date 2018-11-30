@@ -1,7 +1,7 @@
-Package: SMCcalibration
-Version: 1.0.0.9999
+Package: SWCcalibrateR
+Version: 1.0.0
 Date: 2018-10-01
-Title: Calibration tool for soil moisture sensors
+Title: Flexible calibration tool for soil moisture sensors
 Authors@R: c(
     person("Johannes", "Brenner", email = "johannes.brennner@ufz.de",
         role = c("aut", "cre")),
@@ -9,13 +9,13 @@ Authors@R: c(
         role = c("aut")))
 Maintainer@R: person("Johannes", "Brenner", email = "johannes.brennner@ufz.de",
     role = c("aut", "cre"))
-Description: Calibrates soil moisture sensors using volumetric
+Description: The R-shiny toolbox calibrates soil moisture sensors using volumetric
     water content (VWC) measured in-situ by soil moisture sensors and retrieved 
     from soil samples (field campaigns plus laboratory work). 
-    Includes interactive shiny app for data upload and 
+    It includes an interactive shiny app for data upload and 
     subseting, estimation of linear models (OLS and robust MM-type estimator), 
     visualisation of data and model estimate as well as model dignostics,
-    in order to be able to indentify leverage outlier points.
+    in order to be able to indentify leverage and outlier points.
 Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 LazyData: No
@@ -31,4 +31,3 @@ Imports:
     shiny (>= 1.1.0),
     tidyr (>= 0.8.1)
 RoxygenNote: 6.1.0
-Suggests: testthat

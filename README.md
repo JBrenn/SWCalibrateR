@@ -1,12 +1,13 @@
 
 =======
-# SMC calibration
-R package providing functionality for calibration of soil moisture sensors.
-* Get example data for calibration via data("data").
-* Query sites to calibrate and retrieve filtered data frame.
-* Perform linear calibration with standars OLS or MM-type regressor.
+# SWCalibrateR
+
+Interactive R-shiny application providing functionality for flexible calibration of soil moisture sensors.
+* Get example dataset for calibration via data("data").
+* Query metadata to retrieve filtered data frame.
+* Perform linear model estimation with standars OLS or MM-type regressor.
 * Visualize result.
-* Interactive shiny app includes subseting of data, choice of method, visualization, diagnostics of the regression model.
+* Diagnose model fit and identify leverage and outlier points. 
 
 ## How to start
 
@@ -14,13 +15,13 @@ First install the package with:
 
 ```R
 if (!require("devtools")) install.packages("devtools")
-install_github("JBrenn/SMCcalibration")
+install_github("JBrenn/SWCalibrateR")
 ```
 
 and then import the library with:
 
 ```R
-library(SMCcalibration)
+library(SWCalibrateR)
 ```
 
 =======
@@ -36,7 +37,7 @@ https://jgbr.shinyapps.io/shiny/
 
 The same version runs with the following code:
 ```R
-shiny::runGitHub('JBrenn/SMCcalibration', subdir="inst/shiny/", launch.browser = TRUE)
+shiny::runGitHub('JBrenn/SWCalibrateR', subdir="inst/shiny/", launch.browser = TRUE)
 ```
 ## Acknowledgement
 
