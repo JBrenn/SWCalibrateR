@@ -15,7 +15,7 @@
 #' 
 # --------------------------
 # load package dependencies and data
-library(SMCcalibration)
+library(SWCalibrateR)
 data("data")
 # --------------------------
 # shiny server
@@ -34,7 +34,7 @@ server <- function(input, output, session) {
     #data("SensorVSample")
     #temp <- data  
     temp <- read.csv(
-      file.path(system.file("data", package = "SMCcalibration"), "data.csv"), 
+      file.path(system.file("data", package = "SWCalibrateR"), "data.csv"), 
       sep=",", dec=".")
     return(temp)
     } else {
@@ -204,7 +204,7 @@ server <- function(input, output, session) {
       ggplot2::xlab("Sensor VWC [%vol/%vol]") + 
       ggplot2::ylab("Sample VWC [%vol/%vol]")
 
-    # MM-type regressor: SMCcalibration::fitSMDM
+    # MM-type regressor: SWCalibrateR::fitSMDM
     if (input$robust) {
       p <- p +  
         # add robust linear model to ggplot
@@ -243,7 +243,7 @@ server <- function(input, output, session) {
     # Plot the kept and excluded points as two separate data sets
     keep    <- data[ vals$keeprows, , drop = FALSE]
     exclude <- data[!vals$keeprows, , drop = FALSE]
-    # MM-type regressor: SMCcalibration::fitSMDM
+    # MM-type regressor: SWCalibrateR::fitSMDM
     if (input$robust) {
       # robust model estimation
       fit_rlm <- fitSMDM(formula = Sample.VWC ~ Sensor.VWC, data = keep)
