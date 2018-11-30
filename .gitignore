@@ -40,3 +40,6 @@ rsconnect/
 
 # produced figure
 *.png
+
+# rsconnect
+*.dcf
