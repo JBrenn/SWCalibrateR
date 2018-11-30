@@ -167,7 +167,7 @@ server <- function(input, output, session) {
     data$Longitude  <- round(data$Longitude,  2)
     data$Altitude   <- round(data$Altitude,   0)
     # rownames 
-    data$row.name <- rownames(data)
+    data$row.ID     <- rownames(data)
     # delete NA 
     data[!is.na(data[,1]),]
     
