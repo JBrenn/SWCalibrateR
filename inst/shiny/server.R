@@ -5,15 +5,10 @@
 #' @param session session info
 #' @examples 
 #' runApp(ui, server)
-#' @seealso 
-#'  \code{\link[dplyr]{filter}}
-#'  \code{\link[ggplot2]{ggplot}},\code{\link[ggplot2]{aes}},\code{\link[ggplot2]{geom_abline}},\code{\link[ggplot2]{geom_point}},\code{\link[ggplot2]{coord_cartesian}},\code{\link[ggplot2]{facet_grid}},\code{\link[ggplot2]{geom_label}},\code{\link[ggplot2]{geom_smooth}}
-#'  \code{\link[leaflet]{leafletOutput}},\code{\link[leaflet]{awesomeIcons}},\code{\link[leaflet]{leaflet}},\code{\link[leaflet]{addProviderTiles}},\code{\link[leaflet]{addAwesomeMarkers}},\code{\link[leaflet]{addMeasure}},\code{\link[leaflet]{addLayersControl}}
-#'  \code{\link[leaflet.extras]{addSearchOSM}}
 #' @rdname server
 #' @export 
 #' @importFrom dplyr filter
-#' @importFrom ggplot2 ggplot aes geom_abline geom_point coord_cartesian facet_grid geom_text geom_smooth
+#' @importFrom ggplot2 ggplot aes geom_abline geom_point coord_cartesian geom_text geom_smooth
 #' @importFrom leaflet renderLeaflet awesomeIcons leaflet addProviderTiles addAwesomeMarkers addMeasure addLayersControl layersControlOptions
 #' @importFrom leaflet.extras addSearchOSM
 #' 
@@ -183,84 +178,51 @@ server <- function(input, output, session) {
     keep    <- data[ vals$keeprows, , drop = FALSE]
     exclude <- data[!vals$keeprows, , drop = FALSE]
     
-    # facet ggplot
-    if (input$facet) {
-      # ggplot Sensor .VWC vs. Sample.SWC
-      p <- ggplot2::ggplot( keep[!is.na(keep)[,1], ],
-        ggplot2::aes(x = Sensor.VWC, y = Sample.VWC, label = ID) ) +
-        # abline white x=y line
-        ggplot2::geom_abline(intercept = 0, slope = 1, colour = "white") + 
-        # plot points - scatter with exclude data set
-        ggplot2::geom_point(data = exclude, fill = NA, color = "black", 
-          alpha = 0.25) +
-        # set limits of cartesian coordinate system (from 0 to 0.6)
-        ggplot2::coord_cartesian(xlim = c(0, .60), ylim = c(0, .60)) + 
-        # apply facet grid: Soil depth vs. Land use
-        #ggplot2::facet_grid(depth ~ landuse)
-        ggplot2::facet_grid(Soil.depth ~ Landuse) +
-        ggplot2::xlab("Sensor VWC [%vol/%vol]") + 
-        ggplot2::ylab("Sample VWC [%vol/%vol]")
-    # no facet grid ggplot  
-    } else {
-      # zoom in if input$Zoom = TRUE
-      if (input$Zoom) {
-        # set limits for zoom
-        xlim <- ylim <- c(0, .6); xypos <- .55
+    # zoom in if input$Zoom = TRUE
+    if (input$Zoom) {
+      # set limits for zoom
+      xlim <- ylim <- c(0, .6); xypos <- .55
       } else {
-        # set limits for no zoom
-        xlim <- ylim <- c(0, .85); xypos <- .8
-      }
-      # ggplot Sensor.VWC vs. Sample.VWC
-      p <- ggplot2::ggplot(keep, 
-        ggplot2:: aes(x = Sensor.VWC, y = Sample.VWC, label = ID)) +
-        # abline white x=y line
-        ggplot2::geom_abline(intercept = 0, slope = 1, colour = "white") + 
-        # write text x=y
-        ggplot2::geom_text(x = xypos, y = xypos, label = "y = x", color = "white") +
-        ggplot2::geom_text(x = 0.05, y = 0.05, label = "y = x", color = "white") +
-        # plot points - scatter with exclude data set
-        ggplot2::geom_point(data = exclude, fill = NA, color = "black", alpha = 0.25) +
-        # set limits of cartesian coordinate system, defined above
-        ggplot2::coord_cartesian(xlim = xlim, ylim = ylim) +
-        ggplot2::xlab("Sensor VWC [%vol/%vol]") + 
-        ggplot2::ylab("Sample VWC [%vol/%vol]")
+      # set limits for no zoom
+      xlim <- ylim <- c(0, .85); xypos <- .8
     }
-    # facte grid or not
-    if (input$facet)
-    {
-      # MM-type regressor: SMCcalibration::fitSMDM
-      if (input$robust) {
-        p <- p + 
-          # add robust linear model to ggplot
-          ggplot2:: geom_smooth(method = fitSMDM, fullrange = TRUE, 
-                       color = "grey")
-      # OLS method: stats::lm  
-      } else {
-        p <- p + 
-          # add linear model (OLS) to ggplot
-          ggplot2::geom_smooth(method = lm, fullrange = TRUE, color = "grey")
-      }
+    # ggplot Sensor.VWC vs. Sample.VWC
+    p <- ggplot2::ggplot(keep, 
+      ggplot2:: aes(x = Sensor.VWC, y = Sample.VWC, label = ID)) +
+      # abline white x=y line
+      ggplot2::geom_abline(intercept = 0, slope = 1, colour = "white") + 
+      # write text x=y
+      ggplot2::geom_text(x = xypos, y = xypos, label = "y = x", 
+        color = "white") +
+      ggplot2::geom_text(x = 0.05, y = 0.05, label = "y = x", 
+        color = "white") +
+      # plot points - scatter with exclude data set
+      ggplot2::geom_point(data = exclude, fill = NA, color = "black", 
+        alpha = 0.25) +
+      # set limits of cartesian coordinate system, defined above
+      ggplot2::coord_cartesian(xlim = xlim, ylim = ylim) +
+      ggplot2::xlab("Sensor VWC [%vol/%vol]") + 
+      ggplot2::ylab("Sample VWC [%vol/%vol]")
+
+    # MM-type regressor: SMCcalibration::fitSMDM
+    if (input$robust) {
+      p <- p +  
+        # add robust linear model to ggplot
+        ggplot2::geom_smooth(method = fitSMDM, fullrange = TRUE,
+          color = "grey") +
+        # add model fun, estimated equation
+        ggplot2::geom_text(x = 0.45, y = 0.05, 
+          label = lm_eq(keep, method="rlm"), 
+          parse = TRUE, size=6.5)
+    # OLS method: stats::lm 
     } else {
-      # MM-type regressor: SMCcalibration::fitSMDM
-      if (input$robust) {
-        p <- p +  
-          # add robust linear model to ggplot
-          ggplot2::geom_smooth(method = fitSMDM, fullrange = TRUE,
-            color = "grey") +
-          # add model fun, estimated equation
-          ggplot2::geom_text(x = 0.45, y = 0.05, 
-            label = lm_eq(keep, method="rlm"), 
-            parse = TRUE, size=6.5)
-      # OLS method: stats::lm 
-      } else {
-        p <- p + 
-          # add linear model (OLS) to ggplot
-          ggplot2:: geom_smooth(method = lm, fullrange = TRUE, color = "grey") + 
-          # add model fun, estimated equation
-          ggplot2::geom_text(x = 0.45, y = 0.05, 
-            label = lm_eq(keep, method="lm"), 
-            parse = TRUE, size=6.5)
-      }
+      p <- p + 
+        # add linear model (OLS) to ggplot
+        ggplot2:: geom_smooth(method = lm, fullrange = TRUE, color = "grey") + 
+        # add model fun, estimated equation
+        ggplot2::geom_text(x = 0.45, y = 0.05, 
+          label = lm_eq(keep, method="lm"), 
+          parse = TRUE, size=6.5)
     }
     # show rownames
     if (input$Rownames) {

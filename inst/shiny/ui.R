@@ -36,11 +36,8 @@ ui <- shiny::fluidPage(
                   shiny::checkboxInput("robust", label = "robust estimates", 
                     value = FALSE),
                   shiny::br(),
-                  # checkbox "facet grid"
-                  shiny::checkboxInput("facet", label = "facet grid", 
-                    value = FALSE),
                   # checkbox "show row.names"
-                  shiny::checkboxInput("Rownames", label = "show row.names", 
+                  shiny::checkboxInput("Rownames", label = "show row.ID", 
                     value = FALSE),
                   # checkbox "zoom in"
                   shiny::checkboxInput("Zoom", label = "zoom in", value = FALSE),
