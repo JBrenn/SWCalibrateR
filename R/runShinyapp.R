@@ -10,9 +10,9 @@
 #' @export 
 #' @importFrom shiny runApp
 runShinyapp <- function() {
-  appDir <- system.file("shiny", package = "SMCcalibration")
+  appDir <- system.file("shiny", package = "SWCalibrateR")
   if (appDir == "") {
-    stop("Could not find example directory. Try re-installing `SMCcalibration`.", call. = FALSE)
+    stop("Could not find example directory. Try re-installing `SWCalibrateR`.", call. = FALSE)
   }
   shiny::runApp(appDir, display.mode = "normal")
 }

@@ -10,11 +10,10 @@ runShinyapp()
 shiny gui
 }
 \description{
-\code{runShinyapp} does start shiny application for soil
-moisture sensor calibration.
+\code{runShinyapp} does start shiny application for soil moisture sensor calibration.
 }
 \examples{
-SMCcalibration::runShinyapp()
+SWCalibrateR::runShinyapp()
 }
 \seealso{
 \code{\link[shiny]{runApp}}
