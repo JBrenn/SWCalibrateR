@@ -44,7 +44,15 @@ ui <- shiny::fluidPage(
                   # file input
                   shiny::fileInput('datafile', 'Choose CSV file', 
                     accept = c('text/csv', 
-                      'text/comma-separated-values,text/plain', '.csv'))
+                      'text/comma-separated-values,text/plain', '.csv')), 
+                  shiny::br(),
+                  absolutePanel(
+                    bottom = 20,
+                    left = 25,
+                    draggable = F,
+                    width='100%',
+                    height='auto',
+                    p(a(shiny::icon('github fa-2x'),href='https://github.com/JBrenn/SWCalibrateR',target='_blank')))
                 # end sidebar panel  
                 ),
                 # start main panem
