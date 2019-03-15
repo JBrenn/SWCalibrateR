@@ -39,7 +39,7 @@ vignettes/*.pdf
 inst/shiny/rsconnect/
 
 # produced figure
-*.png
+#*.png
 
 # tmp dir
 tmp/
