@@ -32,4 +32,5 @@ Imports:
     tidyr (>= 0.8.1)
 RoxygenNote: 6.1.0
 Suggests: 
-    testthat
+    testthat,
+    shinytest
