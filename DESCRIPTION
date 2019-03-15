@@ -1,5 +1,5 @@
 Package: SWCalibrateR
-Version: 1.0.0
+Version: 1.1.0
 Date: 2018-30-11
 Title: Flexible calibration tool for soil moisture sensors
 Authors@R: c(
