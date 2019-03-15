@@ -1,0 +1,12 @@
+app <- ShinyDriver$new("../")
+app$snapshotInit("selection")
+
+app$setInputs(`Project.ID` = "Project 01")
+app$setInputs(`Project.ID` = character(0))
+app$setInputs(`Project.ID` = "Project 02")
+app$setInputs(`Soil.depth` = "20")
+app$setInputs(`Soil.type` = "clay loam")
+app$setInputs(`Soil.type` = c("clay loam", "sandy clay"))
+app$setInputs(`Soil.type` = c("clay loam", "sandy clay", "silt"))
+app$setInputs(`Soil.type` = c("clay loam", "sandy clay", "silt", "silt loam"))
+app$snapshot()
