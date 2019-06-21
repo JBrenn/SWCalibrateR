@@ -163,12 +163,12 @@ locations of the data subset observation points.")
                       shiny::br(),
                       shiny::hr(),
                       shiny::h4("Keywords"),
-                      hiny::p("R, Shiny, Soil moisture, Calibration, TDR"),
+                      shiny::p("R, Shiny, Soil moisture, Calibration, TDR"),
                       shiny::br(),
                       shiny::hr(),
                       shiny::h4("How to cite"),
-                      shiny::p("1. Brenner, J, Genova, G, Bertoldi, G, Niedrist, G and Chiesa, S D 2019 SWCalibrateR: Interactive, Web – Based Calibration of Soil Moisture Sensors. Journal of Open Research Software, 7(1), p.20. ", shiny::a("DOI.", href="https://doi.org/10.5334/jors.254")),
-                      shiny::p("2. Brenner, J, Genova, G, Bertoldi, G, Niedrist, G and Chiesa, S D 2019 JBrenn/SWCalibrateR: version 1.1.0", shiny::a("Zenodo DOI.", href="10.5281/zenodo.1745327"))
+                      shiny::p("1. Brenner J, Genova G, Bertoldi G, Niedrist G and Della Chiesa, S (2019) SWCalibrateR: Interactive, Web – Based Calibration of Soil Moisture Sensors. Journal of Open Research Software, 7(1), p.20. ", shiny::a("DOI: 10.5334/jors.254.", href="https://doi.org/10.5334/jors.254")),
+                      shiny::p("2. Brenner J, & Genova G. (2019, March 15). JBrenn/SWCalibrateR: version 1.1.0 (Version v1.1.0). Zenodo. ", shiny::a("DOI: 10.5281/zenodo.1745327.", href="http://doi.org/10.5281/zenodo.1745327"))
                       )
                     )
                   )
