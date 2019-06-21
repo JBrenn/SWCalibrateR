@@ -149,6 +149,26 @@ data subset. Sort and search is enabled for each category as well as global sear
                       shiny::h4("Map"),
                       shiny::p("This panel contains a leaflet map of the 
 locations of the data subset observation points.")
+                      ),
+                    #5 Impressum
+                    shiny::tabPanel("Notice",
+                      shiny::br(),
+                      shiny::h4("Abstract"),
+                      shiny::p("SWCalibrateR is a user-friendly web application. We designed SWCalibrateR to interactively estimate linear regression relationships of any couple of field data series. We specifically developed this toolbox to calibrate soil moisture sensors based on gravimetric soil moisture samples. The application has been implemented using R-shiny (https://shiny.rstudio.com/)."),
+                      shiny::p("As a user you can upload your own dataset and dynamically filter it by categories like soil type, land use, soil depth and others. With SWCalibrateR you can visualise the filtered data scatter and the estimated linear model. You can diagnose your model estimate and thus easily remove outliers influencing your model estimate. SWCalibrateR handles robust estimates of linear models besides ordinary least square estimation. Additional features are an interactive data table view and mapping of the data points."),
+                      shiny::br(),
+                      shiny::hr(),
+                      shiny::h4("Funding statement"),
+                      shiny::p("This work was supported by the farming consulting centre for fruticulture and viticulture “Südtiroler Beratungsring” and the research grant “MONALISA” of the Provincia Autonoma di Bolzano, Alto Adige, Ripartizione Diritto allo studio, Università e ricerca scientifica."),
+                      shiny::br(),
+                      shiny::hr(),
+                      shiny::h4("Keywords"),
+                      hiny::p("R, Shiny, Soil moisture, Calibration, TDR"),
+                      shiny::br(),
+                      shiny::hr(),
+                      shiny::h4("How to cite"),
+                      shiny::p("1. Brenner, J, Genova, G, Bertoldi, G, Niedrist, G and Chiesa, S D 2019 SWCalibrateR: Interactive, Web – Based Calibration of Soil Moisture Sensors. Journal of Open Research Software, 7(1), p.20. ", shiny::a("DOI.", href="https://doi.org/10.5334/jors.254")),
+                      shiny::p("2. Brenner, J, Genova, G, Bertoldi, G, Niedrist, G and Chiesa, S D 2019 JBrenn/SWCalibrateR: version 1.1.0", shiny::a("Zenodo DOI.", href="10.5281/zenodo.1745327"))
                       )
                     )
                   )
